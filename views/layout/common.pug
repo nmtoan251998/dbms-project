@@ -1,0 +1,40 @@
+doctype html
+head
+    meta(name="viewport, initial-scale=1, shrink-to-fit=no")
+    meta(charset="UTF-8")
+    title MySql Project
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+    link(rel="stylesheet" href="/styles/navbar.css" type="text/css")
+body    
+    header
+        nav.navbar.navbar-expand-lg.navbar-light
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            a.navbar-brand(href='#' style="margin-right: 10rem")
+                img(src='/media/mysql-logo.jpg', width='50', height='50', alt='logo', title="mysql")
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Falculty
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/falculty/data') All falculty
+                            a.dropdown-item(href='/falculty/create') New falculty
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Major
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/major/data') All major
+                            a.dropdown-item(href='/major/create') New major
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Subject
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/subject/data') All subject
+                            a.dropdown-item(href='/subject/create') New subject
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Student
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/student/data') All student
+                            a.dropdown-item(href='/student/create') New student    
+    main
+        block home    
+        block main
+
