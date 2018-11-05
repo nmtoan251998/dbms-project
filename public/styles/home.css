@@ -1,0 +1,256 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,  'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+.wrapper{
+    width: 100%;    
+    height: 92vh;
+    margin: 1rem auto 0;    
+    padding-top: 5rem;
+}
+    .break-title h1{
+        margin: 20% auto 0;
+        width: 500px;
+        color: #21295C;
+        font-size: 350%; 
+        padding-left: 5rem;       
+    }
+
+    .introduction{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        padding-top: 5rem;
+        height: 90vh;
+    }
+
+        .introduction .db-img{
+            color: #B2D4F9;
+            font-size: 500px;
+            text-align: center;
+        }
+
+        .introduction .intro{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;                        
+            width: 500px; 
+            height: 500px;                                   
+        }
+
+            .introduction .intro h1{    
+                font-size: 50px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+                color: #21295C;
+                margin: 0;
+                padding: 7rem 0 0;
+            }
+
+            .introduction .intro p{
+                font-size: 150%;
+                margin: 0;
+                padding-top: .5rem;
+            }
+
+    .profile-cards{
+        margin: 0 auto;
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));    
+        grid-gap: 10px;
+    }
+
+        .profile-cards .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20% auto;
+            height: 500px;
+            width: 350px;                
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            color: snow;
+            background-color: #5B81AB;     
+        }
+            .profile-cards .card .ava{                
+                background-size: cover;    
+                background-position: center center;
+                height: 70%;
+                width: 100%;    
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;    
+                transition: 450ms;
+            }
+                .profile-cards .card .ava-toan{
+                    background-image: url('/media/ava-img.jpg');
+                }
+            .profile-cards .card .ava img{
+                height: 600px;
+                width: 300px;
+            }
+
+            .profile-cards .card .function, .card .profile{
+                position: absolute;    
+            }
+
+            .profile-cards .card .function{
+                bottom: 0;
+                margin: auto;                            
+                border-radius: 20px;
+                height: 25%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 250%;    
+                transition: 450ms;  
+            }
+            .profile-cards .card:hover .function{           
+                transform: scale(0);
+                transition: 0ms;                
+            }
+            .profile-cards .card .profile{
+                bottom: -45%;    
+                font-size: 120%;
+                box-sizing: border-box;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                height: 30%;
+                width: 100%;
+                margin: auto;    
+                padding-left: 1rem;                    
+                background: rgb(58,58,244);
+                background: linear-gradient(0deg, rgba(58,58,244,0.3) 14%, rgba(138,172,255,1) 100%);
+                transition: 450ms;
+            }
+            .profile-cards .card:hover{                   
+                color: #1c1c1c;
+                background-color: snow;  
+            }
+            .profile-cards .card:hover .ava{   
+                margin-top: 4rem;
+                height: 200px;
+                width: 200px; 
+                border-radius: 50%;
+            }            
+            .profile-cards .card:hover .profile{        
+                display: block;        
+                bottom: 0;        
+            }
+        
+    .tool-cards{
+        margin: 0 auto 0;
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));    
+        grid-gap: 10px;
+    }
+
+        .tool-cards .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20% auto;
+            height: 500px;
+            width: 350px;                    
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid snow;
+            border-radius: 20px;           
+            color: snow;            
+            background-color: #7B99E5;          
+            transition: 10ms;                
+        }
+
+            .tool-cards .card .function, .tool-cards .card .tool-used{
+                position: absolute;    
+            }
+
+            .tool-cards .card .function{
+                bottom: 40%;
+                margin: 0 auto;                                 
+                border-radius: 20px;
+                height: 25%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 250%;    
+                transition: 450ms ease;          
+            }
+            .tool-cards .card .tool-used{
+                bottom: -55%;    
+                font-size: 120%;
+                box-sizing: border-box;    
+                height: 45%;
+                width: 100%;
+                margin: auto;    
+                padding-left: 1rem;                
+                transition: 450ms;  
+            }
+            .tool-cards .card .card-fe{
+                background: rgb(58,58,244);
+                background: linear-gradient(0deg, rgba(58,58,244,0.3) 14%, rgba(138,172,255,1) 100%);
+            }
+            .tool-cards .card .card-db{             
+                background: rgb(58,58,244);
+                background: linear-gradient(0deg, rgba(58,58,244,0.3) 14%, rgba(138,172,255,1) 100%);
+            }
+            .tool-cards .card .card-be{                            
+                background: rgb(58,58,244);
+                background: linear-gradient(0deg, rgba(58,58,244,0.3) 14%, rgba(138,172,255,1) 100%);
+            }
+            .tool-cards .card:hover{
+                color: #1E2654;        
+                background-color: #ffffff;              
+                border: 1px solid #191E43;
+                box-shadow: none;          
+            }
+            .tool-cards .card:hover .function{                                                                                               
+                transform: translateY(-100px);            
+                color: #191E43;
+            }
+            .tool-cards .card:hover .tool-used{     
+                display: block;        
+                bottom: 0;               
+            }
+                
+    .program-flow{        
+        position: relative;
+        height: 800px;
+        margin-top: 1rem;
+    }
+        .program-flow .fas{
+            font-size: 50px;
+            position: absolute;                    
+            bottom: 45%;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .program-flow .right{right: 2rem;}
+        .program-flow .left{left: 2rem;}
+        
+        .program-flow .img-slider{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+            .program-flow .img-slider .img{                
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: 0;                
+            }
+                .program-flow .img1{background-image: url('/media/ava-img.jpg');}
+                .program-flow .img2{background-image: url('/media/database-logo.jpg')}
+                .program-flow .img3{background-image: url('/media/ava-img.jpg')}
+                .program-flow .img4{background-image: url('/media/database-logo.jpg')}
+                .program-flow .img5{background-image: url('/media/database-logo.jpg')}
