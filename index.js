@@ -19,6 +19,8 @@ app.use(express.static('public'))
 app.get('/', (req,res) => {
     res.render('index');
 })
+
+//routing
 app.use(router)
 
 app.listen(port, () => console.log(`Server is started on port ${port}`))

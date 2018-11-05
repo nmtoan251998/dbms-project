@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,  'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.nav{    
+    background: #5B81AB; 
+    display: flex;       
+}
+.nav a{
+    padding: 1rem 1.5rem; /* make it become the button */
+    text-decoration: none;
+    color: #f6f6f6;                           
+}
+    .nav .logo{                
+        padding: .5rem 1.5rem;
+        cursor: pointer;      
+        margin: 0;  
+    }
+        .nav .logo img{
+            float: left; /* float the img logo to the left of the screen */
+            width: 3rem;
+            height: 3rem;            
+        }
+    .nav .nav-menu{
+        padding: 0;
+        margin: 0 3rem;
+        list-style-type: none;                
+    }
+        .nav .nav-menu .nav-item{                         
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            font-size: 120%;
+            position: relative;
+            border-top: 5px solid #5B81AB;            
+            box-sizing: content-box;
+        }
+            .nav .nav-menu .nav-item:hover{                    
+                transition: 700ms;
+                border-top: 5px solid white;
+            }           
+                .nav .nav-menu .nav-item a:not(.home)::after{
+                    content: "\f0d7";
+                    font-family: 'Font Awesome\ 5 Free';
+                    font-weight: 1000; /* Fix version 5.0.9 */
+                    padding-left: 1rem;                
+                }        
+                    .nav .nav-menu .nav-item .dropdown{
+                        list-style-type: none;  
+                        position: absolute;                                      
+                        display: block;                                  
+                        background-color: #1c1c1c;
+                        top: calc(4rem - 5px); /* top = 4rem - 5px of border-top attribute */
+                        padding: 0;
+                        margin: 0 1.5rem; 
+                        -ms-transform: translateY(50px); /*IE 9*/
+                        -webkit-transform: translateY(50px); /*Safari*/                         
+                        transform: translateY(50px);
+                    }
+                        .nav .nav-menu .nav-item .dropdown .dropdown-item{                                                                                    
+                            display: none;
+                            padding: 1rem .5rem;
+                            width: 250px;                        
+                            box-sizing: content-box;
+                            border-bottom: .5px solid #f6f6f6;
+                            border-left: 5px solid #B2D4F9;                                
+                        }
+                        .nav .nav-menu .nav-item .dropdown a::after{
+                            content: "";
+                        }
+                .nav .nav-menu .nav-item:hover .dropdown{                                        
+                    transition: 500ms;
+                    -ms-transform: translateY(0); /* IE 9 */
+                    -webkit-transform: translateY(0); /* Safari */    
+                    transform: translateY(0);                                                  
+                }           
+                .nav .nav-menu .nav-item:hover .dropdown .dropdown-item{                                                            
+                    display: inline-block;                                                                                
+                }
+                .nav .nav-menu .nav-item .dropdown .dropdown-item:hover::after{                    
+                    content: "\f054";
+                    font-family: "Font Awesome\ 5 Free";
+                    font-weight: 1000; /* Fix version 5.0.9 */
+                    padding-left: 1rem;   
+                }
