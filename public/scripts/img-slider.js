@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //hidden all images
     for(let x of images){
         x.style.display = "none";
-    }
-
-    console.log({arrowLeft, arrowRight})
+    }    
 
     arrowLeft.addEventListener('click', previousImg);
     arrowRight.addEventListener('click', nextImg);
@@ -55,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
             images[recentIndex].style.display = "none";
 
             //set it to the first index
-            recentIndex = 0;
+            recentIndex = images.length-1;
 
             //display the first index
             images[recentIndex].style.display = "block";
@@ -66,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(){
             images[recentIndex].style.display = "none";
 
             //increase the index by one
-            recentIndex++;
+            recentIndex--;
 
             //display the image at increased index
             images[recentIndex].style.display = "block";
