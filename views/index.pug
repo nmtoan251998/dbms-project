@@ -1,11 +1,13 @@
 extends ./layout/common
 
 block home
+    script(src="scripts/img-slider.js")
+    link(rel="stylesheet" href="/styles/home.css" type="text/css")    
     main
         .wrapper
             .introduction
                 .db-img
-                    i.fas.fa-database
+                    i.fas.fa-database(title="MySql")
                 .intro
                     h1 CT106H - Database Management System
                     p Use knowledge gained in this subject and apply it into realistic through a project
@@ -25,13 +27,13 @@ block home
                         strong Front-end
                     .profile
                         p
-                            strong Student name:
+                            strong Student name: 
                             span(style='font-style: italic') Nguyễn Minh Toàn
                         p
-                            strong Student code:
+                            strong Student code: 
                             span(style='font-style: italic') B1605369
                         p
-                            strong Student class:
+                            strong Student class: 
                             span(style='font-style: italic') DI16V7F1
                 .card
                     .ava.ava-ngoc
@@ -39,13 +41,13 @@ block home
                         strong Back-end
                     .profile
                         p
-                            strong Student name:
+                            strong Student name: 
                             span(style='font-style: italic') Nguyễn Thái Ngọc
                         p
-                            strong Student code:
+                            strong Student code: 
                             span(style='font-style: italic') B1605404
                         p
-                            strong Student class:
+                            strong Student class: 
                             span(style='font-style: italic') DI16V7F2
             .break-title
                 h1 Techniques used:
