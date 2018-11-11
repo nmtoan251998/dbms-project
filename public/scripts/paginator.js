@@ -1,33 +1,43 @@
 document.addEventListener("DOMContentLoaded", function(){
 
     /* Instead of getting the table data size, we will get it from the database */
-    let tableData = document.querySelectorAll('.tb-data')
-        
-    // Local array to store data
-    let data = []
+    let htmlTableData = document.querySelectorAll('.tb-data')
+            
+    let localData = []
 
-    // Get the sliced items
+    /* Additionally initialize the currentPage = 1, we will add the items id */
     let currentPage = 1   
+    
+    let totalShowedItem = document.querySelector('#total-item-page');
 
-    /* Get the total item per page by the selected value */
-    let totalItemSelected = document.querySelector('#total-item-page');
+    
+    /* Simulation 
+    
+    begin = (n-1)*x
+    end = n*x
 
-    // Initialize for the item per page is 5
-    let totalItemPerPage = parseInt(totalItemSelected.value)       
+    with:
+    n: total page
+    x: total item per page
+
+    */
+    
+
+    let totalItemPerPage = parseInt(totalShowedItem.value)       
     let begin = (currentPage-1) * totalItemPerPage
     let end = currentPage*totalItemPerPage 
     
     // Change the item per page by the selected value
-    totalItemSelected.addEventListener("change", function(){        
-        totalItemPerPage = parseInt(totalItemSelected.value)        
+    totalShowedItem.addEventListener("change", function(){        
+        totalItemPerPage = parseInt(totalShowedItem.value)        
 
         // Re-load the table  
         reloadTable();
     })    
     
     /* Push data into an array */
-    tableData.forEach(item => {        
-        data.push(item)
+    htmlTableData.forEach(item => {        
+        localData.push(item)
         hiddenData()
     })     
     
@@ -40,11 +50,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Get the length of some elements
     let pageIndexLen = pageIndex.length
-    let tableDataLen = tableData.length
+    let tableDataLen = htmlTableData.length
 
     // Render the first page
     activatingPage()
-    render(begin, end, data)   
+    render(begin, end, localData)   
     
     
     pageIndex.forEach((eachIndex, index) => {                  
@@ -167,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function(){
         begin = (currentPage-1) * totalItemPerPage;
         end = currentPage*totalItemPerPage;        
         hiddenData()
-        render(begin, end, data)      
+        render(begin, end, localData)      
     }
 
 }, false)
