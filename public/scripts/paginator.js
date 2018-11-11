@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     */
     
-
     let totalItemPerPage = parseInt(totalShowedItem.value)       
     let begin = (currentPage-1) * totalItemPerPage
     let end = currentPage*totalItemPerPage 

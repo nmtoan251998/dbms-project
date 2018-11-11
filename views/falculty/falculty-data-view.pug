@@ -5,8 +5,8 @@ block main
     .table-data
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
+                button.search-button Search
         table.table
             thead.thead
                 tr
@@ -35,12 +35,13 @@ block main
         .paginator
             .total-item-page
                 label(for='total-item-page') Total item per page:
-                select#total-item-page(name='total-item-page')
-                    option(value='10') 10
-                    option(value='20') 20
-                    option(value='25') 25
-                    option(value='50') 50
-                    option(value='100') 100
+                select#total-item-page(name='total-item-page', onchange=`location = this.value`)
+                    option(value=`/falculty/data?page=${currentPage}&data=5`) Pick
+                    option(value=`/falculty/data?page=${currentPage}&data=5`) 5
+                    option(value=`/falculty/data?page=${currentPage}&data=10`) 10
+                    option(value=`/falculty/data?page=${currentPage}&data=25`) 25
+                    option(value=`/falculty/data?page=${currentPage}&data=50`) 50
+                    option(value=`/falculty/data?page=${currentPage}&data=100`) 100
             i#previous.fas.fa-arrow-alt-circle-left.pagination
             .number
                 input.page-index(type='button', value='1')
