@@ -23,22 +23,15 @@ block main
                         | Functions
                         i.fas.fa-sort
             tbody.tbody
-                tr.tb-data
-                    td(title='') Unknown Id 1
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td.function(title='')
-                        i.fas.fa-trash-alt(id='')
-                        i.fas.fa-pencil-alt(id='')
-                        i.fas.fa-eye(id='')
-                tr.tb-data
-                    td(title='') Unknown Id 2
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td.function(title='')
-                        i.fas.fa-trash-alt(id='')
-                        i.fas.fa-pencil-alt(id='')
-                        i.fas.fa-eye(id='')
+                each ChildFalculty in listFalculty
+                    tr.tb-data
+                        td(title='') #{ChildFalculty.Id}
+                        td(title='') #{ChildFalculty.FalName}
+                        td(title='') #{ChildFalculty.Dean}
+                        td.function(title='')
+                            i.fas.fa-trash-alt(id='')
+                            i.fas.fa-pencil-alt(id='')
+                            i.fas.fa-eye(id='')
                 caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
         .paginator
             .total-item-page

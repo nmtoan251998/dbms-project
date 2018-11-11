@@ -1,7 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
 
+
+const router = require('./routes/router');
 const routerFalculty = require('./routes/falculty-route');
 const routerMajor = require('./routes/major-route');
 const routerSubject = require('./routes/subject-route');
@@ -17,13 +20,16 @@ app.use(bodyParser.json());
 app.set('views', 'views');
 app.set('view engine', 'pug');
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+
+
 
 app.get('/', (req,res) => {
     res.render('index');
-})
+});
 
 //routing
+app.use(router);
 app.use(routerFalculty)
 app.use(routerMajor)
 app.use(routerSubject)
