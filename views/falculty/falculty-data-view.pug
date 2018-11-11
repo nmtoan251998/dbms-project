@@ -1,3 +1,55 @@
 extends ../layout/common
 
 block main
+    link(rel="stylesheet", href="/styles/falculty.css", type="text/css")
+    .table-data
+        .table-search
+            form(action='')
+            input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
+            button.search-button Search
+        table.table
+            thead.thead
+                tr
+                    th#sort-id(title='Identification') 
+                        | ID 
+                        i.fas.fa-sort
+                    th#sort-name(title='Name')
+                        | Falculty name
+                        i.fas.fa-sort
+                    th#sort-dean(title='Dean')
+                        | Dean
+                        i.fas.fa-sort
+                    th#functions(title='Functions')
+                        | Functions
+                        i.fas.fa-sort
+            tbody.tbody
+                each ChildFalculty in listFalculty
+                    tr.tb-data
+                        td(title='') #{ChildFalculty.Id}
+                        td(title='') #{ChildFalculty.FalName}
+                        td(title='') #{ChildFalculty.Dean}
+                        td.function(title='')
+                            i.fas.fa-trash-alt(id='')
+                            i.fas.fa-pencil-alt(id='')
+                            i.fas.fa-eye(id='')
+                caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
+        .paginator
+            .total-item-page
+                label(for='total-item-page') Total item per page:
+                select#total-item-page(name='total-item-page')
+                    option(value='10') 10
+                    option(value='20') 20
+                    option(value='25') 25
+                    option(value='50') 50
+                    option(value='100') 100
+            i#previous.fas.fa-arrow-alt-circle-left.pagination
+            .number
+                input.page-index(type='button', value='1')
+                input.page-index(type='button', value='2')
+                input.page-index(type='button', value='3')
+                input.page-index(type='button', value='4')
+                input.page-index(type='button', value='5')
+            i#next.fas.fa-arrow-alt-circle-right.pagination
+            .total-item
+                label(for='total-item') Total falculty:
+                input#total-item(type='button', value='')

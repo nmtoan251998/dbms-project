@@ -5,6 +5,10 @@ const bodyParser = require('body-parser');
 
 
 const router = require('./routes/router');
+const routerFalculty = require('./routes/falculty-route');
+const routerMajor = require('./routes/major-route');
+const routerSubject = require('./routes/subject-route');
+const routerStudent = require('./routes/student-route');
 
 const port = 3000;
 
@@ -26,5 +30,9 @@ app.get('/', (req,res) => {
 
 //routing
 app.use(router);
+app.use(routerFalculty)
+app.use(routerMajor)
+app.use(routerSubject)
+app.use(routerStudent)
 
 app.listen(port, () => console.log(`Server is started on port ${port}`))

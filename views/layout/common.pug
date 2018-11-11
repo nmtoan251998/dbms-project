@@ -4,15 +4,13 @@ head
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(charset="UTF-8")
     title MySql Project
-    link(rel="stylesheet" href="/styles/nav.css" type="text/css")    
-    link(rel="stylesheet" href="/styles/home.css" type="text/css")    
-    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous")
-    script(src="scripts/img-slider.js")
+    link(rel="stylesheet" href="/styles/nav.css" type="text/css")        
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous")    
 body    
     header
         nav.nav
             .logo
-                img(src='/media/mysql-logo.jpg', alt='logo')
+                img(src='/media/mysql-logo.jpg', alt='logo', title="MySql")
             ul.nav-menu
                 li.nav-item
                     a.home(href='/') Home
@@ -20,30 +18,30 @@ body
                     a(href='') Falculty
                     ul.dropdown
                         li
-                            a.dropdown-item(href='#') Create new falculty
+                            a.dropdown-item(href='/falculty/create') Create new falculty
                         li
-                            a.dropdown-item(href='#') View data
+                            a.dropdown-item(href='/falculty/data') View data
                 li.nav-item
                     a(href='') Major
                     ul.dropdown
                         li
-                            a.dropdown-item(href='#') Create new major
+                            a.dropdown-item(href='/major/create') Create new major
                         li
-                            a.dropdown-item(href='#') View data
+                            a.dropdown-item(href='/major/data') View data
                 li.nav-item
                     a(href='') Subject
                     ul.dropdown
                         li
-                            a.dropdown-item(href='#') Create new subject
+                            a.dropdown-item(href='/subject/create') Create new subject
                         li
-                            a.dropdown-item(href='#') View data
+                            a.dropdown-item(href='/subject/data') View data
                 li.nav-item
                     a(href='') Student
                     ul.dropdown
                         li
-                            a.dropdown-item(href='#') Create new student
+                            a.dropdown-item(href='/student/create') Create new student
                         li
-                            a.dropdown-item(href='#') View data
+                            a.dropdown-item(href='/student/data') View data
     main
         block home    
         block main
