@@ -1,7 +1,7 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/falculty.css", type="text/css")
+    link(rel="stylesheet", href="/styles/falculty-data.css", type="text/css")
     .table-data
         .table-search
             form(action='')
@@ -11,17 +11,16 @@ block main
             thead.thead
                 tr
                     th#sort-id(title='Identification') 
-                        | ID 
+                        | Id 
                         i.fas.fa-sort
                     th#sort-name(title='Name')
-                        | Falculty name
+                        | Faculty name 
                         i.fas.fa-sort
                     th#sort-dean(title='Dean')
-                        | Dean
+                        | Dean 
                         i.fas.fa-sort
                     th#functions(title='Functions')
-                        | Functions
-                        i.fas.fa-sort
+                        | Functions                        
             tbody.tbody
                 each ChildFalculty in listFalculty
                     tr.tb-data
@@ -51,5 +50,5 @@ block main
                 input.page-index(type='button', value='5')
             i#next.fas.fa-arrow-alt-circle-right.pagination
             .total-item
-                label(for='total-item') Total falculty:
+                label(for='total-item') Total faculties:
                 input#total-item(type='button', value='')

@@ -47,9 +47,9 @@
                 background-color: rgb(178, 212, 249);    
                 cursor: grab;    
             }
-                .table .thead th:nth-child(1){width: 12.5%}
-                .table .thead th:nth-child(2){width: 47.5%}
-                .table .thead th:nth-child(3){width: 25%}
+                .table .thead th:nth-child(1){width: 10%}
+                .table .thead th:nth-child(2){width: 15%}
+                .table .thead th:nth-child(3){width: 60%}
                 .table .thead th:nth-child(4){width: 15%}
             .table .tbody .tb-data{
                 border: 1px solid silver;
@@ -61,8 +61,11 @@
                     grid-gap: 1rem;
                     padding: 1.2rem;
                 }
+                    .table .tbody .tb-data .function a{
+                        color: black;
+                    }
                     .table .tbody .tb-data .function i:hover{
-                        color: rgb(178, 212, 249);
+                        color: white;
                         cursor: pointer;
                     }                    
                 .table .tbody tr:nth-child(odd){
