@@ -112,8 +112,8 @@
                     cursor: grab;
                 }     
                 .paginator #total-item-page{
-                    width: 35%;
-                    padding: .5rem;
+                    width: 40%;                    
+                    padding: .5rem 0.1rem;
                     border-radius: 5px;
                     font-size: 120%;
                     background-color: #607897;
