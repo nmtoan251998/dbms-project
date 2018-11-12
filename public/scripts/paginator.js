@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    /* Instead of getting the table data size, we will get it from the database */
-    let htmlTableData = document.querySelectorAll('.tb-data')
+    /* Instead of getting the table data size, we will get it from the database */    
+    let pageIndex = document.querySelectorAll('.page-index')    
             
     // let localData = []
 
@@ -52,26 +52,23 @@ document.addEventListener("DOMContentLoaded", function(){
     let activatePage = 1;
 
     // Render the first page
-    activatingPage()
+    // activatingPage()
         
-    pageIndex.forEach((eachIndex, index) => {                  
+    pageIndex.forEach((eachIndex, index) => {                       
         eachIndex.addEventListener("click", function(){                     
-                        
-            activatePage = index + 1;            
-            currentPage = parseInt(this.value)  
+
+            activatePage = index + 1;
+            currentPage = parseInt(this.value);
                         
             pageIndex.forEach(each => {                
                 each.classList.remove('activating')
             })
             
-            this.classList.add('activating')            
-
-            // Re-load the table           
-            // reloadTable();
+            this.classList.add('activating')
         })                           
     })    
     
-    function activatingPage(){        
+    function activatingPage(){          
         pageIndex.forEach(each => {            
             each.classList.remove('activating')
         })
