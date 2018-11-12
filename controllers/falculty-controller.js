@@ -1,19 +1,17 @@
 const conn = require('../public/scripts/config');
 
 module.exports.getFalcultyData =  (req,res) => {                
-    // PAGINATION
-    
+    // PAGINATION    
     /* Simulation 
-    
+        
     begin = (n-1)*x
     end = n*x
 
     with:
     n: total page
     x: total item per page
+    */
 
-    */                
-       
     let currentPage = parseInt(req.query.page) || 1;
     let itemPerPage = parseInt(req.query.size) || 5;    
     
