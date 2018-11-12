@@ -1,7 +1,8 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/falculty-data.css", type="text/css")
+    link(rel="stylesheet", href="/styles/falculty-data.css", type="text/css")    
+    script(src="/scripts/paginator.js")
     .table-data
         .table-search
             form(action='')
@@ -36,20 +37,22 @@ block main
             .total-item-page
                 label(for='total-item-page') Total item per page:
                 select#total-item-page(name='total-item-page', onchange=`location = this.value`)
-                    option(value=`/falculty/data?page=${currentPage}&data=5`) Pick
-                    option(value=`/falculty/data?page=${currentPage}&data=5`) 5
-                    option(value=`/falculty/data?page=${currentPage}&data=10`) 10
-                    option(value=`/falculty/data?page=${currentPage}&data=25`) 25
-                    option(value=`/falculty/data?page=${currentPage}&data=50`) 50
-                    option(value=`/falculty/data?page=${currentPage}&data=100`) 100
-            i#previous.fas.fa-arrow-alt-circle-left.pagination
-            .number
-                input.page-index(type='button', value='1')
-                input.page-index(type='button', value='2')
-                input.page-index(type='button', value='3')
-                input.page-index(type='button', value='4')
-                input.page-index(type='button', value='5')
-            i#next.fas.fa-arrow-alt-circle-right.pagination
+                    option(value=`/falculty/data?page=${page}&size=5`) Pick
+                    option(value=`/falculty/data?page=${page}&size=5`) 5
+                    option(value=`/falculty/data?page=${page}&size=10`) 10
+                    option(value=`/falculty/data?page=${page}&size=25`) 25
+                    option(value=`/falculty/data?page=${page}&size=50`) 50
+                    option(value=`/falculty/data?page=${page}&size=100`) 100
+            a(href=`/falculty/data?page=${page-1}&size=${item}` style="margin-right: .5rem").pagination
+                i#previous.fas.fa-arrow-alt-circle-left
+            .number  
+                a.page-index(href=`/falculty/data?page=1&size=${item}`) 1
+                a.page-index(href=`/falculty/data?page=2&size=${item}`) 2
+                a.page-index(href=`/falculty/data?page=3&size=${item}`) 3
+                a.page-index(href=`/falculty/data?page=4&size=${item}`) 4
+                a.page-index(href=`/falculty/data?page=5&size=${item}`) 5                
+            a(href=`/falculty/data?page=${page+1}&size=${item}`).pagination
+                i#previous.fas.fa-arrow-alt-circle-right
             .total-item
                 label(for='total-item') Total faculties:
                 input#total-item(type='button', value='')
