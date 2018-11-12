@@ -15,10 +15,7 @@ module.exports.getFalcultyData =  (req,res) => {
     */                
        
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.data) || 5;
-
-
-    console.log({currentPage,itemPerPage})
+    let itemPerPage = parseInt(req.query.size) || 5;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -29,7 +26,8 @@ module.exports.getFalcultyData =  (req,res) => {
         if(err) throw err;                    
         res.render('../views/falculty/falculty-data-view',{                
             listFalculty: result.slice(begin, end),
-            currentPage : currentPage            
+            page : currentPage,
+            item : itemPerPage                
         });
     });    
 
