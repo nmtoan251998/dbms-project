@@ -32,12 +32,20 @@ module.exports.getFalcultyData =  (req,res) => {
 }
 
 module.exports.getFalcultyCreate = (req,res) => {
+<<<<<<< HEAD
+    console.log(req.query);
+=======
     // console.log(req.query);
+>>>>>>> 035b885c32b52496f887232f60a5b85ac3969cfc
     // conn.connect(err=>{
     //     if(err) throw err;
     //     console.log('Connected');
 
+<<<<<<< HEAD
+    // });
+=======
     // })
+>>>>>>> 035b885c32b52496f887232f60a5b85ac3969cfc
     const sql =`INSERT INTO FALCULTY VALUES ('${req.query.falid}','${req.query.falname}','${req.query.dean}')`;
     // conn.query(sql,(err,result)=>{
     //     if(err) throw err;
