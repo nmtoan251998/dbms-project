@@ -60,7 +60,7 @@ block main
                 a.pagination(href=`/subject/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     i#previous.fas.fa-arrow-alt-circle-left
             .number                                 
-                - for(var i = 0; i < 5; i++, pageIndex++)                    
+                - for(var i = 0; i < 5; i++, pageIndex++)
                     if(page === pageIndex)
                         a.activating.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
@@ -70,4 +70,4 @@ block main
             .total-item
                 label(for='total-item') Total subjects:
                 input#total-item(type='button', value='')
-    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
+    
