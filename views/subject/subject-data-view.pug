@@ -50,23 +50,24 @@ block main
                         a(href="#")
                             i.fas.fa-eye(id='')
                 caption(title='Majors subjects') Table name: Cantho univerysity's subjects
-        .paginator
-            .total-item-page
-                label(for='total-item-page') Total item per page:
-                select#total-item-page(name='total-item-page')
-                    option(value='10') 10
-                    option(value='20') 20
-                    option(value='25') 25
-                    option(value='50') 50
-                    option(value='100') 100
-            i#previous.fas.fa-arrow-alt-circle-left.pagination
-            .number
-                input.page-index(type='button', value='1')
-                input.page-index(type='button', value='2')
-                input.page-index(type='button', value='3')
-                input.page-index(type='button', value='4')
-                input.page-index(type='button', value='5')
-            i#next.fas.fa-arrow-alt-circle-right.pagination
+        //- Paginating  
+        .paginator                                  
+            - var pageIndex = 1
+            if(page === 1)                                
+                a.pagination(href=`/subject/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                    i#previous.fas.fa-arrow-alt-circle-left
+            else
+                a.pagination(href=`/subject/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                    i#previous.fas.fa-arrow-alt-circle-left
+            .number                                 
+                - for(var i = 0; i < 5; i++, pageIndex++)
+                    if(page === pageIndex)
+                        a.activating.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
+                    else
+                        a.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/subject/data?page=${page+1}&size=${item}`).pagination
+                i#previous.fas.fa-arrow-alt-circle-right
             .total-item
                 label(for='total-item') Total subjects:
                 input#total-item(type='button', value='')
+    

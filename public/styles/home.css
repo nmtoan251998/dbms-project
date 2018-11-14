@@ -16,21 +16,22 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         padding-top: 5rem;
-        height: 90vh;
+        height: 90vh;        
     }
 
         .introduction .db-img{
             color: #B2D4F9;
             font-size: 500px;
             text-align: center;
+            margin-right: -5rem;
         }
 
         .introduction .intro{
             display: flex;
             flex-direction: column;
             justify-content: center;                        
-            width: 500px; 
-            height: 500px;                                   
+            width: 600px; 
+            height: 500px;                                              
         }
 
             .introduction .intro h1{    
