@@ -29,7 +29,7 @@ block main
                         td(title='') #{ChildFalculty.FalName}
                         td(title='') #{ChildFalculty.Dean}
                         td.function(title='')
-                            i.fas.fa-trash-alt(id='')
+                            i.id-fal.fas.fa-trash-alt(data-id=ChildFalculty.Id)
                             i.fas.fa-pencil-alt(id='')
                             i.fas.fa-eye(id='')
                 caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
@@ -53,3 +53,4 @@ block main
             .total-item
                 label(for='total-item') Total falculty:
                 input#total-item(type='button', value='')
+    script(src="bundle.js")
