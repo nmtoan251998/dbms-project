@@ -3,6 +3,7 @@ extends ./layout/common
 block home
     script(src="scripts/img-slider.js")
     link(rel="stylesheet" href="/styles/home.css" type="text/css")    
+    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
     main
         .wrapper
             .introduction
@@ -11,10 +12,10 @@ block home
                 .intro
                     h1 CT106H - Database Management System                                                           
                     p(style="font-size: 250%; font-style: italic") Student management system
-                    p
-                        a(style='color: black', href='https://github.com/nmtoan251998/dbms-project' target="_blank") 
-                            i.fab.fa-github(style='font-size: 200%; padding-top: 1.5rem;')      
-                            span github.com/nmtoan251998/dbms-project
+                    p                        
+                        img(src="/media/github-brands.svg", alt="" style="width: 40px;height: 40px;") 
+                        a(style='color: black', href='https://github.com/nmtoan251998/dbms-project' target="_blank") github.com/nmtoan251998/dbms-project                            
+                            
             .break-title
                 h1 Team members:
             .profile-cards
