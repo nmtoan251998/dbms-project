@@ -1,27 +1,26 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/falculty.css", type="text/css")
+    link(rel="stylesheet", href="/styles/falculty-data.css", type="text/css")        
     .table-data
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
+                button.search-button Search
         table.table
             thead.thead
                 tr
                     th#sort-id(title='Identification') 
-                        | ID 
+                        | Id 
                         i.fas.fa-sort
                     th#sort-name(title='Name')
-                        | Falculty name
+                        | Faculty name 
                         i.fas.fa-sort
                     th#sort-dean(title='Dean')
-                        | Dean
+                        | Dean 
                         i.fas.fa-sort
                     th#functions(title='Functions')
-                        | Functions
-                        i.fas.fa-sort
+                        | Functions                        
             tbody.tbody
                 each ChildFalculty in listFalculty
                     tr.tb-data
@@ -33,24 +32,28 @@ block main
                             i.fas.fa-pencil-alt(id='')
                             i.fas.fa-eye(id='')
                 caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
-        .paginator
-            .total-item-page
-                label(for='total-item-page') Total item per page:
-                select#total-item-page(name='total-item-page')
-                    option(value='10') 10
-                    option(value='20') 20
-                    option(value='25') 25
-                    option(value='50') 50
-                    option(value='100') 100
-            i#previous.fas.fa-arrow-alt-circle-left.pagination
-            .number
-                input.page-index(type='button', value='1')
-                input.page-index(type='button', value='2')
-                input.page-index(type='button', value='3')
-                input.page-index(type='button', value='4')
-                input.page-index(type='button', value='5')
-            i#next.fas.fa-arrow-alt-circle-right.pagination
+        //- Paginating  
+        .paginator                                  
+            - var pageIndex = 1
+            if(page === 1)                                
+                a.pagination(href=`/falculty/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                    i#previous.fas.fa-arrow-alt-circle-left
+            else
+                a.pagination(href=`/falculty/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                    i#previous.fas.fa-arrow-alt-circle-left
+            .number                                 
+                - for(var i = 0; i < 5; i++, pageIndex++)                    
+                    if(page === pageIndex)
+                        a.activating.page-index(href=`/falculty/data?page=${pageIndex}&size=${item}`)= pageIndex
+                    else
+                        a.page-index(href=`/falculty/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/falculty/data?page=${page+1}&size=${item}`).pagination
+                i#previous.fas.fa-arrow-alt-circle-right
             .total-item
-                label(for='total-item') Total falculty:
+                label(for='total-item') Total faculties:
                 input#total-item(type='button', value='')
+<<<<<<< HEAD
     script(src="bundle.js")
+=======
+    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
+>>>>>>> 035b885c32b52496f887232f60a5b85ac3969cfc

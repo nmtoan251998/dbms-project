@@ -1,0 +1,156 @@
+.table-data{
+    position: relative;    
+    width: 80%;
+    margin: 10rem auto 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";    
+}
+    .table{        
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;         
+    }        
+        .table-search{
+            position: absolute;
+            top: -3.5rem;
+            right: 0;                                 
+        }
+            .table-search .search-input{
+                padding: .81rem 3.5rem .81rem .3rem;
+                font-size: 120%;
+                color: #1c1c1c;
+                text-align: left;
+                border-radius: 5px;
+            }
+            .table-search .search-button{
+                padding: .81rem 1.3rem;                
+                cursor: pointer;
+                background-color: #607897;
+                color: white;
+                border: 1px solid #607897;                
+                font-size: 120%;
+                border-radius: 5px;
+            }
+            .table-search .search-button:hover{
+                color: #607897;
+                background-color: white;
+                border: 1px solid #607897;
+            }
+
+        .table .thead{
+            border: 1px solid rgb(178, 212, 249);
+        }
+            .table .thead th{
+                padding: .85rem;
+                color: #1c1c1c;
+                font-size: 120%;
+                font-weight: bolder;
+                background-color: rgb(178, 212, 249);    
+                cursor: grab;    
+            }
+                .table .thead th:nth-child(1){width: 12.5%}
+                .table .thead th:nth-child(2){width: 47.5%}
+                .table .thead th:nth-child(3){width: 25%}
+                .table .thead th:nth-child(4){width: 15%}
+            .table .tbody .tb-data{
+                border: 1px solid silver;
+                border-top: none;                
+            }
+                .table .tbody .tb-data .function{                    
+                    display: grid; 
+                    grid-template-columns: 1fr 1fr 1fr;                      
+                    grid-gap: 1rem;
+                    padding: 1.2rem;
+                }
+                    .table .tbody .tb-data .function a{
+                        color: black;
+                    }
+                    .table .tbody .tb-data .function i:hover{
+                        color: white;
+                        cursor: pointer;
+                    }                    
+                .table .tbody tr:nth-child(odd){
+                    background-color: #f6f6f6;
+                }
+                .table .tbody tr:nth-child(even){
+                    background-color: white;
+                }
+                .table .tbody tr:hover{
+                    background-color: #607897;    
+                    color: #f3f3f3;
+                }        
+                    .table .tbody td{
+                        font-size: 105%;
+                        padding: 1rem;    
+                        cursor: default;
+                    }
+        .table caption{
+            display: table-caption;
+            caption-side: bottom;
+            text-align: center;                                    
+            cursor: default;
+            margin-top: .5rem;
+            font-style: italic;
+        }
+        .paginator{
+            margin-top: 1.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;           
+            cursor: pointer;   
+            outline: none;                  
+            position: relative;
+        }           
+            .paginator .number .page-index{                
+                border-radius: 50%;
+                padding: .2rem .8rem;
+                margin: 0 2px;
+                color: #f6f6f6;
+                border: 1px solid rgba(250, 128, 114, 0.842);                
+                background-color: rgba(250, 128, 114, 0.842);
+                font-size: 1.5rem;                
+                cursor: pointer;
+                outline: none;
+                text-decoration: none;
+            }
+                .paginator .number .page-index:not(.activating):hover{border: 1px solid white;}         
+                .paginator .number .activating{
+                    background-color: #607897;
+                    border: 1px solid #607897;
+                }           
+                .paginator .number .activating:hover{border: 1px solid white;}
+                .paginator .pagination{
+                    font-size: 2.5rem;                    
+                    margin: 0;                                        
+                    color: rgb(178, 212, 249);                    
+                }
+                .paginator .pagination:hover{
+                    color: #607897;
+                }
+            .paginator .total-item{
+                position: absolute;
+                right: 0;       
+                display: flex;
+                flex-direction: column;                 
+            }       
+                .paginator .total-item label{
+                    font-size: 150%;
+                    cursor: grab;
+                }     
+                .paginator #total-item{
+                    width: 35%;
+                    padding: .5rem;
+                    border-radius: 5px;
+                    font-size: 120%;
+                    background-color: #607897;
+                    color: #f1f1f1;
+                    border: 1px solid #607897;
+                    cursor: pointer;       
+                }
+
+
+
+            
+
+
+

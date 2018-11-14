@@ -3,22 +3,21 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(charset="UTF-8")
-    title MySql Project
-    link(rel="stylesheet" href="/styles/nav.css" type="text/css")        
-    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous")    
+    title MySql Project    
+    link(rel="stylesheet" href="/styles/nav.css" type="text/css")                    
 body    
     header
         nav.nav
-            .logo
+            .logo                                                
                 img(src='/media/mysql-logo.jpg', alt='logo', title="MySql")
             ul.nav-menu
                 li.nav-item
                     a.home(href='/') Home
                 li.nav-item
-                    a(href='') Falculty
+                    a(href='') Faculty
                     ul.dropdown
                         li
-                            a.dropdown-item(href='/falculty/create') Create new falculty
+                            a.dropdown-item(href='/falculty/create') Create new faculty
                         li
                             a.dropdown-item(href='/falculty/data') View data
                 li.nav-item
