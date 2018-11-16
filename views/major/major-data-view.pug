@@ -22,28 +22,18 @@ block main
                     th#functions(title='Functions')
                         | Functions                         
             tbody.tbody
-                tr.tb-data
-                    td(title='') Unknown Id 1
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td.function(title='')
-                        a(href="#")
-                            i.fas.fa-trash-alt(id='')
-                        a(href="#")
-                            i.fas.fa-pencil-alt(id='')
-                        a(href="#")
-                            i.fas.fa-eye(id='')
-                tr.tb-data
-                    td(title='') Unknown Id 2
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td.function(title='')
-                        a(href="#")
-                            i.fas.fa-trash-alt(id='')
-                        a(href="#")
-                            i.fas.fa-pencil-alt(id='')
-                        a(href="#")
-                            i.fas.fa-eye(id='')
+                each ChildMajor in listMajor
+                    tr.tb-data
+                        td(title='') #{ChildMajor.Id}
+                        td(title='') #{ChildMajor.FalId}
+                        td(title='') #{ChildMajor.MajorName}
+                        td.function(title='')
+                            a(href="/major/data-delete/"+ChildMajor.Id)
+                                i.id-fal.fas.fa-trash-alt
+                            a(href="")
+                                i.fas.fa-pencil-alt(id='')
+                            a(href="")
+                                i.fas.fa-eye(id='')
                 caption(title='CTU Majors') Table name: Cantho univerysity's majors
         //- Paginating  
         .paginator                                  

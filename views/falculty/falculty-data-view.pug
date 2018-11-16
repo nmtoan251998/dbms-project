@@ -28,9 +28,12 @@ block main
                         td(title='') #{ChildFalculty.FalName}
                         td(title='') #{ChildFalculty.Dean}
                         td.function(title='')
-                            i.id-fal.fas.fa-trash-alt(data-id=ChildFalculty.Id)
-                            i.fas.fa-pencil-alt(id='')
-                            i.fas.fa-eye(id='')
+                            a(href="/falculty/data-delete/"+ChildFalculty.Id)
+                                i.id-fal.fas.fa-trash-alt
+                            a(href="/falculty/data-modify/"+ChildFalculty.Id+'&'+ChildFalculty.FalName+'&'+ChildFalculty.Dean)
+                                i.fas.fa-pencil-alt(id='')
+                            a(href="")
+                                i.fas.fa-eye(id='')
                 caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
         //- Paginating  
         .paginator                                  
@@ -52,8 +55,4 @@ block main
             .total-item
                 label(for='total-item') Total faculties:
                 input#total-item(type='button', value='')
-<<<<<<< HEAD
-    script(src="bundle.js")
-=======
     link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
->>>>>>> 035b885c32b52496f887232f60a5b85ac3969cfc
