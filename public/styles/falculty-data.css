@@ -8,7 +8,27 @@
         width: 100%;
         text-align: left;
         border-collapse: collapse;         
-    }        
+    }    
+        .add-button{
+            position: absolute;
+            top: -3.5rem;
+            left: 0;
+            z-index: -1;
+        }  
+            .add-button{
+                padding: .81rem 1.3rem;                
+                cursor: pointer;
+                background-color: #607897;
+                color: white;
+                border: 1px solid #607897;                
+                font-size: 120%;
+                border-radius: 5px;
+            }
+            .add-button:hover{
+                color: #607897;
+                background-color: white;
+                border: 1px solid #607897;
+            }    
         .table-search{
             position: absolute;
             top: -3.5rem;
@@ -138,14 +158,15 @@
                     cursor: grab;
                 }     
                 .paginator #total-item{
-                    width: 35%;
-                    padding: .5rem;
+                    width: 90%;
+                    padding: 0.5rem 0.1em;
+                    text-align: left;                   
                     border-radius: 5px;
                     font-size: 120%;
                     background-color: #607897;
                     color: #f1f1f1;
                     border: 1px solid #607897;
-                    cursor: pointer;       
+                    cursor: pointer;                        
                 }
 
 

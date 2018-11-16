@@ -3,6 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/student-data.css", type="text/css")
     .table-data
+        button.add-button Add data
         .table-search
             form(action='')
             input.search-input(type='text', name='search-name', placeholder='Input student name here...')
@@ -68,6 +69,6 @@ block main
             a(href=`/student/data?page=${page+1}&size=${item}`).pagination
                 i#previous.fas.fa-arrow-alt-circle-right
             .total-item
-                label(for='total-item') Total students:
+                label(for='total-item') Total:
                 input#total-item(type='button', value='')
     link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    

@@ -1,7 +1,7 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/subject-data.css", type="text/css")
+    link(rel="stylesheet", href="/styles/scoreRecord-data.css", type="text/css")
     .table-data
         button.add-button Add data
         .table-search
@@ -14,22 +14,18 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         i.fas.fa-sort
-                    th#sort-major-id(title='Major identification')
-                        | Major Id 
+                    th#sort-falculty-id(title='Falculty Identification')
+                        | Faculty Id 
                         i.fas.fa-sort
-                    th#sort-name(title='Subject name')
-                        | Subject name 
-                        i.fas.fa-sort
-                    th#sort-credit(title='Credit')
-                        | Credits 
+                    th#sort-name(title='Name')
+                        | Major name 
                         i.fas.fa-sort
                     th#functions(title='Functions')
-                        | Functions                        
+                        | Functions                         
             tbody.tbody
                 tr.tb-data
                     td(title='') Unknown Id 1
                     td(title='') Unknown Name
-                    td(title='') Unknown Dean
                     td(title='') Unknown Dean
                     td.function(title='')
                         a(href="#")
@@ -42,7 +38,6 @@ block main
                     td(title='') Unknown Id 2
                     td(title='') Unknown Name
                     td(title='') Unknown Dean
-                    td(title='') Unknown Dean
                     td.function(title='')
                         a(href="#")
                             i.fas.fa-trash-alt(id='')
@@ -50,25 +45,25 @@ block main
                             i.fas.fa-pencil-alt(id='')
                         a(href="#")
                             i.fas.fa-eye(id='')
-                caption(title='Majors subjects') Table name: Cantho univerysity's subjects
+                caption(title='CTU Score Records') Table name: Cantho univerysity's score records
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
-                a.pagination(href=`/subject/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/scoreRecord/data?page=${page}&size=${item}` style="margin-right: .5rem")
                     i#previous.fas.fa-arrow-alt-circle-left
             else
-                a.pagination(href=`/subject/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/scoreRecord/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     i#previous.fas.fa-arrow-alt-circle-left
             .number                                 
-                - for(var i = 0; i < 5; i++, pageIndex++)
+                - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/scoreRecord/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/subject/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/scoreRecord/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/scoreRecord/data?page=${page+1}&size=${item}`).pagination
                 i#previous.fas.fa-arrow-alt-circle-right
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')
-    
+    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
