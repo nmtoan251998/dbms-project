@@ -8,12 +8,32 @@
         width: 100%;
         text-align: left;
         border-collapse: collapse;         
-    }        
+    }      
+        .add-button{
+            position: absolute;
+            top: -3.5rem;
+            left: 0;
+            z-index: -1;
+        }  
+            .add-button{
+                padding: .81rem 1.3rem;                
+                cursor: pointer;
+                background-color: #607897;
+                color: white;
+                border: 1px solid #607897;                
+                font-size: 120%;
+                border-radius: 5px;
+            }
+            .add-button:hover{
+                color: #607897;
+                background-color: white;
+                border: 1px solid #607897;
+            }    
         .table-search{
             position: absolute;
             top: -3.5rem;
             right: 0;                                 
-        }
+        }            
             .table-search .search-input{
                 padding: .81rem 3.5rem .81rem .3rem;
                 font-size: 120%;
@@ -120,8 +140,7 @@
                 }           
                 .paginator .number .activating:hover{border: 1px solid white;}
                 .paginator .pagination{
-                    font-size: 2.5rem;                    
-                    margin: 0 10px;                                        
+                    font-size: 2.5rem;                                                                             
                     color: rgb(178, 212, 249);                    
                 }
                 .paginator .pagination:hover{
@@ -129,17 +148,18 @@
                 }
             .paginator .total-item{
                 position: absolute;
-                right: 0;       
+                right: 0;                   
                 display: flex;
                 flex-direction: column;                 
             }       
                 .paginator .total-item label{
                     font-size: 150%;
                     cursor: grab;
-                }     
+                }                     
                 .paginator #total-item{
-                    width: 35%;
-                    padding: .5rem;
+                    width: 90%;
+                    padding: 0.5rem 0.1em;
+                    text-align: left;
                     border-radius: 5px;
                     font-size: 120%;
                     background-color: #607897;
