@@ -1,7 +1,8 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/student-data.css", type="text/css")
+    link(rel="stylesheet", href="/styles/all-content.css", type="text/css")
+    link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data
         button.add-button Add data
         .table-search
@@ -13,53 +14,37 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#sort-class-id(title='Class Identification')
                         | Class Id 
-                        i.fas.fa-sort
-                    th#sort-major-id(title='Major Identification')
-                        | Major Id 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')            
                     th#sort-name(title='Student Name')
                         | Student name 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Functions                         
             tbody.tbody
                 tr.tb-data
-                    td(title='') Unknown Id 1
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td(title='') Unknown Dean
+                    td(title='')
+                    td(title='')                    
+                    td(title='')
                     td.function(title='')
                         a(href="#")
-                            i.fas.fa-trash-alt(id='')
+                            span.icon.icon-del(id='')                            
                         a(href="#")
-                            i.fas.fa-pencil-alt(id='')
+                            span.icon.icon-mod(id='')
                         a(href="#")
-                            i.fas.fa-eye(id='')
-                tr.tb-data
-                    td(title='') Unknown Id 2
-                    td(title='') Unknown Name
-                    td(title='') Unknown Dean
-                    td(title='') Unknown Dean
-                    td.function(title='')
-                        a(href="#")
-                            i.fas.fa-trash-alt(id='')
-                        a(href="#")
-                            i.fas.fa-pencil-alt(id='')
-                        a(href="#")
-                            i.fas.fa-eye(id='')
+                            span.icon.icon-view(id='')  
                 caption(title='CTU Majors') Table name: Cantho univerysity's students
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
                 a.pagination(href=`/student/data?page=${page}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             else
                 a.pagination(href=`/student/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
@@ -67,8 +52,7 @@ block main
                     else
                         a.page-index(href=`/student/data?page=${pageIndex}&size=${item}`)= pageIndex
             a(href=`/student/data?page=${page+1}&size=${item}`).pagination
-                i#previous.fas.fa-arrow-alt-circle-right
+                span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')
-    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
+                input#total-item(type='button', value='')    

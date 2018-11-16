@@ -5,6 +5,9 @@ body{
     font-size: 16px;
     background-color: #ffffff;
 }
+a{
+    text-decoration: none;
+}
 
 .nav{    
     background: #5B81AB; 
