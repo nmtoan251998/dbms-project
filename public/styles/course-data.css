@@ -84,11 +84,7 @@
                 }
                     .table .tbody .tb-data .function a{
                         color: black;
-                    }
-                    .table .tbody .tb-data .function i:hover{                        
-                        color: white;
-                        cursor: pointer;
-                    }                    
+                    }               
                 .table .tbody tr:nth-child(odd){
                     background-color: #f6f6f6;
                 }
@@ -141,6 +137,7 @@
                 }           
                 .paginator .number .activating:hover{border: 1px solid white;}
                 .paginator .pagination{
+                    text-decoration: none;
                     font-size: 2.5rem;                                                                             
                     color: rgb(178, 212, 249);                    
                 }

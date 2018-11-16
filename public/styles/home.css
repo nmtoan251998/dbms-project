@@ -241,10 +241,24 @@
                 background-position: center center;
                 background-repeat: no-repeat;
                 position: absolute;
-                z-index: 0;                
+                z-index: 0;                        
             }
                 .program-flow .img1{background-image: url('/media/coders.tokyo-white-logo.jpg');}
                 .program-flow .img2{background-image: url('/media/DBMS_MYSQL.png')}
                 .program-flow .img3{background-image: url('/media/ava-img-toan.jpg')}
                 .program-flow .img4{background-image: url('/media/database-logo.jpg')}
                 .program-flow .img5{background-image: url('/media/database-logo.jpg')}
+        .fade{
+            animation-name: fade;
+            -webkit-animation-name: fade;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+        }
+        @keyframes fade{
+            from{opacity: .6}
+            to{opacity: 1;}
+        }
+        @-webkit-keyframes fade{
+            from{opacity: .6}
+            to{opacity: 1;}
+        }

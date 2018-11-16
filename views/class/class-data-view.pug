@@ -1,7 +1,8 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/class-data.css", type="text/css")        
+    link(rel="stylesheet", href="/styles/all-content.css", type="text/css")
+    link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data                    
         button.add-button Add data
         .table-search
@@ -13,35 +14,38 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#sort-name(title='Name')
                         | Faculty name 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#sort-dean(title='Dean')
                         | Dean 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
                 each ChildFalculty in listFalculty
                     tr.tb-data
-                        td(title='') #{ChildFalculty.Id}
-                        td(title='') #{ChildFalculty.FalName}
-                        td(title='') #{ChildFalculty.Dean}
+                        td(title='')
+                        td(title='')
+                        td(title='')
                         td.function(title='')                            
-                            i.id-fal.fas.fa-trash-alt(data-id=ChildFalculty.Id)
-                            i.fas.fa-pencil-alt(id='')
-                            i.fas.fa-eye(id='')
+                            a(href="#")
+                                span.icon.icon-del(id='')                            
+                            a(href="#")
+                                span.icon.icon-mod(id='')
+                            a(href="#")
+                                span.icon.icon-view(id='') 
                 caption(title='CTU Classes') Table name: Cantho univerysity's classes
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
                 a.pagination(href=`/class/data?page=${page}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             else
                 a.pagination(href=`/class/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
@@ -49,8 +53,7 @@ block main
                     else
                         a.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
             a(href=`/class/data?page=${page+1}&size=${item}`).pagination
-                i#previous.fas.fa-arrow-alt-circle-right
+                span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')
-    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
+                input#total-item(type='button', value='')    
