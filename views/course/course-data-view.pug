@@ -26,35 +26,33 @@ block main
             tbody.tbody
                 each ChildFalculty in listFalculty
                     tr.tb-data
-                        td(title='') #{ChildFalculty.Id}
-                        td(title='') #{ChildFalculty.FalName}
-                        td(title='') #{ChildFalculty.Dean}
-                        td.function(title='')
-                            a(href="/falculty/data-delete/"+ChildFalculty.Id)
-                                span.icon.icon-del(id='') 
-                            //- a(href="/falculty/data-modify/"+ChildFalculty.Id)
-                            //-     span.icon.icon-mod(id='')
-                            a(href="/falculty/data-modify/"+ChildFalculty.Id+'&'+ChildFalculty.FalName+'&'+ChildFalculty.Dean)
+                        td(title='')
+                        td(title='')
+                        td(title='')
+                        td.function(title='')                            
+                            a(href="#")
+                                span.icon.icon-del(id='')                            
+                            a(href="#")
                                 span.icon.icon-mod(id='')
-                            a(href="")
-                                span.icon.icon-view(id='')
-                caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
+                            a(href="#")
+                                span.icon.icon-view(id='')  
+                caption(title='CTU Courses') Table name: Cantho univerysity's courses
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
-                a.pagination(href=`/falculty/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/course/data?page=${page}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             else
-                a.pagination(href=`/falculty/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/course/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/falculty/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/falculty/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/falculty/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/course/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:

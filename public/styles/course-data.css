@@ -8,7 +8,7 @@
         width: 100%;
         text-align: left;
         border-collapse: collapse;         
-    }      
+    }        
         .add-button{
             position: absolute;
             top: -3.5rem;
@@ -33,7 +33,7 @@
             position: absolute;
             top: -3.5rem;
             right: 0;                                 
-        }            
+        }
             .table-search .search-input{
                 padding: .81rem 3.5rem .81rem .3rem;
                 font-size: 120%;
@@ -65,12 +65,13 @@
                 font-size: 120%;
                 font-weight: bolder;
                 background-color: rgb(178, 212, 249);    
-                cursor: grab;    
+                cursor: grab;                    
             }
                 .table .thead th:nth-child(1){width: 10%}
                 .table .thead th:nth-child(2){width: 15%}
-                .table .thead th:nth-child(3){width: 60%}
-                .table .thead th:nth-child(4){width: 15%}
+                .table .thead th:nth-child(3){width: 50%}
+                .table .thead th:nth-child(4){width: 10%}
+                .table .thead th:nth-child(5){width: 15%}
             .table .tbody .tb-data{
                 border: 1px solid silver;
                 border-top: none;                
@@ -83,7 +84,7 @@
                 }
                     .table .tbody .tb-data .function a{
                         color: black;
-                    }                  
+                    }               
                 .table .tbody tr:nth-child(odd){
                     background-color: #f6f6f6;
                 }
@@ -129,15 +130,15 @@
                 outline: none;
                 text-decoration: none;
             }
-                .paginator .number .page-index:not(.activating):hover{border: 1px solid white;}
+                .paginator .number .page-index:not(.activating):hover{border: 1px solid white;}         
                 .paginator .number .activating{
                     background-color: #607897;
                     border: 1px solid #607897;
                 }           
                 .paginator .number .activating:hover{border: 1px solid white;}
                 .paginator .pagination{
-                    font-size: 2.5rem;                            
-                    text-decoration: none;                                                 
+                    text-decoration: none;
+                    font-size: 2.5rem;                                                                             
                     color: rgb(178, 212, 249);                    
                 }
                 .paginator .pagination:hover{
@@ -145,14 +146,14 @@
                 }
             .paginator .total-item{
                 position: absolute;
-                right: 0;                   
+                right: 0;       
                 display: flex;
                 flex-direction: column;                 
             }       
                 .paginator .total-item label{
                     font-size: 150%;
                     cursor: grab;
-                }                     
+                }     
                 .paginator #total-item{
                     width: 90%;
                     padding: 0.5rem 0.1em;
@@ -164,11 +165,6 @@
                     border: 1px solid #607897;
                     cursor: pointer;       
                 }
-.not-visible{
-    display: none;
-}
-
-
 
             
 

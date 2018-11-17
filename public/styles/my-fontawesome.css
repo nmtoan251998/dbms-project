@@ -1,0 +1,7 @@
+.icon{font-family: 'Font Awesome\ 5 Free'; font-size: 130%; font-weight: 600; /* Fix version 5.0.9 */ cursor: pointer;}
+.icon-del::after {content: "\f05e";}
+.icon-mod::before {content: "\f013";}
+.icon-view::before {content: "\f1c0";}
+.icon-sort::before {content: "\f0dc";}
+.icon-arrow-circle-left::before {content: "\f104";}
+.icon-arrow-circle-right::before {content: "\f105";}

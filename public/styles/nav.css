@@ -5,6 +5,9 @@ body{
     font-size: 16px;
     background-color: #ffffff;
 }
+a{
+    text-decoration: none;
+}
 
 .nav{    
     background: #5B81AB; 
@@ -32,11 +35,11 @@ body{
     }
         .nav .nav-menu .nav-item{                         
             display: inline-block;
-            padding: 1rem 1.5rem;
+            padding: 1rem .1rem;
             font-size: 120%;
             position: relative;
             border-top: 5px solid #5B81AB;            
-            box-sizing: content-box;
+            box-sizing: content-box;            
         }
             .nav .nav-menu .nav-item:hover{                    
                 transition: 700ms;
@@ -63,7 +66,7 @@ body{
                         .nav .nav-menu .nav-item .dropdown .dropdown-item{                                                                                    
                             display: none;
                             padding: 1rem .5rem;
-                            width: 250px;                        
+                            width: 200px;                        
                             box-sizing: content-box;
                             border-bottom: .5px solid #f6f6f6;
                             border-left: 5px solid #B2D4F9;                                

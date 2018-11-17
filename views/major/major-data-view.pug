@@ -1,8 +1,10 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/major-data.css", type="text/css")
+    link(rel="stylesheet", href="/styles/all-content.css", type="text/css")
+    link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data
+        button.add-button Add data
         .table-search
             form(action='')
             input.search-input(type='text', name='search-name', placeholder='Input major name here...')
@@ -12,13 +14,13 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#sort-falculty-id(title='Falculty Identification')
                         | Faculty Id 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#sort-name(title='Name')
                         | Major name 
-                        i.fas.fa-sort
+                        span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Functions                         
             tbody.tbody
@@ -29,21 +31,22 @@ block main
                         td(title='') #{ChildMajor.MajorName}
                         td.function(title='')
                             a(href="/major/data-delete/"+ChildMajor.Id)
-                                i.id-fal.fas.fa-trash-alt
+                                span.icon.icon-del(id='') 
                             a(href="")
-                                i.fas.fa-pencil-alt(id='')
+                                span.icon.icon-mod(id='')
                             a(href="")
-                                i.fas.fa-eye(id='')
+                                span.icon.icon-view(id='') 
+
                 caption(title='CTU Majors') Table name: Cantho univerysity's majors
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
                 a.pagination(href=`/major/data?page=${page}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             else
                 a.pagination(href=`/major/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
-                    i#previous.fas.fa-arrow-alt-circle-left
+                    span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
@@ -51,8 +54,7 @@ block main
                     else
                         a.page-index(href=`/major/data?page=${pageIndex}&size=${item}`)= pageIndex
             a(href=`/major/data?page=${page+1}&size=${item}`).pagination
-                i#previous.fas.fa-arrow-alt-circle-right
+                span.icon.icon-arrow-circle-right#previous
             .total-item
-                label(for='total-item') Total majors:
-                input#total-item(type='button', value='')
-    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")    
+                label(for='total-item') Total:
+                input#total-item(type='button', value='')    

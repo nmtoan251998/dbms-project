@@ -15,43 +15,43 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-major-id(title='Major identification')
-                        | Major Id 
+                    th#sort-falculty-id(title='Falculty Identification')
+                        | Faculty Id 
                         span.icon.icon-sort(id='')
-                    th#sort-name(title='Subject name')
-                        | Subject name 
-                        span.icon.icon-sort(id='')                    
+                    th#sort-name(title='Name')
+                        | Major name 
+                        span.icon.icon-sort(id='')
                     th#functions(title='Functions')
-                        | Functions                        
+                        | Functions                         
             tbody.tbody
                 tr.tb-data
                     td(title='')
                     td(title='')
-                    td(title='')                    
+                    td(title='')
                     td.function(title='')
                         a(href="#")
                             span.icon.icon-del(id='')                            
                         a(href="#")
                             span.icon.icon-mod(id='')
                         a(href="#")
-                            span.icon.icon-view(id='')                 
-                caption(title='Majors subjects') Table name: Cantho univerysity's subjects
+                            span.icon.icon-view(id='')  
+                caption(title='CTU Score Records') Table name: Cantho univerysity's score records
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
-                a.pagination(href=`/subject/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/scoreRecord/data?page=${page}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             else
-                a.pagination(href=`/subject/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/scoreRecord/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/scoreRecord/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/subject/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/subject/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/scoreRecord/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/scoreRecord/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:

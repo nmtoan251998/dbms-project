@@ -4,6 +4,7 @@ const falcultyRouter = require('../controllers/falculty-controller');
 const majorRouter = require('../controllers/major-controller');
 const subjectRouter = require('../controllers/subject-controller');
 const studentRouter = require('../controllers/student-controller');
+const scoreRecordRouter = require('../controllers/scoreRecord-controller');
 
 const router = express.Router();
 
@@ -23,5 +24,17 @@ router.get('/subject/create', subjectRouter.getSubjectCreate);
 //student routing
 router.get('/student/data', studentRouter.getStudentData);
 router.get('/student/create', studentRouter.getStudentCreate);
+
+//class routing
+// router.get('/class/data', classRouter.getClassData);
+// router.get('/class/create', classRouter.getClassCreate);
+
+//course routing
+// router.get('/course/data', courseRouter.getCourseData);
+// router.get('/course/create', courseRouter.getCourseCreate);
+
+//scoreRecord routing
+// router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
+// router.get('/scoreRecord/create', scoreRecordRouter.getscoreRecordCreate);
 
 module.exports = router;
