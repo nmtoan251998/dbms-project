@@ -29,13 +29,15 @@ block main
                         td(title='') #{ChildFalculty.Id}
                         td(title='') #{ChildFalculty.FalName}
                         td(title='') #{ChildFalculty.Dean}
-                        td.function(title='')                              
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
+                        td.function(title='')
+                            a(href="/falculty/data-delete/"+ChildFalculty.Id)
+                                span.icon.icon-del(id='') 
+                            //- a(href="/falculty/data-modify/"+ChildFalculty.Id)
+                            //-     span.icon.icon-mod(id='')
+                            a(href="/falculty/data-modify/"+ChildFalculty.Id+'&'+ChildFalculty.FalName+'&'+ChildFalculty.Dean)
                                 span.icon.icon-mod(id='')
-                            a(href="#")
-                                span.icon.icon-view(id='')  
+                            a(href="")
+                                span.icon.icon-view(id='')
                 caption(title='CTU Falculties') Table name: Cantho univerysity's falculties
         //- Paginating  
         .paginator                                  

@@ -24,17 +24,19 @@ block main
                     th#functions(title='Functions')
                         | Functions                         
             tbody.tbody
-                tr.tb-data
-                    td(title='') 
-                    td(title='')                     
-                    td(title='')  
-                    td.function(title='')
-                        a(href="#")
-                            span.icon.icon-del(id='')                            
-                        a(href="#")
-                            span.icon.icon-mod(id='')
-                        a(href="#")
-                            span.icon.icon-view(id='')         
+                each ChildMajor in listMajor
+                    tr.tb-data
+                        td(title='') #{ChildMajor.Id}
+                        td(title='') #{ChildMajor.FalId}
+                        td(title='') #{ChildMajor.MajorName}
+                        td.function(title='')
+                            a(href="/major/data-delete/"+ChildMajor.Id)
+                                span.icon.icon-del(id='') 
+                            a(href="")
+                                span.icon.icon-mod(id='')
+                            a(href="")
+                                span.icon.icon-view(id='') 
+
                 caption(title='CTU Majors') Table name: Cantho univerysity's majors
         //- Paginating  
         .paginator                                  
