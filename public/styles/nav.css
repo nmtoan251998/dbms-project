@@ -14,8 +14,7 @@ a{
     display: flex;       
 }
 .nav a{
-    padding: 1rem 1.5rem; /* make it become the button */
-    text-decoration: none;
+    padding: 1rem 1.5rem; /* make it become the button */    
     color: #f6f6f6;                           
 }
     .nav .logo{                
@@ -35,11 +34,11 @@ a{
     }
         .nav .nav-menu .nav-item{                         
             display: inline-block;
-            padding: 1rem .1rem;
+            padding: 1rem 1.5rem;
             font-size: 120%;
             position: relative;
             border-top: 5px solid #5B81AB;            
-            box-sizing: content-box;            
+            box-sizing: content-box;
         }
             .nav .nav-menu .nav-item:hover{                    
                 transition: 700ms;
@@ -66,7 +65,7 @@ a{
                         .nav .nav-menu .nav-item .dropdown .dropdown-item{                                                                                    
                             display: none;
                             padding: 1rem .5rem;
-                            width: 200px;                        
+                            width: 250px;                        
                             box-sizing: content-box;
                             border-bottom: .5px solid #f6f6f6;
                             border-left: 5px solid #B2D4F9;                                

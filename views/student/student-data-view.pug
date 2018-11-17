@@ -1,10 +1,10 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/all-content.css", type="text/css")
+    link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data
-        button.add-button Add data
+        a(href="/student/create-data").add-button Add data 
         .table-search
             form(action='')
             input.search-input(type='text', name='search-name', placeholder='Input student name here...')
@@ -25,10 +25,10 @@ block main
                         | Functions                         
             tbody.tbody
                 tr.tb-data
-                    td(title='')
-                    td(title='')                    
-                    td(title='')
-                    td.function(title='')
+                    td
+                    td                    
+                    td
+                    td.function
                         a(href="#")
                             span.icon.icon-del(id='')                            
                         a(href="#")
