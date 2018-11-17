@@ -3,7 +3,6 @@ const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
 
-
 const router = require('./routes/router');
 const routerFalculty = require('./routes/falculty-route');
 const routerMajor = require('./routes/major-route');
@@ -21,8 +20,6 @@ app.set('views', 'views');
 app.set('view engine', 'pug');
 
 app.use(express.static('public'));
-
-
 
 app.get('/', (req,res) => {
     res.render('index');

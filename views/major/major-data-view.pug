@@ -1,10 +1,10 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/all-content.css", type="text/css")
+    link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data
-        button.add-button Add data
+        a(href="/major/create-data").add-button Add data 
         .table-search
             form(action='')
             input.search-input(type='text', name='search-name', placeholder='Input major name here...')
@@ -36,7 +36,6 @@ block main
                                 span.icon.icon-mod(id='')
                             a(href="")
                                 span.icon.icon-view(id='') 
-
                 caption(title='CTU Majors') Table name: Cantho univerysity's majors
         //- Paginating  
         .paginator                                  
