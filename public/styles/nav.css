@@ -1,35 +1,32 @@
 .nav{    
     background: rgb(159, 199, 243); 
     display: flex; 
-    height: 10vh;    
+    height: 8vh;    
     position: relative;
     z-index: 2;  
 }
 .nav a{
-    padding: 1rem 1.5rem; /* make it become the button */    
-    color: #ffffff;                           
+    padding: .8rem 1rem; /*make it become the button */
+    color: #ffffff;             
 }
     .nav .logo{                        
-        cursor: pointer;      
-        margin: 0;  
-        width: 13vw;        
-        background-image: url(/media/mysql-logo.jpg);   
-        background-size: contain;
-        background-position: center center;     
-        background-repeat: no-repeat;
+        cursor: pointer;              
+        width: 12vw;     
+        margin-right: 1rem;                 
     }
-        .nav .logo img{
-            float: left; /* float the img logo to the left of the screen */
-            width: 3rem;
-            height: 3rem;            
+        .nav .logo .img{                                    
+            height: 130%;    
+            width: 100%;                                    
+            border: none; 
+            margin-top: -.5rem;                                     
         }
-    .nav .nav-menu{
-        padding: 0;
-        margin: 0;
-    }
+        .nav .nav-menu{
+            padding: 0;
+            margin: 0;
+        }
         .nav .nav-menu .nav-item{                         
             display: inline-block;
-            padding: 1rem 1.5rem;
+            padding: .5rem 1.5rem;
             font-size: 120%;
             position: relative;
             border-top: 5px solid rgb(159, 199, 243);            

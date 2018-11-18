@@ -11,7 +11,8 @@ body
         link(rel="stylesheet" href="/styles/nav.css" type="text/css")        
         header              
             nav.nav
-                .logo(onclick='window.location.assign("/")' title="MySql")                                                                     
+                .logo(onclick='window.location.assign("/")' title="MySql")                                                                                                             
+                    img.img(src="/media/mysql (1).png", alt="MySQL")                         
                 ul.nav-menu
                     li.nav-item
                         a.home(href='/home') Home               
@@ -39,6 +40,6 @@ body
                             | Courses
                     li.item
                         a(href='/scoreRecord/data')
-                            | Score Records                        
+                            | Scores                      
             block home  
             block main        
