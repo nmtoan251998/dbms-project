@@ -11,21 +11,19 @@
         font-size: 350%; 
         padding-left: 5rem;       
     }
-
     .introduction{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         padding-top: 5rem;
         height: 90vh;        
     }
-
         .introduction .db-img{
             color: #B2D4F9;
             font-size: 500px;
             text-align: center;
             margin-right: -5rem;
+            cursor: pointer;
         }
-
         .introduction .intro{
             display: flex;
             flex-direction: column;
@@ -33,7 +31,6 @@
             width: 600px; 
             height: 500px;                                              
         }
-
             .introduction .intro h1{    
                 font-size: 50px;
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
@@ -41,13 +38,11 @@
                 margin: 0;
                 padding: 7rem 0 0;
             }
-
             .introduction .intro p{
                 font-size: 150%;
                 margin: 0;
                 padding-top: .5rem;
             }
-
     .profile-cards{
         margin: 0 auto;
         width: 95%;
@@ -55,7 +50,6 @@
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));    
         grid-gap: 10px;
     }
-
         .profile-cards .card{
             display: flex;
             flex-direction: column;
@@ -134,8 +128,7 @@
             .profile-cards .card:hover .profile{        
                 display: block;        
                 bottom: 0;        
-            }
-        
+            }        
     .tool-cards{
         margin: 0 auto 0;
         width: 95%;
@@ -212,8 +205,7 @@
             .tool-cards .card:hover .tool-used{     
                 display: block;        
                 bottom: 0;               
-            }
-                
+            }                
     .program-flow{        
         position: relative;
         height: 800px;
@@ -227,8 +219,7 @@
             z-index: 1;
         }
         .program-flow .right{right: 2rem;}
-        .program-flow .left{left: 2rem;}
-        
+        .program-flow .left{left: 2rem;}        
         .program-flow .img-slider{
             height: 100%;
             width: 100%;
