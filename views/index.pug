@@ -1,12 +1,12 @@
 extends ./layout/common
 
-block home
+block index
     script(src="scripts/img-slider.js")
-    link(rel="stylesheet" href="/styles/home.css" type="text/css")        
+    link(rel="stylesheet" href="/styles/index.css" type="text/css")        
     main
         .wrapper
             .introduction
-                .db-img
+                .db-img(onclick='window.location.assign("/home")')
                     i.fas.fa-database(title="MySql")
                 .intro
                     h1 CT106H - Database Management System                                                           
