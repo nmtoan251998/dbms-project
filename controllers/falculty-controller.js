@@ -32,20 +32,19 @@ module.exports.getFalcultyData =  (req,res) => {
 }
 
 module.exports.getFalcultyCreate = (req,res) => {
-
-    if (req.query.falid) {
-        const sql =`INSERT INTO FALCULTY VALUES ('${req.query.falid}','${req.query.falname}','${req.query.dean}')`;
-        conn.query(sql,(err,result)=>{
-        if(err) throw err;
-        console.log('call me',result);
-    });
-    }
-    
     res.render('../views/falculty/falculty-create-view');
 }
 
 module.exports.postFalcultyCreate = (req,res) =>{
-    
+    console.log(req.body)
+    if (req.body.falid) {
+        const sql =`INSERT INTO FALCULTY VALUES ('${req.body.falid}','${req.body.falname}','${req.body.dean}')`;
+        conn.query(sql,(err,result)=>{
+            if(err) throw err;
+            console.log('call me',result);
+        });
+    }
+    res.render('../views/falculty/falculty-create-view');
 }
 
 module.exports.deleteFalcultyData = (req,res) =>{
@@ -66,13 +65,14 @@ module.exports.modifyFalcultyData = (req,res) =>{
     });
 };
 
-module.exports.getModifyFalcultyData = (req,res) =>{
-    const sql = `UPDATE FALCULTY SET ID = '${req.query.falid}', FalName = '${req.query.falname}', Dean = '${req.query.dean}' WHERE Id = '${req.query.falid}'`;
+module.exports.postModifyFalcultyData = (req,res) =>{
+    console.log(req.body)
+    const sql = `UPDATE FALCULTY SET ID = '${req.body.falid}', FalName = '${req.body.falname}', Dean = '${req.body.dean}' WHERE Id = '${req.body.falid}'`;
    
     conn.query(sql,(err,result)=>{
         if(err) throw err;
         console.log(result);
     });
 
-    res.redirect('./data');
+    res.redirect('../data');
 }

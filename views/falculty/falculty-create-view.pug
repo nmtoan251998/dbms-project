@@ -3,7 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/falculty-create.css")
     .container
-        form.form(method="get")
+        form.form(method="post",action="/falculty/create")
             legend Faculty Information
             table
                 tr
