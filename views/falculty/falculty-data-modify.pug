@@ -1,0 +1,24 @@
+extends ../layout/common
+
+block main
+    link(rel="stylesheet", href="/styles/create-forms.css") 
+    .container
+        form.form(method="post",action="/falculty/modify/"+data.id)
+            legend Faculty Information
+            table
+                tr
+                    td
+                        label(for="falid") Faculty's Id: 
+                    td
+                        input(type="text", name="falid",value=data.id)
+                tr
+                    td
+                        label(for="falname") Faculty's Name: 
+                    td
+                        input(type="text", name="falname",value=data.falname)
+                tr
+                    td 
+                        label(for="dean") Faculty Dean: 
+                    td
+                        input(type="text", name="dean",value=data.dean)
+            button(type="submit") Submit

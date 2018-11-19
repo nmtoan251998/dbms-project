@@ -2,23 +2,23 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
-    form.form-create(method="post",action="/major/create-data")
+    form.form-create(method="post",action="/major/modify/"+data.id)
         fieldset
-            legend New faculty information
+            legend New major information
             table.table-create
                 tr
                     td
                         label(for="majorid") Id: 
                     td
-                        input(type="text" name="majorid" id="majorid" placeholder="Major identification")
+                        input(type="text" name="majorid" value=data.id)
                 tr
                     td
                         label(for="falid") Faculty Id: 
                     td
-                        input(type="text" name="falid" id="falid" placeholder="Major name")
+                        input(type="text" name="falid" value=data.falid)
                 tr
                     td 
                         label(for="majorname") Major Name: 
                     td
-                        input(type="text" name="majorname" id="majorname" placeholder="Dean name")
+                        input(type="text" name="majorname" value=data.majorname)
             button(type="submit") Save

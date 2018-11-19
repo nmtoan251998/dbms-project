@@ -26,13 +26,13 @@ block main
             tbody.tbody
                 each ChildFalculty in listFalculty
                     tr.tb-data
-                        td #{ChildFalculty.Id}
-                        td #{ChildFalculty.FalName}
-                        td #{ChildFalculty.Dean}
-                        td.function                              
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
+                        td(title='') #{ChildFalculty.Id}
+                        td(title='') #{ChildFalculty.FalName}
+                        td(title='') #{ChildFalculty.Dean}
+                        td.function
+                            a(href="/falculty/data-delete/"+ChildFalculty.Id)
+                                span.icon.icon-del(id='') 
+                            a(href="/falculty/data-modify/"+ChildFalculty.Id+'&'+ChildFalculty.FalName+'&'+ChildFalculty.Dean)
                                 span.icon.icon-mod(id='')
                             a(href="")
                                 span.icon.icon-view(id='')
