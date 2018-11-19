@@ -60,7 +60,7 @@ module.exports.deleteFalcultyData = (req,res) =>{
 };
 
 module.exports.modifyFalcultyData = (req,res) =>{
-    res.render('./falculty/falculty-data-modify',{
+    res.render('./falculty/falculty-modify',{
         data: req.params
     });
 };

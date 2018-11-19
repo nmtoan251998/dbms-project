@@ -1,8 +1,8 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/create-forms.css")    
-    form.form-create(method="post",action="/falculty/create")
+    link(rel="stylesheet", href="/styles/create-forms.css") 
+    form.form-create(method="post",action="/falculty/modify/"+data.id)
         fieldset
             legend New faculty information
             table.table-create
@@ -10,15 +10,15 @@ block main
                     td
                         label(for="falid") Id: 
                     td
-                        input(type="text" name="falid" id="falid" placeholder="Faculty identification")
+                        input(type="text" name="falid" placeholder="Faculty identification")
                 tr
                     td
                         label(for="falname") Name: 
                     td
-                        input(type="text" name="falname" id="falname" placeholder="Faculty name")
+                        input(type="text" name="falname" placeholder="Faculty name")
                 tr
                     td 
                         label(for="dean") Dean: 
                     td
-                        input(type="text" name="dean" id="dean" placeholder="Dean name")
+                        input(type="text" name="dean" placeholder="Dean name")
             button(type="submit") Save

@@ -15,7 +15,7 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-falculty-id(title='Falculty Identification')
+                    th#sort-falculty-id(title='Major Identification')
                         | Faculty Id 
                         span.icon.icon-sort(id='')
                     th#sort-name(title='Name')
@@ -32,7 +32,7 @@ block main
                         td.function(title='')
                             a(href="/major/data-delete/"+ChildMajor.Id)
                                 span.icon.icon-del(id='') 
-                            a(href="")
+                            a(href="/major/data-modify/"+ChildMajor.Id+'&'+ChildMajor.FalId+'&'+ChildMajor.MajorName)
                                 span.icon.icon-mod(id='')
                             a(href="")
                                 span.icon.icon-view(id='') 
