@@ -3,67 +3,43 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(charset="UTF-8")
-    title MySql Project    
-    link(rel="stylesheet" href="/styles/nav.css" type="text/css")
+    title MySql Project     
+    link(rel="stylesheet" href="/styles/main.css" type="text/css")                       
     link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")                        
-body    
-    header
-        nav.nav
-            .logo                                                
-                img(src='/media/mysql-logo.jpg', alt='logo', title="MySql")
-            ul.nav-menu
-                li.nav-item
-                    a.home(href='/') Home
-                li.nav-item
-                    a(href='/falculty/data') Faculty
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/falculty/create') Create new faculty
-                        li
-                            a.dropdown-item(href='/falculty/data') View data
-                li.nav-item
-                    a(href='/major/data') Major
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/major/create') Create new major
-                        li
-                            a.dropdown-item(href='/major/data') View data
-                li.nav-item
-                    a(href='/subject/data') Subject
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/subject/create') Create new subject
-                        li
-                            a.dropdown-item(href='/subject/data') View data
-                li.nav-item
-                    a(href='/student/data') Student
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/student/create') Create new student
-                        li
-                            a.dropdown-item(href='/student/data') View data
-                li.nav-item
-                    a(href='/class/data') Class
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/class/create') Create new class
-                        li
-                            a.dropdown-item(href='/class/data') View data
-                li.nav-item
-                    a(href='/course/data') Course
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/course/create') Create new cousre
-                        li
-                            a.dropdown-item(href='/course/data') View data
-                li.nav-item
-                    a(href='/scoreRecord/data') Score record
-                    ul.dropdown
-                        li
-                            a.dropdown-item(href='/scoreRecord/create') Create new faculty
-                        li
-                            a.dropdown-item(href='/scoreRecord/data') View data
-    main
-        block home    
-        block main
-
+body       
+    block index      
+        link(rel="stylesheet" href="/styles/nav.css" type="text/css")        
+        header              
+            nav.nav
+                .logo(onclick='window.location.assign("/")' title="MySql")                                                                                                             
+                    img.img(src="/media/mysql (1).png", alt="MySQL")                         
+                ul.nav-menu
+                    li.nav-item
+                        a.home(href='/home') Home               
+        main        
+            link(rel="stylesheet" href="/styles/sidebar.css" type="text/css")              
+            aside.sidebar            
+                ul.functions-list
+                    li.item                
+                        a(href='/falculty/data')
+                            | Falculties
+                    li.item
+                        a(href='/major/data')
+                            | Majors
+                    li.item
+                        a(href='/subject/data')
+                            | Subjects
+                    li.items
+                        a(href='/student/data')
+                            | Students
+                    li.item
+                        a(href='/class/data')
+                            | Classes
+                    li.item
+                        a(href='/course/data')
+                            | Courses
+                    li.item
+                        a(href='/scoreRecord/data')
+                            | Scores                      
+            block home  
+            block main        

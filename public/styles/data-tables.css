@@ -1,29 +1,26 @@
 .table-data{
     position: relative;    
-    width: 80%;
-    margin: 10rem auto 0;
+    width: 80%;    
+    margin-top: 5%;            
+    margin-left: 15%;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";    
 }
     .table{        
         width: 100%;
         text-align: left;
         border-collapse: collapse;         
-    }        
+    }            
         .add-button{
             position: absolute;
             top: -3.5rem;
-            left: 0;
-            z-index: -1;
-        }  
-            .add-button{
-                padding: .81rem 1.3rem;                
-                cursor: pointer;
-                background-color: #607897;
-                color: white;
-                border: 1px solid #607897;                
-                font-size: 120%;
-                border-radius: 5px;
-            }
+            left: 0;            
+            padding: .75rem 1rem;                            
+            background-color: #607897;
+            color: white;
+            border: 1px solid #607897;                
+            font-size: 120%;
+            border-radius: 5px;
+        }
             .add-button:hover{
                 color: #607897;
                 background-color: white;
@@ -65,13 +62,12 @@
                 font-size: 120%;
                 font-weight: bolder;
                 background-color: rgb(178, 212, 249);    
-                cursor: grab;                    
+                cursor: grab;    
             }
-                .table .thead th:nth-child(1){width: 10%}
-                .table .thead th:nth-child(2){width: 15%}
-                .table .thead th:nth-child(3){width: 50%}
-                .table .thead th:nth-child(4){width: 10%}
-                .table .thead th:nth-child(5){width: 15%}
+                .table .thead th:nth-child(1){width: 12.5%}
+                .table .thead th:nth-child(2){width: 47.5%}
+                .table .thead th:nth-child(3){width: 25%}
+                .table .thead th:nth-child(4){width: 15%}
             .table .tbody .tb-data{
                 border: 1px solid silver;
                 border-top: none;                
@@ -84,7 +80,10 @@
                 }
                     .table .tbody .tb-data .function a{
                         color: black;
-                    }               
+                    }                    
+                    .table .tbody .tb-data .function a:hover{
+                        color: white;
+                    }
                 .table .tbody tr:nth-child(odd){
                     background-color: #f6f6f6;
                 }
@@ -117,7 +116,7 @@
             cursor: pointer;   
             outline: none;                  
             position: relative;
-        }
+        }           
             .paginator .number .page-index{                
                 border-radius: 50%;
                 padding: .2rem .8rem;
@@ -136,10 +135,9 @@
                     border: 1px solid #607897;
                 }           
                 .paginator .number .activating:hover{border: 1px solid white;}
-                .paginator .pagination{
-                    text-decoration: none;
-                    font-size: 2.5rem;                                                                             
-                    color: rgb(178, 212, 249);                    
+                .paginator .pagination{                    
+                    font-size: 2.5rem;                                                                           
+                    color: rgb(178, 212, 249);                                        
                 }
                 .paginator .pagination:hover{
                     color: #607897;
@@ -157,14 +155,16 @@
                 .paginator #total-item{
                     width: 90%;
                     padding: 0.5rem 0.1em;
-                    text-align: left;
+                    text-align: left;                   
                     border-radius: 5px;
                     font-size: 120%;
                     background-color: #607897;
                     color: #f1f1f1;
                     border: 1px solid #607897;
-                    cursor: pointer;       
+                    cursor: pointer;                        
                 }
+                
+
 
             
 
