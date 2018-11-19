@@ -1,38 +1,74 @@
-.sidebar{
-    background-color: #eef1f2;
-    opacity: .75;
-    position: fixed;
-    top: 0;    
-    height: 100vh;    
-    width: 12vw;        
-    overflow: hidden;
-    z-index: 0;
-    padding-top: 8vh;
-    font-size: 16px;
+.options{
+    position: fixed;    
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;    
+    
 }
-    .sidebar ul {
-        width: 100%;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+    .options a{
+        color: white;
     }
-        .sidebar .functions-list a{
-            border-left: 6px solid #eef1f2;
-            text-decoration: none;
-            color: #1c1c1c;
-            padding: 1.5rem;
-            display: block;  
-            transition: 350ms;   
+    .options i{
+        padding: .5rem .1em;
+        cursor: pointer;
+    }
+    .options i:hover{
+        opacity: .8;
+        transition: 250ms;
+    }
+    .sidebar{
+        background-color: #eef1f2;
+        opacity: .75;
+        position: fixed;
+        top: 0;    
+        height: 100vh;    
+        /* width: 12vw;         */
+        width: 0; 
+        overflow: hidden;
+        z-index: 0;
+        padding-top: 8vh;
+        font-size: 16px;
+        transition: .5s;
+    }
+        .sidebar ul {
+            width: 100%;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
         }
-        .sidebar .functions-list a:hover{
-            border-left: 6px solid slategray;
-            background-color: black;
-            color: white;            
+        .sidebar .functions-list .closebtn{
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            font-size: 35px;
+            cursor: pointer;
         }
-        .sidebar .functions-list a:hover::after{
-            font-family: 'Font Awesome\ 5 Free';         
-            content:"\f105";
-            font-weight: 700; /* Fix version 5.0.9 */
-            position: relative;
-            right: -3.5em;                
+        .sidebar .functions-list .closebtn:hover{
+            opacity: .75;
         }
+            .sidebar .functions-list a{
+                border-left: 6px solid #eef1f2;
+                text-decoration: none;
+                color: #1c1c1c;
+                padding: 1.2rem 1.5rem;
+                display: block;  
+                transition: 350ms;   
+            }
+            .sidebar .functions-list a:hover{
+                border-left: 6px solid slategray;
+                background-color: black;
+                color: white;            
+            }
+            .sidebar .functions-list a:hover::after{
+                font-family: 'Font Awesome\ 5 Free';         
+                content:"\f105";
+                font-weight: 700; /* Fix version 5.0.9 */
+                position: relative;
+                right: -2em;                
+            }
+            

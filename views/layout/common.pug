@@ -4,24 +4,25 @@ head
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(charset="UTF-8")
     title MySql Project     
-    link(rel="stylesheet" href="/styles/main.css" type="text/css")                       
-    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")                        
+    link(rel="stylesheet" href="/styles/main.css" type="text/css")                           
 body       
-    block index      
-        link(rel="stylesheet" href="/styles/nav.css" type="text/css")        
-        header              
-            nav.nav
-                .logo(onclick='window.location.assign("/")' title="MySql")                                                                                                             
-                    img.img(src="/media/mysql (1).png", alt="MySQL")                         
-                ul.nav-menu
-                    li.nav-item
-                        a.home(href='/home') Home               
-                    li.nav-item
-                        a.home(href='/functions') Functions    
-        main        
-            link(rel="stylesheet" href="/styles/sidebar.css" type="text/css")              
+    block index              
+        main
+            link(rel="stylesheet" href="/styles/sidebar.css" type="text/css")                  
+            .options
+                a(href="/")
+                    <i class="fas fa-home"></i>
+                <i class="fas fa-list-ul"></i>            
             aside.sidebar            
                 ul.functions-list
+                    li.closebtn
+                        <i class="far fa-times-circle"></i>
+                    li.item                
+                        a(href='/home')
+                            | Home
+                    li.item                
+                        a(href='/functions')
+                            | Functions
                     li.item                
                         a(href='/falculty/data')
                             | Falculties
@@ -45,3 +46,4 @@ body
                             | Scores                      
             block home  
             block main        
+    link(rel="preload" as="style" onload="this.rel='stylesheet'"  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous")                        

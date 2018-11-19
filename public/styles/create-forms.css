@@ -1,7 +1,10 @@
-.form-create{    
+.form-create{   
+    position: relative; 
     margin: 10% auto;
     width: 15%;     
+    z-index: 10;
 }
+
 .form-create fieldset{
     position: relative;
     height: 280px;
