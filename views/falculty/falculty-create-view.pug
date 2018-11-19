@@ -1,24 +1,24 @@
 extends ../layout/common
 
 block main
-    link(rel="stylesheet", href="/styles/falculty-create.css")
-    .container
-        form.form(method="get")
-            legend Faculty Information
-            table
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    form.form-create(method="get")
+        fieldset
+            legend New faculty information
+            table.table-create
                 tr
                     td
-                        label(for="falid") Faculty's Id: 
+                        label(for="falid") Id: 
                     td
-                        input(type="text", name="falid")
+                        input(type="text" name="falid" id="falid" placeholder="Faculty identification")
                 tr
                     td
-                        label(for="falname") Faculty's Name: 
+                        label(for="falname") Name: 
                     td
-                        input(type="text", name="falname")
+                        input(type="text" name="falname" id="falname" placeholder="Faculty name")
                 tr
                     td 
-                        label(for="dean") Faculty Dean: 
+                        label(for="dean") Dean: 
                     td
-                        input(type="text", name="dean")
-            button(type="submit") Submit
+                        input(type="text" name="dean" id="dean" placeholder="Dean name")
+            button(type="submit") Save
