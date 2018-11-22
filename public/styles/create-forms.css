@@ -1,14 +1,15 @@
 .form-create{   
-    position: relative; 
-    margin: 10% auto;
-    width: 15%;     
+    position: absolute;     
     z-index: 10;
+    top: 30px;
+    left: 25%;        
 }
 
 .form-create fieldset{
     position: relative;
-    height: 280px;
-    width: 400px;
+    background-color: white;
+    /* height: 280px;
+    width: 400px; */
     box-shadow: 3px 5px 10px 1px rgb(85, 83, 83);
 }
     .form-create legend{        
@@ -18,16 +19,16 @@
         width: 100%;
     }
         .form-create .table-create td{
-            font-size: 120%;
+            font-size: 120%;            
         }
         .form-create .table-create input{
             border: 2px solid gainsboro;
-            border-radius: 5px;
-            margin: .6em 0;
+            border-radius: 5px;            
             padding: .8rem 0;
             width: 90%;
             overflow: hidden;
             box-sizing: border-box;
+            /* margin: .6em 0; */
         }
         .form-create .table-create input:focus{            
             box-shadow: 0px 0px 3px 1.5px #97C0F9;            
