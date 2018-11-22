@@ -20,6 +20,7 @@
             border: 1px solid #607897;                
             font-size: 120%;
             border-radius: 5px;
+            cursor: pointer;
         }
             .add-button:hover{
                 color: #607897;

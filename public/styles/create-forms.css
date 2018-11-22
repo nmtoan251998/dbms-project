@@ -2,7 +2,10 @@
     position: absolute;     
     z-index: 10;
     top: 30px;
-    left: 25%;        
+    left: 30%;  
+}
+.invisible{
+    display: none;
 }
 
 .form-create fieldset{
@@ -39,10 +42,9 @@
             .form-create .table-create input[placeholder]{
                 padding-left: 1em;
             }
-    .form-create button{
+    .form-create .btn{
         position: absolute;
-        bottom: 5px;
-        right: 5px;
+        bottom: 5px;        
         font-size: 120%;
         padding: .6rem 1.3rem;
         border: 1px solid white;
@@ -51,8 +53,13 @@
         cursor: pointer;
         border-radius: 6px;
     }
-
-    .form-create button:hover{    
+        .form-create .save-btn{
+            right: 5px;
+        }
+        .form-create .close-btn{
+            right: 5.5rem;
+        }
+    .form-create .btn:hover{    
         color: #607897;    
         border: 1px solid #607897;
         background: white;
