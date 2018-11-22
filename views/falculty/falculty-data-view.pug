@@ -4,11 +4,32 @@ block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data                    
-        a(href="/falculty/create").add-button Add data        
+        a.btn.add-button Add data        
         .table-search
             form(action='')
                 input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
-                button.search-button Search
+                button.search-button Search        
+        form.form-create(method="post",action="/falculty/create")
+            fieldset
+                legend New faculty information
+                table.table-create
+                    tr
+                        td
+                            label(for="falid") Id: 
+                        td
+                            input(type="text" name="falid" id="falid" placeholder="Faculty identification")
+                    tr
+                        td
+                            label(for="falname") Name: 
+                        td
+                            input(type="text" name="falname" id="falname" placeholder="Faculty name")
+                    tr
+                        td 
+                            label(for="dean") Dean: 
+                        td
+                            input(type="text" name="dean" id="dean" placeholder="Dean name")
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save
         table.table
             thead.thead
                 tr
@@ -56,4 +77,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value='')        
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/faculty.css")                    
+    script(src="/scripts/open-createForm.js")

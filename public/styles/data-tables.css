@@ -20,6 +20,7 @@
             border: 1px solid #607897;                
             font-size: 120%;
             border-radius: 5px;
+            cursor: pointer;
         }
             .add-button:hover{
                 color: #607897;
@@ -162,11 +163,4 @@
                     color: #f1f1f1;
                     border: 1px solid #607897;
                     cursor: pointer;                        
-                }
-                
-
-
-            
-
-
-
+                }                
