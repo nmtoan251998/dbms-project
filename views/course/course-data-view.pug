@@ -4,11 +4,32 @@ block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
     .table-data                    
-        a(href="/course/create-data").add-button Add data 
+        a.btn.add-button Add data        
         .table-search
             form(action='')
-                input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
-                button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input course name here...')
+                button.search-button Search  
+        form.form-create(method="post",action="/course/create")
+            fieldset
+                legend New faculty information
+                table.table-create
+                    tr
+                        td
+                            label(for="courseid") Id: 
+                        td
+                            input(type="text" name="courseid" id="courseid" placeholder="Course identification")
+                    tr
+                        td
+                            label(for="coursename") Name: 
+                        td
+                            input(type="text" name="coursename" id="coursename" placeholder="Course name")
+                    tr
+                        td 
+                            label(for="dean") Dean: 
+                        td
+                            input(type="text" name="dean" id="dean" placeholder="Dean name")
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save
         table.table
             thead.thead
                 tr
@@ -57,3 +78,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
+        link(rel="stylesheet", href="/styles/create-forms.css")    
+        link(rel="stylesheet", href="/styles/course.css")                    
+        script(src="/scripts/open-createForm.js")
