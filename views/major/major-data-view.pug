@@ -3,12 +3,33 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
-    .table-data
-        a(href="/major/create-data").add-button Add data 
+    .table-data                    
+        a.btn.add-button Add data        
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input major name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input major name here...')
+                button.search-button Search 
+        form.form-create(method="post",action="/major/create")
+            fieldset
+                legend New major information
+                table.table-create
+                    tr
+                        td
+                            label(for="majorid") Id: 
+                        td
+                            input(type="text" name="majorid" id="majorid" placeholder="Major identification")
+                    tr
+                        td
+                            label(for="majorname") Name: 
+                        td
+                            input(type="text" name="majorname" id="majorname" placeholder="Major name")
+                    tr
+                        td 
+                            label(for="facultyid") Faculty Id: 
+                        td
+                            input(type="text" name="facultyid" id="facultyid" placeholder="Faculty identification")
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save       
         table.table
             thead.thead
                 tr
@@ -16,7 +37,7 @@ block main
                         | Id 
                         span.icon.icon-sort(id='')
                     th#sort-falculty-id(title='Major Identification')
-                        | Faculty Id 
+                        | Major Id 
                         span.icon.icon-sort(id='')
                     th#sort-name(title='Name')
                         | Major name 
@@ -57,3 +78,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/faculty.css")                    
+    script(src="/scripts/open-createForm.js")

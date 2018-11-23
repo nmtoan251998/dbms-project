@@ -3,12 +3,38 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
-    .table-data
-        a(href="/subject/create-data").add-button Add data 
+    .table-data                    
+        a.btn.add-button Add data        
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input major name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input subject name here...')
+                button.search-button Search  
+        form.form-create(method="post",action="/subject/create")
+            fieldset
+                legend New subject information
+                table.table-create
+                    tr
+                        td
+                            label(for="subjectid") Id: 
+                        td
+                            input(type="text" name="subjectid" id="subjectid" placeholder="Subject identification")
+                    tr
+                        td 
+                            label(for="majorid") Major Id: 
+                        td
+                            input(type="text" name="majorid" id="majorid" placeholder="Major identification")
+                    tr                    
+                        td
+                            label(for="subjectname") Name: 
+                        td
+                            input(type="text" name="subjectname" id="subjectname" placeholder="Subject name")                   
+                    tr
+                        td 
+                            label(for="credit") Credit: 
+                        td
+                            input(type="text" name="credit" id="credit" placeholder="Total credit")
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save      
         table.table
             thead.thead
                 tr
@@ -56,3 +82,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/subject.css")                    
+    script(src="/scripts/open-createForm.js")
