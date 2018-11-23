@@ -7,6 +7,7 @@ const studentRouter = require('../controllers/student-controller');
 const scoreRecordRouter = require('../controllers/scoreRecord-controller');
 const classRouter = require('../controllers/class-controller');
 const courseRouter = require('../controllers/course-controller');
+const studentDetailRouter = require('../controllers/studentDetail-controller');
 
 
 const router = express.Router();
@@ -39,5 +40,9 @@ router.get('/course/create', courseRouter.getCourseCreate);
 // scoreRecord routing
 router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
 router.get('/scoreRecord/create', scoreRecordRouter.getScoreRecordCreate);
+
+// studentDetail routing
+router.get('/studentDetail/data', studentDetailRouter.getStudentDetailData);
+router.get('/studentDetail/create', studentDetailRouter.getStudentDetailCreate);
 
 module.exports = router;
