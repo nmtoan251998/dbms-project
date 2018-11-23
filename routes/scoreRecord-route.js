@@ -1,10 +1,10 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// const scoreRecordRouter = require('../controllers/scoreRecord-controller');
+const scoreRecordRouter = require('../controllers/scoreRecord-controller');
 
-// //major routing
-// router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
-// router.get('/scoreRecord/create', scoreRecordRouter.getScoreRecordCreate);
+//major routing
+router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
+router.get('/scoreRecord/create', scoreRecordRouter.getScoreRecordCreate);
 
-// module.exports = router;
+module.exports = router;

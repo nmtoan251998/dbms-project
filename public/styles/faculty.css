@@ -1,6 +1,5 @@
 /* Change follow specific rows in fieldset 
 -- Change height + width in fieldset
--- Change margin in input
 */
 .form-create fieldset{
     height: 280px;
@@ -9,12 +8,3 @@
     background-color: white; */    
     /* box-shadow: 3px 5px 10px 1px rgb(85, 83, 83); */
 }
-    .form-create .table-create input{
-        margin: .6em 0;
-        /* border: 2px solid gainsboro;
-        border-radius: 5px;            
-        padding: .8rem 0;
-        width: 90%;
-        overflow: hidden;
-        box-sizing: border-box; */        
-    }

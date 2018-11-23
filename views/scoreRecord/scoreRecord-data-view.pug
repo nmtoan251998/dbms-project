@@ -3,12 +3,43 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
-    .table-data
-        a(href="/scoreRecord/create-data").add-button Add data 
+    .table-data                    
+        a.btn.add-button Add data        
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input major name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input score record here...')
+                button.search-button Search        
+        form.form-create(method="post",action="/scoreRecord/create")
+            fieldset
+                legend New record information
+                table.table-create
+                    tr
+                        td
+                            label(for="subjectid") Subject Id: 
+                        td
+                            input(type="text" name="subjectid" id="subjectid" placeholder="Subject identification")
+                    tr
+                        td
+                            label(for="studentid") Student Id: 
+                        td
+                            input(type="text" name="studentid" id="studentid" placeholder="Student identification")
+                    tr
+                        td
+                            label(for="year") Year: 
+                        td
+                            input(type="text" name="year" id="year" placeholder="Year")
+                    tr
+                        td 
+                            label(for="semester") semester: 
+                        td
+                            input(type="text" name="semester" id="semester" placeholder="Semester")
+                    tr
+                        td
+                            label(for="score") Score: 
+                        td
+                            input(type="text" name="score" id="score" placeholder="Score")
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save
         table.table
             thead.thead
                 tr
@@ -56,3 +87,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/scoreRecord.css")                    
+    script(src="/scripts/open-createForm.js")

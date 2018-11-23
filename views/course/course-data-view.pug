@@ -11,7 +11,7 @@ block main
                 button.search-button Search  
         form.form-create(method="post",action="/course/create")
             fieldset
-                legend New faculty information
+                legend New course information
                 table.table-create
                     tr
                         td
@@ -25,9 +25,14 @@ block main
                             input(type="text" name="coursename" id="coursename" placeholder="Course name")
                     tr
                         td 
-                            label(for="dean") Dean: 
+                            label(for="start") Start: 
                         td
-                            input(type="text" name="dean" id="dean" placeholder="Dean name")
+                            input(type="text" name="start" id="start" placeholder="Start year")
+                    tr
+                        td 
+                            label(for="end") End: 
+                        td
+                            input(type="text" name="end" id="end" placeholder="End year")
                 a.btn.cancel-button Cancel
                 button.btn.save-btn(type="submit") Save
         table.table
@@ -78,6 +83,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
-        link(rel="stylesheet", href="/styles/create-forms.css")    
-        link(rel="stylesheet", href="/styles/course.css")                    
-        script(src="/scripts/open-createForm.js")
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/course.css")                    
+    script(src="/scripts/open-createForm.js")
