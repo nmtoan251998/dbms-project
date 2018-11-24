@@ -3,12 +3,33 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
     link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
-    .table-data
-        a(href="/student/create-data").add-button Add data 
+    .table-data                    
+        a.btn.add-button Add data        
         .table-search
             form(action='')
-            input.search-input(type='text', name='search-name', placeholder='Input student name here...')
-            button.search-button Search
+                input.search-input(type='text', name='search-name', placeholder='Input student name here...')
+                button.search-button Search        
+        form.form-create(method="post",action="/student/create")
+            fieldset
+                legend New student information
+                table.table-create
+                    tr
+                        td
+                            label(for="student") Id: 
+                        td
+                            input(type="text" name="student" id="student" placeholder="Student identification")
+                    tr
+                        td 
+                            label(for="classid") Class Id: 
+                        td
+                            input(type="text" name="classid" id="classid" placeholder="Class identification")
+                    tr
+                        td
+                            label(for="studentname") Name: 
+                        td
+                            input(type="text" name="studentname" id="studentname" placeholder="Student name")                    
+                a.btn.cancel-button Cancel
+                button.btn.save-btn(type="submit") Save
         table.table
             thead.thead
                 tr
@@ -56,3 +77,6 @@ block main
             .total-item
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/student.css")                    
+    script(src="/scripts/open-createForm.js")

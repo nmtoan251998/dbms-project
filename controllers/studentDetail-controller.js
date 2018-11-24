@@ -1,6 +1,6 @@
 const conn = require('../public/scripts/config');
 
-module.exports.getClassData =  (req,res) => {                
+module.exports.getStudentDetailData =  (req,res) => {                
     // PAGINATION    
     /* Simulation 
         
@@ -18,11 +18,11 @@ module.exports.getClassData =  (req,res) => {
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
     
-    const sql =`SELECT * FROM CLASS`;
+    const sql =`SELECT * FROM STUDENT_DETAIL`;
     
     conn.query(sql, (err,result) => {
         if(err) throw err;                    
-        res.render('../views/class/class-data-view',{                
+        res.render('../views/studentDetail/studentDetail-data-view',{                
             listFalculty: result.slice(begin, end),
             page : currentPage,
             item : itemPerPage                
@@ -31,6 +31,6 @@ module.exports.getClassData =  (req,res) => {
 
 }
 
-module.exports.getClassCreate = (req,res) => {
-    res.render('../views/class/class-create-view');
+module.exports.getStudentDetailCreate = (req,res) => {
+    res.render('../views/studentDetail/studentDetail-create-view');
 }

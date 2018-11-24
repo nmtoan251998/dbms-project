@@ -2,53 +2,69 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/data-tables.css", type="text/css")
-    link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")        
-    .table-data                    
+    link(rel="stylesheet", href="/styles/my-fontawesome.css", type="text/css")      
+    .table-data            
         a.btn.add-button Add data        
         .table-search
             form(action='')
-                input.search-input(type='text', name='search-name', placeholder='Input course name here...')
-                button.search-button Search  
-        form.form-create(method="post",action="/course/create")
+                input.search-input(type='text', name='search-name', placeholder='Input student id here...')
+                button.search-button Search        
+        form.form-create(method="post",action="/student/create")
             fieldset
-                legend New course information
+                legend Student detail
                 table.table-create
                     tr
                         td
-                            label(for="courseid") Id: 
+                            label(for="id") Id: 
                         td
-                            input(type="text" name="courseid" id="courseid" placeholder="Course identification")
-                    tr
-                        td
-                            label(for="coursename") Name: 
-                        td
-                            input(type="text" name="coursename" id="coursename" placeholder="Course name")
+                            input(type="text" name="id" id="id" placeholder="Identification")
                     tr
                         td 
-                            label(for="start") Start: 
+                            label(for="DoB") DoB: 
                         td
-                            input(type="text" name="start" id="start" placeholder="Start year")
+                            input(type="text" name="DoB" id="DoB" placeholder="Date of birth")
+                    tr
+                        td
+                            label(for="gender") Gender: 
+                        td
+                            input(type="text" name="gender" id="gender" placeholder="Gender") 
+                    tr
+                        td
+                            label(for="city") City: 
+                        td
+                            input(type="text" name="city" id="city" placeholder="City")
                     tr
                         td 
-                            label(for="end") End: 
+                            label(for="address") Address: 
                         td
-                            input(type="text" name="end" id="end" placeholder="End year")
-                a.btn.cancel-button Cancel
-                button.btn.save-btn(type="submit") Save
+                            input(type="text" name="address" id="address" placeholder="Address")
+                    tr
+                        td
+                            label(for="phone") Phone: 
+                        td
+                            input(type="text" name="phone" id="phone" placeholder="Phone number")                    
+            a.btn.cancel-button Cancel
+            button.btn.save-btn(type="submit") Save                
         table.table
             thead.thead
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-name(title='Name')
-                        | Course name 
+                    th#sort-name(title='Dob')
+                        | DoB 
                         span.icon.icon-sort(id='')                    
-                    th#sort-start(title='Start year')
-                        | Start year
+                    th#sort-start(title='Gender')
+                        | Gender
                         span.icon.icon-sort(id='')
-                    th#sort-end(title='End year')
-                        | End year
+                    th#sort-end(title='City')
+                        | City
+                        span.icon.icon-sort(id='')
+                    th#sort-start(title='Address')
+                        | Address
+                        span.icon.icon-sort(id='')
+                    th#sort-end(title='Phone')
+                        | Phone
                         span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Action                        
@@ -65,7 +81,7 @@ block main
                                 span.icon.icon-mod(id='')
                             a(href="#")
                                 span.icon.icon-view(id='')  
-                caption(title='CTU Courses') Table name: Cantho univerysity's courses
+                caption(title='CTU Courses') Table name: Student details
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
@@ -87,5 +103,5 @@ block main
                 label(for='total-item') Total:
                 input#total-item(type='button', value='')    
     link(rel="stylesheet", href="/styles/create-forms.css")    
-    link(rel="stylesheet", href="/styles/course.css")                    
+    link(rel="stylesheet", href="/styles/studentDetail.css")                    
     script(src="/scripts/open-createForm.js")

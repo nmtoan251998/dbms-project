@@ -1,0 +1,22 @@
+/* Change follow specific rows in fieldset 
+-- Change height + width in fieldset
+*/
+/* Change table columns size
+-- Change width of .table .thead th:nth-child
+*/
+.form-create fieldset{
+    height: 300px;
+    width: 400px;
+    /* position: relative;
+    background-color: white; */    
+    /* box-shadow: 3px 5px 10px 1px rgb(85, 83, 83); */
+    overflow-y: scroll;
+}
+
+.table .thead th:nth-child(1){width: 10%}
+.table .thead th:nth-child(2){width: 10%}
+.table .thead th:nth-child(3){width: 7.5%}
+.table .thead th:nth-child(4){width: 21.125%}
+.table .thead th:nth-child(5){width: 21.125%}
+.table .thead th:nth-child(6){width: 10%}
+.table .thead th:nth-child(7){width: 15%}
