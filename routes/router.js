@@ -46,6 +46,7 @@ router.get('/course/modify', courseRouter.getCourseModify);
 // scoreRecord routing
 router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
 router.get('/scoreRecord/create', scoreRecordRouter.getScoreRecordCreate);
+router.get('/scoreRecord/modify', scoreRecordRouter.getScoreRecordModify);
 
 // studentDetail routing
 router.get('/studentDetail/data', studentDetailRouter.getStudentDetailData);
