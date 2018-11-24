@@ -51,5 +51,6 @@ router.get('/scoreRecord/modify', scoreRecordRouter.getScoreRecordModify);
 // studentDetail routing
 router.get('/studentDetail/data', studentDetailRouter.getStudentDetailData);
 router.get('/studentDetail/create', studentDetailRouter.getStudentDetailCreate);
+router.get('/studentDetail/modify', studentDetailRouter.getStudentDetailModify);
 
 module.exports = router;
