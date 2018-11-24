@@ -34,3 +34,7 @@ module.exports.getCourseData =  (req,res) => {
 module.exports.getCourseCreate = (req,res) => {
     res.render('../views/course/course-create-view');
 }
+
+module.exports.getCourseModify = (req,res) => {
+    res.render('../views/course/course-modify-view');
+}

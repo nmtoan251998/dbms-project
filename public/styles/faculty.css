@@ -8,3 +8,8 @@
     background-color: white; */    
     /* box-shadow: 3px 5px 10px 1px rgb(85, 83, 83); */
 }
+
+.table .thead th:nth-child(1){width: 10%}
+.table .thead th:nth-child(2){width: 40%}
+.table .thead th:nth-child(3){width: 40%}
+.table .thead th:nth-child(4){width: 10%}

@@ -24,6 +24,11 @@ block main
                         td
                             input(type="text" name="classid" id="classid" placeholder="Class identification")
                     tr
+                        td 
+                            label(for="majorid") Major Id: 
+                        td
+                            input(type="text" name="majorid" id="majorid" placeholder="Major identification")
+                    tr
                         td
                             label(for="studentname") Name: 
                         td
@@ -38,24 +43,26 @@ block main
                         span.icon.icon-sort(id='')
                     th#sort-class-id(title='Class Identification')
                         | Class Id 
+                        span.icon.icon-sort(id='')
+                    th#sort-major-id(title='Major Identification')
+                        | Major Id 
                         span.icon.icon-sort(id='')            
                     th#sort-name(title='Student Name')
                         | Student name 
                         span.icon.icon-sort(id='')
                     th#functions(title='Functions')
-                        | Functions                         
+                        | Action                         
             tbody.tbody
                 tr.tb-data
                     td
                     td                    
                     td
+                    td
                     td.function
                         a(href="#")
                             span.icon.icon-del(id='')                            
                         a(href="#")
-                            span.icon.icon-mod(id='')
-                        a(href="#")
-                            span.icon.icon-view(id='')  
+                            span.icon.icon-mod(id='') 
                 caption(title='CTU Majors') Table name: Cantho univerysity's students
         //- Paginating  
         .paginator                                  

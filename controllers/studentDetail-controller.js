@@ -34,3 +34,7 @@ module.exports.getStudentDetailData =  (req,res) => {
 module.exports.getStudentDetailCreate = (req,res) => {
     res.render('../views/studentDetail/studentDetail-create-view');
 }
+
+module.exports.getStudentDetailModify = (req,res) => {
+    res.render('../views/studentDetail/studentDetail-modify-view');
+}

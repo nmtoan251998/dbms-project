@@ -7,11 +7,11 @@ block main
         a.btn.add-button Add data        
         .table-search
             form(action='')
-                input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
-                button.search-button Search        
-        form.form-create(method="post",action="/class/create")
+                input.search-input(type='text', name='search-name', placeholder='Input class name here...')
+                button.search-button Search  
+        form.form-create(method="post",action="/course/create")
             fieldset
-                legend New class information
+                legend New course information
                 table.table-create
                     tr
                         td
@@ -19,20 +19,20 @@ block main
                         td
                             input(type="text" name="classid" id="classid" placeholder="Class identification")
                     tr
-                        td 
+                        td
                             label(for="majorid") Major Id: 
                         td
                             input(type="text" name="majorid" id="majorid" placeholder="Major identification")
-                    tr                    
+                    tr
                         td
                             label(for="classname") Name: 
                         td
-                            input(type="text" name="classname" id="classname" placeholder="Class name")                   
+                            input(type="text" name="classname" id="classname" placeholder="Class name")
                     tr
                         td 
-                            label(for="teachername") Head teacher: 
+                            label(for="headteacher") Head teacher: 
                         td
-                            input(type="text" name="teachername" id="teachername" placeholder="Head teacher name")
+                            input(type="text" name="headteacher" id="headteacher" placeholder="Head teacher name")                    
                 a.btn.cancel-button Cancel
                 button.btn.save-btn(type="submit") Save
         table.table
@@ -41,12 +41,15 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-name(title='Name')
-                        | Class name 
-                        span.icon.icon-sort(id='')                                        
                     th#sort-majorid(title='Major Id')
                         | Major Id
-                        span.icon.icon-sort(id='')                                        
+                        span.icon.icon-sort(id='')                    
+                    th#sort-name(title='Name')
+                        | Class name
+                        span.icon.icon-sort(id='')
+                    th#sort-end(title='Head teacher')
+                        | Head teacher
+                        span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
@@ -59,9 +62,7 @@ block main
                             a(href="#")
                                 span.icon.icon-del(id='')                            
                             a(href="#")
-                                span.icon.icon-mod(id='')
-                            a(href="#")
-                                span.icon.icon-view(id='') 
+                                span.icon.icon-mod(id='') 
                 caption(title='CTU Classes') Table name: Cantho univerysity's classes
         //- Paginating  
         .paginator                                  
@@ -75,10 +76,10 @@ block main
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/class/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/course/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
