@@ -62,18 +62,16 @@ block main
                             a(href="#")
                                 span.icon.icon-del(id='')                            
                             a(href="#")
-                                span.icon.icon-mod(id='')
-                            a(href="#")
-                                span.icon.icon-view(id='')  
+                                span.icon.icon-mod(id='') 
                 caption(title='CTU Classes') Table name: Cantho univerysity's classes
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
-                a.pagination(href=`/course/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/class/data?page=${page}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             else
-                a.pagination(href=`/course/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/class/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    

@@ -10,7 +10,7 @@
 }
 
 .table .thead th:nth-child(1){width: 12.5%}
-.table .thead th:nth-child(2){width: 15%}
-.table .thead th:nth-child(3){width: 25%}
+.table .thead th:nth-child(2){width: 12.5%}
+.table .thead th:nth-child(3){width: 32.5%}
 .table .thead th:nth-child(4){width: 32.5%}
-.table .thead th:nth-child(5){width: 15%}
+.table .thead th:nth-child(5){width: 10%}
