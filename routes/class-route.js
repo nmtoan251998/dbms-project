@@ -6,5 +6,6 @@ const majorRouter = require('../controllers/class-controller');
 //major routing
 router.get('/class/data', classRouter.getClassData);
 router.get('/class/create', classRouter.getClassCreate);
+router.get('/class/modify', classRouter.getClassModify);
 
 module.exports = router;

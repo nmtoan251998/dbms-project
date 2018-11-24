@@ -32,6 +32,7 @@ router.get('/student/create', studentRouter.getStudentCreate);
 // class routing
 router.get('/class/data', classRouter.getClassData);
 router.get('/class/create', classRouter.getClassCreate);
+router.get('/class/modify', classRouter.getClassModify);
 
 // course routing
 router.get('/course/data', courseRouter.getCourseData);
