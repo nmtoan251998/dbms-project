@@ -15,6 +15,7 @@ const router = express.Router();
 //falculty routing
 router.get('/falculty/data', falcultyRouter.getFalcultyData);
 router.get('/falculty/create', falcultyRouter.getFalcultyCreate);
+router.get('/falculty/modify', falcultyRouter.getFalcultyModify);
 router.post('/falculty/create',falcultyRouter.postFalcultyCreate)
 
 //major routing
