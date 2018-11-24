@@ -12,5 +12,16 @@
 .table .thead th:nth-child(1){width: 12.5%}
 .table .thead th:nth-child(2){width: 12.5%}
 .table .thead th:nth-child(3){width: 12.5%}
-.table .thead th:nth-child(4){width: 58.5%}
-.table .thead th:nth-child(5){width: 10%}
+.table .thead th:nth-child(4){width: 50%}
+.table .thead th:nth-child(5){width: 12.5%}
+
+.table .tbody .tb-data .function{
+    /* display: grid;  */
+    grid-template-columns: 1fr 1fr 1fr;                      
+    /* grid-gap: 1rem;
+    padding: 1rem; */
+}
+
+/* .table .thead th:nth-child(1) form{left: 30%;}
+.table .thead th:nth-child(2) form{left: 70%;}
+.table .thead th:nth-child(3) form{left: 15%;} */

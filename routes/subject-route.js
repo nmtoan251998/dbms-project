@@ -4,7 +4,7 @@ const router = express.Router();
 const subjectRouter = require('../controllers/subject-controller');
 
 //subject routing
-router.get('/subject/data', subjectRouter.getSubjectData);
-router.get('/subject/create', subjectRouter.getSubjectCreate);
+router.get('/data', subjectRouter.getSubjectData);
+router.get('/create', subjectRouter.getSubjectCreate);
 
 module.exports = router;

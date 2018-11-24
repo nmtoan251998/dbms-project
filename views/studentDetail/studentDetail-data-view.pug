@@ -68,17 +68,19 @@ block main
                         span.icon.icon-sort(id='')
                     th#functions(title='Action')
                         | Action                        
-            tbody.tbody
-                each ChildFalculty in listFalculty
-                    tr.tb-data
-                        td
-                        td
-                        td
-                        td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
-                                span.icon.icon-mod(id='')
+            tbody.tbody                
+                tr.tb-data
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td                        
+                    td.function                            
+                        a(href="#")
+                            span.icon.icon-del(id='')                            
+                        a(href="#")
+                            span.icon.icon-mod(id='')
                 caption(title='Student details') Table name: Student details
         //- Paginating  
         .paginator                                  

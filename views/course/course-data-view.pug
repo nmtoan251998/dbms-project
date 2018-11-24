@@ -53,16 +53,17 @@ block main
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
-                each ChildFalculty in listFalculty
-                    tr.tb-data
-                        td
-                        td
-                        td
-                        td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
-                                span.icon.icon-mod(id='')
+                //- each ChildFalculty in listFalculty
+                tr.tb-data
+                    td
+                    td
+                    td
+                    td
+                    td.function                            
+                        a(href="#")
+                            span.icon.icon-del(id='')                            
+                        a(href="#")
+                            span.icon.icon-mod(id='')
                 caption(title='CTU Courses') Table name: Cantho univerysity's courses
         //- Paginating  
         .paginator                                  

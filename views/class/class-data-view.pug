@@ -50,19 +50,19 @@ block main
                     th#sort-end(title='Head teacher')
                         | Head teacher
                         span.icon.icon-sort(id='')
-                    th#functions(title='Functions')
+                    th#functions(title='Actions')
                         | Action                        
-            tbody.tbody
-                each ChildFalculty in listFalculty
-                    tr.tb-data
-                        td
-                        td
-                        td
-                        td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
-                                span.icon.icon-mod(id='') 
+            tbody.tbody                
+                tr.tb-data
+                    td
+                    td
+                    td
+                    td
+                    td.function                            
+                        a(href="#")
+                            span.icon.icon-del(id='')                            
+                        a(href="#")
+                            span.icon.icon-mod(id='') 
                 caption(title='CTU Classes') Table name: Cantho univerysity's classes
         //- Paginating  
         .paginator                                  
@@ -76,10 +76,10 @@ block main
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/course/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/class/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
