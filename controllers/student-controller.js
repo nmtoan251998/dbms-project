@@ -78,3 +78,7 @@ module.exports.deleteMajorData = (req,res) =>{
        });
    });  
 };
+
+module.exports.getStudentModify = (req,res) => {
+    res.render('../views/student/student-modify-view')
+}
