@@ -4,8 +4,8 @@ const router = express.Router();
 const studentRouter = require('../controllers/student-controller');
 
 //student routing
-router.get('/student/data', studentRouter.getStudentData);
-router.get('/student/create', studentRouter.getStudentCreate);
-router.get('/student/modify', studentRouter.getStudentModify);
+router.get('/data', studentRouter.getStudentData);
+router.get('/create', studentRouter.getStudentCreate);
+router.get('/modify', studentRouter.getStudentModify);
 
 module.exports = router;
