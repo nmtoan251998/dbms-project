@@ -46,16 +46,24 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-falculty-id(title='Falculty Identification')
-                        | Student Id
+                    th#sort-student-id(title='Student Id')
+                        | Student Id 
                         span.icon.icon-sort(id='')
-                    th#sort-name(title='Name')
-                        | Major name 
+                    th#sort-year(title='Year')
+                        | Year
                         span.icon.icon-sort(id='')
-                    th#functions(title='Functions')
+                    th#sort-semester(title='Semester')
+                        | Semester 
+                        span.icon.icon-sort(id='')
+                    th#sort-score(title='Score')
+                        | Score
+                        span.icon.icon-sort(id='')
+                    th#functions(title='Action')
                         | Action                         
             tbody.tbody
                 tr.tb-data
+                    td
+                    td
                     td
                     td
                     td
@@ -64,8 +72,6 @@ block main
                             span.icon.icon-del(id='')                            
                         a(href="#")
                             span.icon.icon-mod(id='')
-                        a(href="#")
-                            span.icon.icon-view(id='')  
                 caption(title='CTU Score Records') Table name: Cantho univerysity's score records
         //- Paginating  
         .paginator                                  
