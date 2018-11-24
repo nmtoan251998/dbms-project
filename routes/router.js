@@ -20,6 +20,7 @@ router.post('/falculty/create',falcultyRouter.postFalcultyCreate)
 //major routing
 router.get('/major/data', majorRouter.getMajorData);
 router.get('/major/create', majorRouter.getMajorCreate);
+router.get('/major/modify', majorRouter.getMajorModify);
 
 //subject routing
 router.get('/subject/data', subjectRouter.getSubjectData);
