@@ -54,7 +54,7 @@ block main
                             input(type="text", name="column", value='majorname',style="display:none")
                             button(type="submit")
                                 span.icon.icon-sort(id='')
-                    th#functions(title='Functions')
+                    th#functions(title='Action')
                         | Action                         
             tbody.tbody
                 each ChildMajor in listMajor
@@ -67,8 +67,6 @@ block main
                                 span.icon.icon-del(id='') 
                             a(href="/major/data-modify/"+ChildMajor.Id+'&'+ChildMajor.FalId+'&'+ChildMajor.MajorName)
                                 span.icon.icon-mod(id='')
-                            a(href="")
-                                span.icon.icon-view(id='') 
                 caption(title='CTU Majors') Table name: Cantho univerysity's majors
         //- Paginating  
         .paginator                                  
@@ -91,5 +89,5 @@ block main
                 label(for='total-item') Total:
                 input#total-item(type='button', value=total)     
     link(rel="stylesheet", href="/styles/create-forms.css")    
-    link(rel="stylesheet", href="/styles/faculty.css")                    
+    link(rel="stylesheet", href="/styles/major.css")                    
     script(src="/scripts/open-createForm.js")
