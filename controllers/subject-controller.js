@@ -5,3 +5,8 @@ module.exports.getSubjectData = (req,res) => {
 module.exports.getSubjectCreate = (req,res) => {
     res.render('../views/subject/subject-create-view')
 }
+
+
+module.exports.getSubjectModify = (req,res) => {
+    res.render('../views/subject/subject-modify-view')
+}

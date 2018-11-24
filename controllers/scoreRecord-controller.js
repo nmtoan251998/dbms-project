@@ -34,3 +34,7 @@ module.exports.getScoreRecordData =  (req,res) => {
 module.exports.getScoreRecordCreate = (req,res) => {
     res.render('../views/scoreRecord/scoreRecord-create-view');
 }
+
+module.exports.getScoreRecordModify = (req,res) => {
+    res.render('../views/scoreRecord/scoreRecord-modify-view');
+}
