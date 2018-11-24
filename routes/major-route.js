@@ -9,6 +9,6 @@ router.get('/major/create-data', majorRouter.getMajorCreate);
 router.post('/major/create-data', majorRouter.postMajorCreate);
 router.get('/major/data-delete/:id', majorRouter.deleteMajorData);
 router.get('/major/data-modify/:id&:falid&:majorname', majorRouter.modifyMajorData);
-router.post('/major/modify/:id', majorRouter.postModifyMajorData);
+router.post('/major/data-modify/:id', majorRouter.postModifyMajorData);
 
 module.exports = router;

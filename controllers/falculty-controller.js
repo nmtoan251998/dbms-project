@@ -1,4 +1,5 @@
 const conn = require('../public/scripts/config');
+const find = require('../admin_modules/find');
 
 module.exports.getFalcultyData =  (req,res) => {                
     // PAGINATION    
@@ -17,15 +18,41 @@ module.exports.getFalcultyData =  (req,res) => {
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
+    var sql,
+        sort='desc';
+    switch (req.query.column) {
+        case 'id':
+            makeSort('id',req.query.sort);
+            break;
+        case 'falname':
+            makeSort('falname',req.query.sort);
+            break;
+        case 'dean':
+            makeSort('dean',req.query.sort);
+            break;
+        default:
+            makeSort('id',req.query.sort);
+            break;
+    }
     
-    const sql =`SELECT * FROM FALCULTY`;
+    function makeSort(column,state){
+        if(state === 'desc'){
+            sql =`SELECT * FROM FALCULTY ORDER BY ${column} DESC`;
+            sort='asc'
+        }
+        else{
+            sql =`SELECT * FROM FALCULTY ORDER BY ${column} ASC`;
+        }
+    }
     
     conn.query(sql, (err,result) => {
         if(err) throw err;                    
         res.render('../views/falculty/falculty-data-view',{                
             listFalculty: result.slice(begin, end),
             page : currentPage,
-            item : itemPerPage                
+            item : itemPerPage,
+            total: result.length,
+            sort: sort                
         });
     });    
 
@@ -44,7 +71,7 @@ module.exports.postFalcultyCreate = (req,res) =>{
             console.log('call me',result);
         });
     }
-    res.render('../views/falculty/falculty-create-view');
+    res.redirect('/falculty/data');
 }
 
 module.exports.deleteFalcultyData = (req,res) =>{
@@ -75,4 +102,23 @@ module.exports.postModifyFalcultyData = (req,res) =>{
     });
 
     res.redirect('../data');
+}
+
+module.exports.getSearchFalcultyData = (req,res) =>{
+    let currentPage = parseInt(req.query.page) || 1;
+    let itemPerPage = parseInt(req.query.size) || 5;    
+    
+    let begin = (currentPage-1) * itemPerPage;
+    let end = currentPage* itemPerPage ;
+
+    find('falculty','falname',req.query['search-name'])
+    .then(result =>{
+        res.render('../views/falculty/falculty-data-view',{                
+            listFalculty: result[0],
+            page : currentPage,
+            item : itemPerPage,
+            total: result[0].length                
+        });
+    });
+    
 }

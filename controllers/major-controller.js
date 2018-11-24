@@ -18,14 +18,41 @@ module.exports.getMajorData =  (req,res) => {
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
     
-    const sql =`SELECT * FROM MAJOR`;
+    var sql,
+        sort='desc';
+    switch (req.query.column) {
+        case 'id':
+            makeSort('id',req.query.sort);
+            break;
+        case 'falid':
+            makeSort('falid',req.query.sort);
+            break;
+        case 'majorname':
+            makeSort('majorname',req.query.sort);
+            break;
+        default:
+            makeSort('id',req.query.sort);
+            break;
+    }
+    
+    function makeSort(column,state){
+        if(state === 'desc'){
+            sql =`SELECT * FROM MAJOR ORDER BY ${column} DESC`;
+            sort='asc'
+        }
+        else{
+            sql =`SELECT * FROM MAJOR ORDER BY ${column} ASC`;
+        }
+    }
     
     conn.query(sql, (err,result) => {
         if(err) throw err;                    
         res.render('../views/major/major-data-view',{                
             listMajor: result.slice(begin, end),
             page : currentPage,
-            item : itemPerPage                
+            item : itemPerPage,
+            total: result.length,
+            sort: sort                   
         });
     });    
 

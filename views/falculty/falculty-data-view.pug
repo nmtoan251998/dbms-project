@@ -6,7 +6,7 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/falculty/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input falculty name here...')
                 button.search-button Search        
         form.form-create(method="post",action="/falculty/create")
@@ -35,13 +35,25 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/falculty/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-name(title='Name')
                         | Faculty name 
-                        span.icon.icon-sort(id='')
+                        form(action="/falculty/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='falname',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-dean(title='Dean')
-                        | Dean 
-                        span.icon.icon-sort(id='')
+                        | Dean
+                        form(action="/falculty/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='dean',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
@@ -77,7 +89,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')        
+                input#total-item(type='button', value=total)        
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/faculty.css")                    
     script(src="/scripts/open-createForm.js")
