@@ -15,34 +15,42 @@ const router = express.Router();
 //falculty routing
 router.get('/falculty/data', falcultyRouter.getFalcultyData);
 router.get('/falculty/create', falcultyRouter.getFalcultyCreate);
+router.get('/falculty/modify', falcultyRouter.getFalcultyModify);
 router.post('/falculty/create',falcultyRouter.postFalcultyCreate)
 
 //major routing
 router.get('/major/data', majorRouter.getMajorData);
 router.get('/major/create', majorRouter.getMajorCreate);
+router.get('/major/modify', majorRouter.getMajorModify);
 
 //subject routing
 router.get('/subject/data', subjectRouter.getSubjectData);
 router.get('/subject/create', subjectRouter.getSubjectCreate);
+router.get('/subject/modify', subjectRouter.getSubjectModify);
 
 //student routing
 router.get('/student/data', studentRouter.getStudentData);
 router.get('/student/create', studentRouter.getStudentCreate);
+router.get('/student/modify', studentRouter.getStudentModify);
 
 // class routing
 router.get('/class/data', classRouter.getClassData);
 router.get('/class/create', classRouter.getClassCreate);
+router.get('/class/modify', classRouter.getClassModify);
 
 // course routing
 router.get('/course/data', courseRouter.getCourseData);
 router.get('/course/create', courseRouter.getCourseCreate);
+router.get('/course/modify', courseRouter.getCourseModify);
 
 // scoreRecord routing
 router.get('/scoreRecord/data', scoreRecordRouter.getScoreRecordData);
 router.get('/scoreRecord/create', scoreRecordRouter.getScoreRecordCreate);
+router.get('/scoreRecord/modify', scoreRecordRouter.getScoreRecordModify);
 
 // studentDetail routing
 router.get('/studentDetail/data', studentDetailRouter.getStudentDetailData);
 router.get('/studentDetail/create', studentDetailRouter.getStudentDetailCreate);
+router.get('/studentDetail/modify', studentDetailRouter.getStudentDetailModify);
 
 module.exports = router;
