@@ -24,6 +24,7 @@ router.get('/major/create', majorRouter.getMajorCreate);
 //subject routing
 router.get('/subject/data', subjectRouter.getSubjectData);
 router.get('/subject/create', subjectRouter.getSubjectCreate);
+router.get('/subject/modify', subjectRouter.getSubjectModify);
 
 //student routing
 router.get('/student/data', studentRouter.getStudentData);
