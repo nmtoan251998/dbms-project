@@ -51,53 +51,53 @@ block main
                     th#sort-id(title='Identification') 
                         | Id 
                         span.icon.icon-sort(id='')
-                    th#sort-name(title='Dob')
+                    th#sort-dob(title='Dob')
                         | DoB 
                         span.icon.icon-sort(id='')                    
-                    th#sort-start(title='Gender')
+                    th#sort-gender(title='Gender')
                         | Gender
                         span.icon.icon-sort(id='')
-                    th#sort-end(title='City')
+                    th#sort-city(title='City')
                         | City
                         span.icon.icon-sort(id='')
-                    th#sort-start(title='Address')
+                    th#sort-address(title='Address')
                         | Address
                         span.icon.icon-sort(id='')
-                    th#sort-end(title='Phone')
+                    th#sort-phone(title='Phone')
                         | Phone
                         span.icon.icon-sort(id='')
-                    th#functions(title='Functions')
+                    th#functions(title='Action')
                         | Action                        
-            tbody.tbody
-                each ChildFalculty in listFalculty
-                    tr.tb-data
-                        td
-                        td
-                        td
-                        td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
-                                span.icon.icon-mod(id='')
-                            a(href="#")
-                                span.icon.icon-view(id='')  
-                caption(title='CTU Courses') Table name: Student details
+            tbody.tbody                
+                tr.tb-data
+                    td
+                    td
+                    td
+                    td
+                    td
+                    td                        
+                    td.function                            
+                        a(href="#")
+                            span.icon.icon-del(id='')                            
+                        a(href="#")
+                            span.icon.icon-mod(id='')
+                caption(title='Student details') Table name: Student details
         //- Paginating  
         .paginator                                  
             - var pageIndex = 1
             if(page === 1)                                
-                a.pagination(href=`/course/data?page=${page}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/studentDetail/data?page=${page}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             else
-                a.pagination(href=`/course/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
+                a.pagination(href=`/studentDetail/data?page=${page-1}&size=${item}` style="margin-right: .5rem")
                     span#previous.icon.icon-arrow-circle-left
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/studentDetail/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/course/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/studentDetail/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/studentDetail/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:

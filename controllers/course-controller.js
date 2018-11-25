@@ -129,4 +129,7 @@ module.exports.getSearchCourseData = (req,res) =>{
             total: result[0].length                
         });
     });  
+
+module.exports.getCourseModify = (req,res) => {
+    res.render('../views/course/course-modify-view');
 }

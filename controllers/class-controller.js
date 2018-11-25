@@ -34,3 +34,7 @@ module.exports.getClassData =  (req,res) => {
 module.exports.getClassCreate = (req,res) => {
     res.render('../views/class/class-create-view');
 }
+
+module.exports.getClassModify = (req,res) => {
+    res.render('../views/class/class-modify-view');
+}
