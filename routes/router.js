@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const falcultyRouter = require('./falculty-route.js');
-const majorRouter = require('./major-route');
+const majorRouter = require('./major-route.js');
 const subjectRouter = require('./subject-route');
 const studentRouter = require('./student-route');
 const scoreRecordRouter = require('./scoreRecord-route');
