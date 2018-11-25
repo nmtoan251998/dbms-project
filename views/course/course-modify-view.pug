@@ -1,3 +1,29 @@
 extends ../layout/common
 
 block main
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    form.form-create(method="post",action="/course/data-modify/"+data.course)
+        fieldset
+            legend New course information
+            table.table-create
+                tr
+                    td
+                        label(for="courseid") Id: 
+                    td
+                        input(type="text" name="courseid" id="courseid" placeholder="Course identification")
+                tr
+                    td
+                        label(for="coursename") Name: 
+                    td
+                        input(type="text" name="coursename" id="coursename" placeholder="Course name")
+                tr
+                    td 
+                        label(for="startyear") Dean: 
+                    td
+                        input(type="text" name="startyear" id="startyear" placeholder="Start year")
+                tr
+                    td 
+                        label(for="endyear") Dean: 
+                    td
+                        input(type="text" name="endyear" id="endyear" placeholder="End year")
+            button(type="submit") Save
