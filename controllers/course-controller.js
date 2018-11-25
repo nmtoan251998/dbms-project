@@ -1,5 +1,6 @@
 const conn = require('../public/scripts/config');
 const date = require('date-and-time');
+const find = require('../admin_modules/find');
 
 module.exports.getCourseCreate = (req,res) => {
     res.render('../views/course/course-create-view');
@@ -29,11 +30,14 @@ module.exports.getCourseData =  (req,res) => {
         case 'id':
             makeSort('id',req.query.sort);
             break;
-        case 'falid':
-            makeSort('falid',req.query.sort);
-            break;
         case 'coursename':
             makeSort('coursename',req.query.sort);
+            break;
+        case 'startyear':
+            makeSort('startyear',req.query.sort);
+            break;
+        case 'endyear':
+            makeSort('endyear',req.query.sort);
             break;
         default:
             makeSort('id',req.query.sort);
@@ -67,7 +71,7 @@ module.exports.getCourseData =  (req,res) => {
 
 }
 
-module.exports.getCourseCreate = (req,res) => {
+module.exports.postCourseCreate = (req,res) => {
     res.render('../views/course/course-create-view');
 }
 
@@ -96,14 +100,14 @@ module.exports.deleteCourseData = (req,res) =>{
 };
 
 module.exports.modifyCourseData = (req,res) =>{
-    res.render('./course/course-modify',{
+    res.render('./course/course-modify-view',{
         data: req.params
     });
 };
 
 module.exports.postModifyCourseData = (req,res) =>{
     console.log(req.body)
-    const sql = `UPDATE MAJOR SET ID = '${req.body.courseid}', FalId = '${req.body.falid}', CourseName = '${req.body.coursename}' WHERE Id = '${req.body.courseid}'`;
+    const sql = `UPDATE COURSE SET ID = '${req.body.courseid}',CourseName = '${req.body.coursename}', StartYear = '${req.body.startyear}', endyear ='${req.body.endyear}'  WHERE ID = '${req.body.courseid}'`;
    
     conn.query(sql,(err,result)=>{
         if(err) throw err;
@@ -122,6 +126,8 @@ module.exports.getSearchCourseData = (req,res) =>{
 
     find('course','coursename',req.query['search-name'])
     .then(result =>{
+        result[0][0]['StartYear'] = date.format(result[0][0]['StartYear'],'YYYY');
+        result[0][0]['EndYear'] = date.format(result[0][0]['EndYear'],'YYYY');
         res.render('../views/course/course-data-view',{                
             listCourse: result[0],
             page : currentPage,
@@ -129,7 +135,7 @@ module.exports.getSearchCourseData = (req,res) =>{
             total: result[0].length                
         });
     });  
-
+}
 module.exports.getCourseModify = (req,res) => {
     res.render('../views/course/course-modify-view');
 }
