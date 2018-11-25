@@ -6,7 +6,7 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/course/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input course name here...')
                 button.search-button Search  
         form.form-create(method="post",action="/course/create")
@@ -53,18 +53,19 @@ block main
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
-                each ChildFalculty in listFalculty
+                each ChildCourse in listCourse
                     tr.tb-data
-                        td
-                        td
-                        td
+                        td(title='') #{ChildCourse.Id}
+                        td(title='') #{ChildCourse.CourseName}
+                        td(title='') #{ChildCourse.StartYear}
+                        td(title='') #{ChildCourse.EndYear}
                         td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
+                            a(href="/course/data-delete/"+ChildCourse.Id)
+                                span.icon.icon-del(id='') 
+                            a(href="/course/data-modify/"+ChildCourse.Id+'&'+ChildCourse.FalName+'&'+ChildCourse.Dean)
                                 span.icon.icon-mod(id='')
-                            a(href="#")
-                                span.icon.icon-view(id='')  
+                            a(href="")
+                                span.icon.icon-view(id='')
                 caption(title='CTU Courses') Table name: Cantho univerysity's courses
         //- Paginating  
         .paginator                                  

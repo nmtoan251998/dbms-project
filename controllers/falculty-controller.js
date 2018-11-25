@@ -119,6 +119,5 @@ module.exports.getSearchFalcultyData = (req,res) =>{
             item : itemPerPage,
             total: result[0].length                
         });
-    });
-    
+    });  
 }
