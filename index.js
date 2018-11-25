@@ -8,6 +8,7 @@ const routerFalculty = require('./routes/falculty-route');
 const routerMajor = require('./routes/major-route');
 const routerSubject = require('./routes/subject-route');
 const routerStudent = require('./routes/student-route');
+const routerCourse = require('./routes/course-route');
 
 const port = 3000;
 
@@ -38,6 +39,7 @@ app.use(routerFalculty);
 app.use(routerMajor);
 app.use(routerSubject);
 app.use(routerStudent);
+app.use(routerCourse);
 
 
 app.listen(port, () => console.log(`Server is started on port ${port}`));

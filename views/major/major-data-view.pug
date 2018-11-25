@@ -6,10 +6,10 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/major/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input major name here...')
                 button.search-button Search 
-        form.form-create(method="post",action="/major/create")
+        form.form-create(method="post",action="/major/data-create")
             fieldset
                 legend New major information
                 table.table-create
@@ -27,7 +27,7 @@ block main
                         td 
                             label(for="facultyid") Faculty Id: 
                         td
-                            input(type="text" name="facultyid" id="facultyid" placeholder="Faculty identification")
+                            input(type="text" name="falcultyid" id="falcultyid" placeholder="Faculty identification")
                 a.btn.cancel-button Cancel
                 button.btn.save-btn(type="submit") Save       
         table.table
