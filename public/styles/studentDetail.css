@@ -5,12 +5,12 @@
 -- Change width of .table .thead th:nth-child
 */
 .form-create fieldset{
-    height: 300px;
-    width: 400px;
+    height: 450px;
+    width: 450px;
     /* position: relative;
     background-color: white; */    
     /* box-shadow: 3px 5px 10px 1px rgb(85, 83, 83); */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .table .thead th:nth-child(1){width: 10%}
@@ -20,3 +20,11 @@
 .table .thead th:nth-child(5){width: 21.125%}
 .table .thead th:nth-child(6){width: 15%}
 .table .thead th:nth-child(7){width: 10%}
+
+.form-create{
+    top: -1rem;
+}
+
+.cancel-button{
+    left: 10px;
+}
