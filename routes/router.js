@@ -15,18 +15,18 @@ const router = express.Router();
 //falculty routing
 router.get('/falculty/data', falcultyRouter.getFalcultyData);
 router.get('/falculty/create', falcultyRouter.getFalcultyCreate);
-router.get('/falculty/modify', falcultyRouter.getFalcultyModify);
+router.get('/falculty/modify', falcultyRouter.modifyFalcultyData);
 router.post('/falculty/create',falcultyRouter.postFalcultyCreate)
 
 //major routing
 router.get('/major/data', majorRouter.getMajorData);
 router.get('/major/create', majorRouter.getMajorCreate);
-router.get('/major/modify', majorRouter.getMajorModify);
+router.get('/major/modify', majorRouter.modifyMajorData);
 
 //subject routing
 router.get('/subject/data', subjectRouter.getSubjectData);
 router.get('/subject/create', subjectRouter.getSubjectCreate);
-router.get('/subject/modify', subjectRouter.getSubjectModify);
+router.get('/subject/modify', subjectRouter.getSubjectData);
 
 //student routing
 router.get('/student/data', studentRouter.getStudentData);
