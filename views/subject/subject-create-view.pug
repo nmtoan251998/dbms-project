@@ -1,3 +1,29 @@
 extends ../layout/common
 
 block main
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    form.form-create(method="post",action="/subject/data-modify/"+data.id)
+        fieldset
+            legend New subject information
+            table.table-create
+                tr
+                    td
+                        label(for="subjectid") Id: 
+                    td
+                        input(type="text" name="subjectid" id="subjectid" placeholder="Class identification")
+                tr
+                    td
+                        label(for="majorid") Major: 
+                    td
+                        input(type="text" name="majorid" id="majorid" placeholder="Major identification")
+                tr
+                    td 
+                        label(for="subjectname") Name: 
+                    td
+                        input(type="text" name="subjectname" id="subjectname" placeholder="Class name")
+                tr
+                    td 
+                        label(for="credit") Credit: 
+                    td
+                        input(type="text" name="credit" id="credit" placeholder="Head teacher")
+            button(type="submit") Save

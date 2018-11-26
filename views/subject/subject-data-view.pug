@@ -6,7 +6,7 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/subject/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input subject name here...')
                 button.search-button Search  
         form.form-create(method="post",action="/subject/create")
@@ -40,25 +40,46 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/subject/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-major-id(title='Major identification')
                         | Major Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/subject/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='majorid',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-name(title='Subject name')
                         | Subject name 
-                        span.icon.icon-sort(id='')                    
+                        form(action="/subject/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='subjectname',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')   
+                    th#sort-credit(title='Credit name')
+                        | Credit 
+                        form(action="/subject/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='credit',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')                 
                     th#functions(title='Functions')
                         | Action                        
             tbody.tbody
-                tr.tb-data
-                    td
-                    td
-                    td                    
-                    td.function
-                        a(href="#")
-                            span.icon.icon-del(id='')                            
-                        a(href="#")
-                            span.icon.icon-mod(id='')                                       
+                each ChildSubject in listSubject              
+                    tr.tb-data
+                        td #{ChildSubject.Id}
+                        td #{ChildSubject.MajorId}
+                        td #{ChildSubject.SubjectName}
+                        td #{ChildSubject.Credit}                    
+                        td.function
+                            a(href="/subject/data-delete/"+ChildSubject.Id)
+                                    span.icon.icon-del(id='') 
+                            a(href="/subject/data-modify/"+ChildSubject.Id+'&'+ChildSubject.MajorId+'&'+ChildSubject.SubjectName+'&'+ChildSubject.Credit)
+                                    span.icon.icon-mod(id='')                                       
                 caption(title='Majors subjects') Table name: Cantho univerysity's subjects
         //- Paginating  
         .paginator                                  
@@ -79,7 +100,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value=total)    
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/subject.css")                    
     script(src="/scripts/open-createForm.js")

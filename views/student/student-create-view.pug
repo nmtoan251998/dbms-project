@@ -1,3 +1,24 @@
 extends ../layout/common
 
 block main
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    form.form-create(method="post",action="/student/data-modify/"+data.id)
+        fieldset
+            legend New student information
+            table.table-create
+                tr
+                    td
+                        label(for="studentid") Id: 
+                    td
+                        input(type="text" name="studentid" id="studentid" placeholder="Student identification")
+                tr
+                    td 
+                        label(for="classid") Name: 
+                    td
+                        input(type="text" name="classid" id="classid" placeholder="Class identification")
+                tr
+                    td 
+                        label(for="studentname") Headteacher: 
+                    td
+                        input(type="text" name="studentname" id="studentname" placeholder="Student name")
+            button(type="submit") Save
