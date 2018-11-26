@@ -67,9 +67,7 @@
                 position: relative;
             }              
                 .table .thead th form{
-                    position: absolute;
-                    top: 30%;
-                    /* left: ; */
+                    display: inline;
                 }
             .table .tbody .tb-data{
                 border: 1px solid silver;
@@ -81,7 +79,7 @@
                     grid-gap: 1rem;
                     padding: 1rem;
                 }
-                    .table .tbody .tb-data .function > a:hover{                    
+                    .table .tbody .tb-data .function > a:hover{                       
                         filter: brightness(300%);
                     }
                     
