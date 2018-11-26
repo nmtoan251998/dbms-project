@@ -1,0 +1,26 @@
+.functions{
+    width: 60%;
+    margin: 5% auto 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.list{
+    grid-column: 1 / span 1;
+}
+    .list .btn{
+        padding: .6rem 1.3rem;
+    }
+    .btn button{
+        padding: inherit;
+        width: 150px;
+        cursor: pointer;
+        border: 1px solid white;
+        background: #607897;
+        color: #f6f6f6;
+        border-radius: 6px;
+    }
+
+.show-board{
+    border: 1px solid black;
+}
