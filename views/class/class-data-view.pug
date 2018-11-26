@@ -6,12 +6,12 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/class/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input class name here...')
                 button.search-button Search  
-        form.form-create(method="post",action="/course/create")
+        form.form-create(method="post",action="/class/create")
             fieldset
-                legend New course information
+                legend New class information
                 table.table-create
                     tr
                         td
@@ -40,29 +40,46 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/class/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-majorid(title='Major Id')
                         | Major Id
-                        span.icon.icon-sort(id='')                    
+                        form(action="/class/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')                    
                     th#sort-name(title='Name')
                         | Class name
-                        span.icon.icon-sort(id='')
+                        form(action="/class/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-end(title='Head teacher')
                         | Head teacher
-                        span.icon.icon-sort(id='')
-                    th#functions(title='Functions')
+                        form(action="/class/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
+                    th#functions(title='Actions')
                         | Action                        
-            tbody.tbody
-                each ChildFalculty in listFalculty
+            tbody.tbody  
+                each ChildClass in listClass              
                     tr.tb-data
-                        td
-                        td
-                        td
+                        td #{ChildClass.Id}
+                        td #{ChildClass.MajorId}
+                        td #{ChildClass.ClassName}
+                        td #{ChildClass.HeadTeacher}
                         td.function                            
-                            a(href="#")
-                                span.icon.icon-del(id='')                            
-                            a(href="#")
-                                span.icon.icon-mod(id='') 
+                            a(href="/class/data-delete/"+ChildClass.Id)
+                                    span.icon.icon-del(id='') 
+                            a(href="/class/data-modify/"+ChildClass.Id+'&'+ChildClass.MajorId+'&'+ChildClass.ClassName+'&'+ChildClass.HeadTeacher)
+                                    span.icon.icon-mod(id='')
                 caption(title='CTU Classes') Table name: Cantho univerysity's classes
         //- Paginating  
         .paginator                                  
@@ -76,14 +93,14 @@ block main
             .number                                 
                 - for(var i = 0; i < 5; i++, pageIndex++)                    
                     if(page === pageIndex)
-                        a.activating.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
+                        a.activating.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
                     else
-                        a.page-index(href=`/course/data?page=${pageIndex}&size=${item}`)= pageIndex
-            a(href=`/course/data?page=${page+1}&size=${item}`).pagination
+                        a.page-index(href=`/class/data?page=${pageIndex}&size=${item}`)= pageIndex
+            a(href=`/class/data?page=${page+1}&size=${item}`).pagination
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value=total)    
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/class.css")                    
     script(src="/scripts/open-createForm.js")

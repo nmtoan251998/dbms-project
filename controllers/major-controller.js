@@ -1,5 +1,5 @@
 const conn = require('../public/scripts/config');
-
+const find = require('../admin_modules/find')
 module.exports.getMajorData =  (req,res) => {                
     // PAGINATION    
     /* Simulation 
@@ -65,13 +65,13 @@ module.exports.getMajorCreate = (req,res) => {
 module.exports.postMajorCreate = (req,res) =>{
     console.log(req.body)
     if (req.body.majorid) {
-        const sql =`INSERT INTO MAJOR VALUES ('${req.body.majorid}','${req.body.falid}','${req.body.majorname}')`;
+        const sql =`INSERT INTO MAJOR VALUES ('${req.body.majorid}','${req.body.falcultyid}','${req.body.majorname}')`;
         conn.query(sql,(err,result)=>{
             if(err) throw err;
             console.log('call me',result);
         });
     }
-    res.render('../views/major/major-create-view');
+    res.redirect('/major/data');
 }
 
 module.exports.deleteMajorData = (req,res) =>{
@@ -102,4 +102,22 @@ module.exports.postModifyMajorData = (req,res) =>{
     });
 
     res.redirect('../data');
+}
+
+module.exports.getSearchMajorData = (req,res) =>{
+    let currentPage = parseInt(req.query.page) || 1;
+    let itemPerPage = parseInt(req.query.size) || 5;    
+    
+    let begin = (currentPage-1) * itemPerPage;
+    let end = currentPage* itemPerPage ;
+
+    find('major','majorname',req.query['search-name'])
+    .then(result =>{
+        res.render('../views/major/major-data-view',{                
+            listMajor: result[0],
+            page : currentPage,
+            item : itemPerPage,
+            total: result[0].length                
+        });
+    });  
 }

@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const majorRouter = require('../controllers/class-controller');
+const classRouter = require('../controllers/class-controller');
 
-//major routing
-router.get('/class/data', classRouter.getClassData);
-router.get('/class/create', classRouter.getClassCreate);
-router.get('/class/modify', classRouter.getClassModify);
+//class routing
+router.get('/data', classRouter.getClassData);
+router.get('/create-data', classRouter.getClassCreate);
+router.post('/create', classRouter.postClassCreate);
+router.get('/data-delete/:id', classRouter.deleteClassData);
+router.get('/data-modify/:id&:majorid&:classname&:headteacher', classRouter.modifyClassData);
+router.post('/data-modify/:id', classRouter.postModifyClassData);
+router.get('/data-search',classRouter.getSearchClassData);
 
 module.exports = router;

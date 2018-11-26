@@ -4,7 +4,7 @@ const router = express.Router();
 const studentDetailRouter = require('../controllers/studentDetail-controller');
 
 //studentDetail routing
-router.get('/studentDetail/data', studentDetailRouter.getStudentDetailData);
-router.get('/studentDetail/create', studentDetailRouter.getStudentDetailCreate);
+router.get('/data', studentDetailRouter.getStudentDetailData);
+router.get('/create', studentDetailRouter.getStudentDetailCreate);
 
 module.exports = router;
