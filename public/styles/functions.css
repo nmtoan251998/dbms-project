@@ -1,5 +1,5 @@
 .functions{
-    width: 60%;
+    width: 80%;
     margin: 5% auto 0;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -7,20 +7,51 @@
 
 .list{
     grid-column: 1 / span 1;
+    padding: .6rem 1.3rem;
 }
-    .list .btn{
-        padding: .6rem 1.3rem;
-    }
-    .btn button{
+    .btn{
+        display: block;
+        margin-top: 5px;
         padding: inherit;
         width: 150px;
+        height: 50px;
         cursor: pointer;
         border: 1px solid white;
         background: #607897;
         color: #f6f6f6;
         border-radius: 6px;
     }
+    .btn:hover{    
+        color: #607897;    
+        border: 1px solid #607897;
+        background: white;
+    }
 
 .show-board{
-    border: 1px solid black;
+    border: 1px solid gray;
+    padding: .5rem;
+    box-shadow: 1px 0px 10px 1px black;
+}
+    .show-board input{
+        /* padding: .3rem 1rem; */
+        margin: 0 2px 5px;
+    }
+
+#total-stu{
+    display: none;
+}
+#avg-point{
+    display: none;
+}
+#stu-scho{
+    display: none;
+}
+#failed-subject{
+    display: none;
+}
+#full-stu-info{
+    display: none;
+}
+#most-least-scho{
+    display: none;
 }
