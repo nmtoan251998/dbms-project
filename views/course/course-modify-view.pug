@@ -2,6 +2,7 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/course.css")
     form.form-create(method="post",action="/course/data-modify/"+data.course)
         fieldset
             legend New course information
@@ -26,4 +27,4 @@ block main
                         label(for="endyear") Dean: 
                     td
                         input(type="text" name="endyear" id="endyear" placeholder="End year")
-            button(type="submit") Save
+            button.btn(type="submit") Save
