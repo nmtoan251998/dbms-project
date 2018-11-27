@@ -2,6 +2,7 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/class.css")   
     form.form-create(method="post",action="/class/data-modify/"+data.id)
         fieldset
             legend New class information
@@ -26,4 +27,4 @@ block main
                         label(for="headteacher") Headteacher: 
                     td
                         input(type="text" name="headteacher" id="headteacher" placeholder="Head teacher")
-            button(type="submit") Save
+            button.btn(type="submit") Save
