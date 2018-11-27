@@ -6,7 +6,7 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/student/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input student name here...')
                 button.search-button Search        
         form.form-create(method="post",action="/student/create")
@@ -15,19 +15,14 @@ block main
                 table.table-create
                     tr
                         td
-                            label(for="student") Id: 
+                            label(for="studentid") Id: 
                         td
-                            input(type="text" name="student" id="student" placeholder="Student identification")
+                            input(type="text" name="studentid" id="studentid" placeholder="Student identification")
                     tr
                         td 
                             label(for="classid") Class Id: 
                         td
                             input(type="text" name="classid" id="classid" placeholder="Class identification")
-                    tr
-                        td 
-                            label(for="majorid") Major Id: 
-                        td
-                            input(type="text" name="majorid" id="majorid" placeholder="Major identification")
                     tr
                         td
                             label(for="studentname") Name: 
@@ -40,31 +35,40 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/student/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-class-id(title='Class Identification')
                         | Class Id 
-                        span.icon.icon-sort(id='')
-                    th#sort-major-id(title='Major Identification')
-                        | Major Id 
-                        span.icon.icon-sort(id='')            
+                        form(action="/student/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='classid',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-name(title='Student Name')
                         | Student name 
-                        span.icon.icon-sort(id='')
+                        form(action="/student/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='studentname',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#functions(title='Functions')
                         | Action                         
             tbody.tbody
-                tr.tb-data
-                    td
-                    td                    
-                    td
-                    td
-                    td.function
-                        a(href="#")
-                            span.icon.icon-del(id='')                            
-                        a(href="#")
-                            span.icon.icon-mod(id='') 
-                        a(href="#")
-                            span.icon.icon-view(id='') 
+                each ChildStudent in listStudent
+                    tr.tb-data
+                        td #{ChildStudent.Id}
+                        td #{ChildStudent.ClassId}                
+                        td #{ChildStudent.StudentName}
+                        td.function
+                            a(href="/student/data-delete/"+ChildStudent.Id)
+                                span.icon.icon-del(id='')                            
+                            a(href="/student/data-modify/"+ChildStudent.Id+'&'+ChildStudent.ClassId+'&'+ChildStudent.StudentName)
+                                span.icon.icon-mod(id='') 
+                            a(href="#")
+                                span.icon.icon-view(id='') 
                 caption(title='CTU Majors') Table name: Cantho univerysity's students
         //- Paginating  
         .paginator                                  
@@ -85,7 +89,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value=total)    
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/student.css")                    
     script(src="/scripts/open-createForm.js")
