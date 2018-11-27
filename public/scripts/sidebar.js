@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let options = document.querySelector(".options");
 
     let test  = window.pageYOffset;
-    console.log({test})
+    // console.log({test})
 
     window.addEventListener("scroll", function(){
         if(this.pageYOffset >= 2650){
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })        
 
-    closeBtn.addEventListener("click", function(){        
+    closeBtn.addEventListener("click", function(){              
         setTimeout(() => options.style.fontSize = 35+"px", 250)          
         sideBar.style.width = 0;              
     })
