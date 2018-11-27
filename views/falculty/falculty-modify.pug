@@ -11,15 +11,15 @@ block main
                     td
                         label(for="falid") Id: 
                     td
-                        input(type="text" name="falid" placeholder="Faculty identification")
+                        input(type="text" name="falid" placeholder="Faculty identification", value=data.id)
                 tr
                     td
                         label(for="falname") Name: 
                     td
-                        input(type="text" name="falname" placeholder="Faculty name")
+                        input(type="text" name="falname" placeholder="Faculty name", value=data.falname)
                 tr
                     td 
                         label(for="dean") Dean: 
                     td
-                        input(type="text" name="dean" placeholder="Dean name")
+                        input(type="text" name="dean" placeholder="Dean name", value=data.dean)
             button.btn(type="submit") Save

@@ -10,7 +10,7 @@ const scoreRecordRouter = require('./scoreRecord-route');
 const classRouter = require('./class-route');
 const courseRouter = require('./course-route');
 const studentDetailRouter = require('./studentDetail-route');
-const higherFunctionsRouter = require('./higher-functions-route.js');
+const higherFunctionsRouter = require('./functions-route.js');
 
 router.use('/falculty', falcultyRouter);
 router.use('/major', majorRouter);
