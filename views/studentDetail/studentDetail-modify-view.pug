@@ -1,3 +1,39 @@
 extends ../layout/common
 
 block main
+    link(rel="stylesheet", href="/styles/create-forms.css")    
+    form.form-create(method="post",action="/studentDetail/data-modify/"+data.id)
+        fieldset
+            legend New student detail information
+            table.table-create
+                tr
+                    td
+                        label(for="studentid") Id: 
+                    td
+                        input(type="text" name="studentid" id="studentid" placeholder="Identification")
+                tr
+                    td 
+                        label(for="dob") DoB: 
+                    td
+                        input(type="text" name="dob" id="dob" placeholder=data.dob)
+                tr
+                    td
+                        label(for="gender") Gender: 
+                    td
+                        input(type="text" name="gender" id="gender" placeholder=data.gender) 
+                tr
+                    td
+                        label(for="city") City: 
+                    td
+                        input(type="text" name="city" id="city" placeholder=data.city)
+                tr
+                    td 
+                        label(for="address") Address: 
+                    td
+                        input(type="text" name="address" id="address" placeholder=data.address)
+                tr
+                    td
+                        label(for="phone") Phone: 
+                    td
+                        input(type="text" name="phone" id="phone" placeholder=data.phone)
+            button(type="submit") Save

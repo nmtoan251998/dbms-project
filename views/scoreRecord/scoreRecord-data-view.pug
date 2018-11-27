@@ -6,8 +6,8 @@ block main
     .table-data                    
         a.btn.add-button Add data        
         .table-search
-            form(action='')
-                input.search-input(type='text', name='search-name', placeholder='Input score record here...')
+            form(action='/scoreRecord/data-search')
+                input.search-input(type='text', name='search-name', placeholder='Input subject id record here...')
                 button.search-button Search        
         form.form-create(method="post",action="/scoreRecord/create")
             fieldset
@@ -44,34 +44,55 @@ block main
             thead.thead
                 tr
                     th#sort-id(title='Identification') 
-                        | Id 
-                        span.icon.icon-sort(id='')
+                        | Subject Id 
+                        form(action="/scoreRecord/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='subjectid',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-student-id(title='Student Id')
                         | Student Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/scoreRecord/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='studentid',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-year(title='Year')
                         | Year
-                        span.icon.icon-sort(id='')
+                        form(action="/scoreRecord/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='year',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-semester(title='Semester')
                         | Semester 
-                        span.icon.icon-sort(id='')
+                        form(action="/scoreRecord/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='semester',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-score(title='Score')
                         | Score
-                        span.icon.icon-sort(id='')
+                        form(action="/scoreRecord/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='score',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#functions(title='Action')
                         | Action                         
             tbody.tbody
-                tr.tb-data
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td.function
-                        a(href="#")
-                            span.icon.icon-del(id='')                            
-                        a(href="#")
-                            span.icon.icon-mod(id='')
+                each ChildScoreRecord in listScoreRecord              
+                    tr.tb-data
+                        td #{ChildScoreRecord.SubjectId}
+                        td #{ChildScoreRecord.StudentId}
+                        td #{ChildScoreRecord.Year}
+                        td #{ChildScoreRecord.Semester}
+                        td #{ChildScoreRecord.Score}
+                        td.function                            
+                            a(href="/scoreRecord/data-delete/"+ChildScoreRecord.SubjectId+'&'+ChildScoreRecord.StudentId)
+                                    span.icon.icon-del(id='') 
+                            a(href="/scoreRecord/data-modify/"+ChildScoreRecord.SubjectId+'&'+ChildScoreRecord.StudentId+'&'+ChildScoreRecord.Year+'&'+ChildScoreRecord.Semester+'&'+ChildScoreRecord.Score)
+                                    span.icon.icon-mod(id='')
                 caption(title='CTU Score Records') Table name: Cantho univerysity's score records
         //- Paginating  
         .paginator                                  
@@ -92,7 +113,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value=total)    
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/scoreRecord.css")                    
     script(src="/scripts/open-createForm.js")

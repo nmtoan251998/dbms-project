@@ -6,23 +6,23 @@ block main
     .table-data            
         a.btn.add-button Add data        
         .table-search
-            form(action='')
+            form(action='/studentdetail/data-search')
                 input.search-input(type='text', name='search-name', placeholder='Input student id here...')
                 button.search-button Search        
-        form.form-create(method="post",action="/student/create")
+        form.form-create(method="post",action="/studentdetail/create")
             fieldset
                 legend Student detail
                 table.table-create
                     tr
                         td
-                            label(for="id") Id: 
+                            label(for="studentid") Id: 
                         td
-                            input(type="text" name="id" id="id" placeholder="Identification")
+                            input(type="text" name="studentid" id="studentid" placeholder="Identification")
                     tr
                         td 
-                            label(for="DoB") DoB: 
+                            label(for="dob") DoB: 
                         td
-                            input(type="text" name="DoB" id="DoB" placeholder="Date of birth")
+                            input(type="text" name="dob" id="dob" placeholder="Date of birth")
                     tr
                         td
                             label(for="gender") Gender: 
@@ -50,37 +50,57 @@ block main
                 tr
                     th#sort-id(title='Identification') 
                         | Id 
-                        span.icon.icon-sort(id='')
+                        form(action="/studentDetail/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='id',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-dob(title='Dob')
                         | DoB 
-                        span.icon.icon-sort(id='')                    
+                        form(action="/studentDetail/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='dob',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')                    
                     th#sort-gender(title='Gender')
                         | Gender
-                        span.icon.icon-sort(id='')
+                        form(action="/studentDetail/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='gender',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-city(title='City')
                         | City
-                        span.icon.icon-sort(id='')
+                        form(action="/studentDetail/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='city',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
                     th#sort-address(title='Address')
                         | Address
-                        span.icon.icon-sort(id='')
-                    th#sort-phone(title='Phone')
+                        form(action="/studentDetail/data")
+                            input(type="text", name="sort", value=sort,style="display:none")
+                            input(type="text", name="column", value='address',style="display:none")
+                            button(type="submit")
+                                span.icon.icon-sort(id='')
+                    th#sort-phone(title='phone')
                         | Phone
-                        span.icon.icon-sort(id='')
                     th#functions(title='Action')
                         | Action                        
             tbody.tbody                
-                tr.tb-data
-                    td
-                    td
-                    td
-                    td
-                    td
-                    td                        
-                    td.function                            
-                        a(href="#")
-                            span.icon.icon-del(id='')                            
-                        a(href="#")
-                            span.icon.icon-mod(id='')
+                each ChildStudentDetail in listStudentDetail              
+                    tr.tb-data
+                        td #{ChildStudentDetail.Id}
+                        td #{ChildStudentDetail.DoB}
+                        td #{ChildStudentDetail.Gender}
+                        td #{ChildStudentDetail.City}
+                        td #{ChildStudentDetail.Address}
+                        td #{ChildStudentDetail.Phone}
+                        td.function                            
+                            a(href="/studentDetail/data-delete/"+ChildStudentDetail.Id)
+                                    span.icon.icon-del(id='') 
+                            a(href="/studentDetail/data-modify/"+ChildStudentDetail.Id+'&'+ChildStudentDetail.DoB+'&'+ChildStudentDetail.Gender+'&'+ChildStudentDetail.City+'&'+ChildStudentDetail.Address+'&'+ChildStudentDetail.Phone)
+                                    span.icon.icon-mod(id='')
                 caption(title='Student details') Table name: Student details
         //- Paginating  
         .paginator                                  
@@ -101,7 +121,7 @@ block main
                 span.icon.icon-arrow-circle-right#previous
             .total-item
                 label(for='total-item') Total:
-                input#total-item(type='button', value='')    
+                input#total-item(type='button', value=total)    
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/studentDetail.css")                    
     script(src="/scripts/open-createForm.js")
