@@ -14,7 +14,7 @@ block main
         .show-board
             .function-item#total-stu
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/total-stu", method="post")
                         input(type="text", name="faculty-name", placeholder="Faculty name")
                         input(type="text", name="year", placeholder="Year")
                         button(type="submit") Run
@@ -25,7 +25,7 @@ block main
                         input(type="text", value="")
             .function-item#avg-point
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/avg-point", method="post")
                         input(type="text", name="student-code", placeholder="Student code")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
@@ -37,7 +37,7 @@ block main
                         input(type="text", value="")
             .function-item#stu-scho
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/stu-scho", method="post")
                         input(type="text", name="major-name", placeholder="Major name")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
@@ -52,7 +52,7 @@ block main
                             li Student ID + Student Name
             .function-item#failed-subject
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/failed-subject", method="post")
                         input(type="text", name="major-name", placeholder="Major name")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
@@ -64,7 +64,7 @@ block main
                         input(type="text", value="")
             .function-item#full-stu-info
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/full-stu-info", method="post")
                         input(type="text", name="student-code", placeholder="Student code")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
@@ -80,7 +80,7 @@ block main
                         input(type="text", value="")
             .function-item#most-least-scho
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/most-least-scho", method="post")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
                         button(type="submit") Run
@@ -91,7 +91,7 @@ block main
                         input(type="text", value="")
             .function-item#bad-stu
                 .input
-                    form(action="", method="post")
+                    form(action="/functions/bad-stu", method="post")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
                         button(type="submit") Run
