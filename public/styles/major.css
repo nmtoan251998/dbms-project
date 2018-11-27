@@ -13,7 +13,3 @@
 .table .thead th:nth-child(2){width: 12.5%}
 .table .thead th:nth-child(3){width: 65%}
 .table .thead th:nth-child(4){width: 10%}
-
-.table .thead th:nth-child(1) form{left: 30%;}
-.table .thead th:nth-child(2) form{left: 70%;}
-.table .thead th:nth-child(3) form{left: 15%;}
