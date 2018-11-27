@@ -12,58 +12,95 @@ block main
             button.btn The most - least scholarship
             button.btn Bad students
         .show-board
-            #total-stu
+            .function-item#total-stu
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
-                .ouput
-                    input(type="text", name="",  "")
-            #avg-point
-                .input
-                    form(action="", method="post")
-                        input(type="text", name="")
-                        input(type="text", name="")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="faculty-name", placeholder="Faculty name")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output
-                    input(type="text", name="",  "")
-            #stu-scho
+                    fieldset
+                        legend Results
+                        | Total student
+                        input(type="text", value="")
+            .function-item#avg-point
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="student-code", placeholder="Student code")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output
-                    input(type="text", name="",)
-            #failed-subject
+                    fieldset
+                        legend Results
+                        | Avarage point
+                        input(type="text", value="")
+            .function-item#stu-scho
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="major-name", placeholder="Major name")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output
-                    input(type="text", name="")
-            #full-stu-info
+                    fieldset
+                        legend Results
+                        | Student list
+                        ul
+                            li Student ID + Student Name
+                            li Student ID + Student Name
+                            li Student ID + Student Name
+            .function-item#failed-subject
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="major-name", placeholder="Major name")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output
-                    input(type="text", name="",  )
-                    input(type="text", name="",  )
-                    input(type="text", name="",  )
-            #most-least-scho
+                    fieldset
+                        legend Results
+                        | Subject name
+                        input(type="text", value="")
+            .function-item#full-stu-info
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="student-code", placeholder="Student code")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output
-            #bad-stu
+                    fieldset
+                        legend Results
+                        | Class
+                        input(type="text", value="")
+                        | Major
+                        input(type="text", value="")
+                        | Faculty
+                        input(type="text", value="")
+            .function-item#most-least-scho
                 .input
                     form(action="", method="post")
-                        input(type="text", name="")
-                        button(type="submit")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
+                .output
+                    fieldset
+                        legend Results
+                        | Faculty name
+                        input(type="text", value="")
+            .function-item#bad-stu
+                .input
+                    form(action="", method="post")
+                        input(type="text", name="semester", placeholder="Semester")
+                        input(type="text", name="year", placeholder="Year")
+                        button(type="submit") Run
                 .output                    
-                    input(type="text", name="")
+                    fieldset
+                        legend Results
+                        | Number of students                       
+                        input(type="text", value="") 
+    script(src="/scripts/functions.js")
 
 
 
