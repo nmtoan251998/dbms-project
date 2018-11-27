@@ -10,7 +10,7 @@ const scoreRecordRouter = require('./scoreRecord-route');
 const classRouter = require('./class-route');
 const courseRouter = require('./course-route');
 const studentDetailRouter = require('./studentDetail-route');
-const higherFunctionsRouter = require('./functions-route.js');
+const functionsRouter = require('./functions-route.js');
 
 router.use('/falculty', falcultyRouter);
 router.use('/major', majorRouter);
@@ -20,6 +20,6 @@ router.use('/scoreRecord', scoreRecordRouter);
 router.use('/class', classRouter);
 router.use('/course', courseRouter);
 router.use('/studentDetail', studentDetailRouter);
-router.use('/functions', higherFunctionsRouter);
+router.use('/functions', functionsRouter);
 
 module.exports = router;
