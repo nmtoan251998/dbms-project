@@ -2,6 +2,7 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
+    link(rel="stylesheet", href="/styles/major.css")    
     form.form-create(method="post",action="/major/data-modify/"+data.id)
         fieldset
             legend New major information
@@ -21,4 +22,4 @@ block main
                         label(for="majorname") Major Name: 
                     td
                         input(type="text" name="majorname" value=data.majorname)
-            button(type="submit") Save
+            button.btn(type="submit") Save

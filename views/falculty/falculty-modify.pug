@@ -2,6 +2,7 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css") 
+    link(rel="stylesheet", href="/styles/faculty.css") 
     form.form-create(method="post",action="/falculty/data-modify/"+data.id)
         fieldset
             legend New faculty information
@@ -21,4 +22,4 @@ block main
                         label(for="dean") Dean: 
                     td
                         input(type="text" name="dean" placeholder="Dean name")
-            button(type="submit") Save
+            button.btn(type="submit") Save
