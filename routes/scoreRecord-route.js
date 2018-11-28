@@ -8,7 +8,7 @@ router.get('/data', scoreRecordRouter.getScoreRecordData);
 router.get('/create-data', scoreRecordRouter.getScoreRecordCreate);
 router.post('/create', scoreRecordRouter.postScoreRecordCreate);
 router.get('/data-delete/:id', scoreRecordRouter.deleteScoreRecordData);
-router.get('/data-modify/:id&:majorid&:classname&:headteacher', scoreRecordRouter.modifyScoreRecordData);
+router.get('/data-modify/:id&:studentid&:year&:semester&:score', scoreRecordRouter.modifyScoreRecordData);
 router.post('/data-modify/:id', scoreRecordRouter.postModifyScoreRecordData);
 router.get('/data-search',scoreRecordRouter.getSearchScoreRecordData);
 

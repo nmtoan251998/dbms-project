@@ -2,7 +2,7 @@ extends ../layout/common
 
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
-    link(rel="stylesheet", href="/styles/class.css")   
+    link(rel="stylesheet", href="/styles/scoreRecord.css")     
     form.form-create(method="post",action="/scoreRecord/data-modify/"+data.id)
         fieldset
             legend New score record information
@@ -11,26 +11,26 @@ block main
                     td
                         label(for="subjectid") Subject Id: 
                     td
-                        input(type="text" name="subjectid" id="subjectid" placeholder="Class identification")
+                        input(type="text" name="subjectid" id="subjectid" placeholder=data.id)
                 tr
                     td
                         label(for="studentid") Student Id: 
                     td
-                        input(type="text" name="studentid" id="studentid" placeholder="Major identification")
+                        input(type="text" name="studentid" id="studentid" placeholder=data.studentid)
                 tr
                     td 
                         label(for="year") Year: 
                     td
-                        input(type="text" name="year" id="year" placeholder="Class name")
+                        input(type="text" name="year" id="year" placeholder=data.year)
                 tr
                     td 
                         label(for="semester") Semester: 
                     td
-                        input(type="text" name="semester" id="semester" placeholder="Head teacher")
+                        input(type="text" name="semester" id="semester" placeholder=data.semester)
                 tr
                     td 
                         label(for="score") Score: 
                     td
-                        input(type="text" name="score" id="score" placeholder="Head teacher")
+                        input(type="text" name="score" id="score" placeholder=data.score)
             button.btn.save-btn(type="submit") Save
-            a.btn(href="/class/data") Back
+            a.btn(href="/scoreRecord/data") Back
