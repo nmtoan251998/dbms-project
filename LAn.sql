@@ -23,14 +23,10 @@ INSERT INTO FALCULTY VALUES ('DB', 'Khoa Du Bi Dan Toc', 'Nguyen Van Loi');
 INSERT INTO FALCULTY VALUES ('MTR', 'Khoa Moi Truong', 'Nguyen Thu Trang');
 INSERT INTO FALCULTY VALUES ('TS', 'Khoa Thuy San', 'Nguyen Thanh Thao');
 
-UPDATE FALCULTY SET ID = "THUD", FALNAME = "NONG NGHIEP", dEAN="Lộc đéo có bồ" WHERE ID = "KT";
-
-DELETE FROM FALCULTY WHERE ID ='undefined';
-DELETE FROM FALCULTY	LIMIT 3;    
 SELECT * FROM FALCULTY;
 DROP TABLE FALCULTY;
-
 DELETE FROM FALCULTY WHERE id = 'CNTTTT';
+
 CREATE TABLE MAJOR(
 	Id CHAR(10),
 	FalId CHAR(10),
@@ -40,9 +36,6 @@ CREATE TABLE MAJOR(
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 );
-
-
-DESC MAJOR;
 
 INSERT INTO MAJOR
 	VALUES('CNTT', 'CNTTTT','Cong Nghe Thong Tin');
@@ -67,8 +60,6 @@ INSERT INTO MAJOR
 INSERT INTO MAJOR
 	VALUES('KTTNN', 'MTR','Ky Thuat Tai Nguyen Nuoc');
 
-insert into major values('khmt','kt','kt');
-desc major;
 DELETE FROM MAJOR
 	LIMIT 5;
 SELECT * FROM MAJOR;
@@ -95,6 +86,7 @@ INSERT INTO CLASS VALUES ('TS17V7F2','NTTS','Nuoi Trong Thuy San 2','Tran Van An
 INSERT INTO CLASS VALUES ('KT12V7F1','QTKD','Quan Tri Kinh Doanh 1','Le Cong Cong');
 INSERT INTO CLASS VALUES ('DI15V7F1','KHMT','Khoa Hoc May Tinh 1','Pham Nguyen Khang');
 INSERT INTO CLASS VALUES ('DI17V7F1','KHMTCLC','Khoa Hoc May Tinh Chat Luong Cao 1','Nguyen Huu Hoa');
+
 DELETE FROM CLASS
 	LIMIT 3;    
 SELECT * FROM CLASS;
@@ -119,6 +111,7 @@ INSERT INTO COURSE VALUES('K47','Khoa 47','2021-1-1','2025-1-1');
 INSERT INTO COURSE VALUES('K48','Khoa 48','2022-1-1','2026-1-1');
 INSERT INTO COURSE VALUES('K39','Khoa 39','2013-1-1','2017-1-1');
 INSERT INTO COURSE VALUES('K38','Khoa 38','2012-1-1','2016-1-1');
+
 SELECT * FROM COURSE;
 DROP TABLE COURSE;
 
@@ -135,16 +128,15 @@ CREATE TABLE COURSE_HAS_MAJOR(
 );
 
 INSERT INTO COURSE_HAS_MAJOR VALUES ('K42','CNTT'),
-						('K42','CNTTCLC'),
-                        ('K42','QTKD'),
-                        ('K40','CNTTCLC');
-                        
-INSERT INTO COURSE_HAS_MAJOR VALUES ('K42','KDQTCLC');
+									('K42','CNTTCLC'),
+									('K42','QTKD'),
+									('K40','CNTTCLC');                        
 INSERT INTO COURSE_HAS_MAJOR VALUES ('K43','NTTS'),
 									('K41','TH'),
                                     ('K39','SPTH'),
                                     ('K38','QTKD'),
-                                    ('K40','KTTNN');
+                                    ('K40','KTTNN'),
+                                    ('K42','KDQTCLC');
 
 SELECT * FROM COURSE_HAS_MAJOR;
 DROP TABLE COURSE_HAS_MAJOR;
@@ -161,32 +153,27 @@ CREATE TABLE STUDENT(
 );
 
 INSERT INTO STUDENT
-	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan');
+	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan',1);
 INSERT INTO STUDENT
-	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc');
+	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc',0);
 INSERT INTO STUDENT
-	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc');
+	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc',2);
 INSERT INTO STUDENT
-	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang');
+	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang',0);
 INSERT INTO STUDENT
-	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh');
+	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh',0);
 INSERT INTO STUDENT
-	VALUES('B1709588','TS17V7F2','Nguyen Van Tu'); 
+	VALUES('B1709588','TS17V7F2','Nguyen Van Tu',0); 
 INSERT INTO STUDENT
-	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh');
+	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh',0);
 INSERT INTO STUDENT
-	VALUES('B1305069','SP13V7F2','Tran Hung Dao');
+	VALUES('B1305069','SP13V7F2','Tran Hung Dao',2);
 INSERT INTO STUDENT
-	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh');
+	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh',2);
 INSERT INTO STUDENT
-	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu');
-ALTER TABLE STUDENT ADD COLUMN AcademicWarning INT DEFAULT 0;
+	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu',0);
 
-UPDATE STUDENT SET Course='K42' WHERE Id = 'B1605383';
-UPDATE STUDENT SET ACADEMICWARNING = 2 WHERE STUDENT.ID = 'B1200369';
-UPDATE STUDENT SET ACADEMICWARNING = 1 WHERE STUDENT.ID = 'B1605369';
-UPDATE STUDENT SET ACADEMICWARNING = 2 WHERE STUDENT.ID = 'B1605396';
-UPDATE STUDENT SET ACADEMICWARNING = 2 WHERE STUDENT.ID = 'B1305069';
+
 DELETE FROM STUDENT
 	LIMIT 4;
 SELECT * FROM STUDENT;
@@ -317,7 +304,7 @@ CREATE PROCEDURE findStudentWithId(StdId varchar(50))
 		SELECT * FROM STUDENT WHERE Id = StdId;
     END//
 
--- this function can find anything in the world muhahahahaa
+-- this function can find record by value input with column on table
 delimiter //
 CREATE PROCEDURE findAnything(TableName varchar(20),ColumnName varchar(20),Value1 varchar(50))
 	BEGIN 
@@ -329,7 +316,7 @@ CREATE PROCEDURE findAnything(TableName varchar(20),ColumnName varchar(20),Value
         EXECUTE STMT1;
         DEaLLOCATE PREPARE STMT1;
     END//
--- PROCEDURE delete student with id
+-- PROCEDURE delete record by value input with column on table
 CREATE PROCEDURE deleteAnyThing(TableName varchar(20),ColumnName varchar(20),Value1 varchar(50))
 	BEGIN 
         SET @TableName = TableName;
@@ -341,7 +328,7 @@ CREATE PROCEDURE deleteAnyThing(TableName varchar(20),ColumnName varchar(20),Val
         DEaLLOCATE PREPARE STMT1;
     END//
 
--- PROCIDURE modify anything 
+-- PROCIDURE modify record by value input with column on table 
 CREATE PROCEDURE modifyAnything(TableName varchar(20),ColumnModify varchar(20),NewValue varchar(50) ,ConditionColumn varchar(20),ValueCondition varchar(50))
 	BEGIN
 		SET @TableName = TableName;
@@ -355,28 +342,15 @@ CREATE PROCEDURE modifyAnything(TableName varchar(20),ColumnModify varchar(20),N
         DEaLLOCATE PREPARE STMT1;
     END//
 
-
+-- Filter students were academic warning on semester and year
 CREATE PROCEDURE filterAcademicWarning(Y INT,Seme INT)
 	BEGIN
-	SELECT * FROM STUDENT INNER JOIN SCORE_RECORD ON STUDENT.Id = SCORE_RECORD.StudentId WHERE AcademicWarning > 1 AND Score < 1.6 AND SCORE_RECORD.Year = Y AND Semester = Seme;
+	SELECT * FROM STUDENT INNER JOIN SCORE_RECORD
+    ON STUDENT.Id = SCORE_RECORD.StudentId 
+    WHERE AcademicWarning > 1 AND Score < 1.6 AND SCORE_RECORD.Year = Y AND Semester = Seme;
     END//
+    
 DROP PROCEDURE filterAcademicWarning//
-
-CREATE PROCEDURE countNumberStudentEachFalculty(FalcultyId char(10))
-	BEGIN
-		SELECT *,COUNT(*) AS NumberStudent FROM FALCULTY INNER JOIN MAJOR
-        ON FALCULTY.Id = MAJOR.FalId INNER JOIN STUDENT 
-        ON MAJOR.Id = STUDENT.MajorId GROUP BY FALCULTY.Id HAVING FALCULTY.Id = FalcultyId;
-    END//
--- as the name of function
-CREATE PROCEDURE countNumberStudentHaveTheSameFalcultyHometownAndCourse()
-	BEGIN
-		SELECT CourseId,FalId,City,COUNT(*) FROM STUDENT JOIN COURSE
-		 ON STUDENT.CourseId = COURSE.Id JOIN MAJOR 
-		 ON MAJOR.Id = STUDENT.MajorId JOIN STUDENT_DETAIL
-		 ON STUDENT.Id = STUDENT_DETAIL.Id
-		 GROUP BY CourseId,FalId,City;
-	END//
     
 -- count avg according to studentid, year and semester
 CREATE FUNCTION avgWithStudentIdYearAndSemester(StdId CHAR(10),Y INT, Seme INT)
@@ -388,23 +362,24 @@ CREATE FUNCTION avgWithStudentIdYearAndSemester(StdId CHAR(10),Y INT, Seme INT)
         WHERE StudentId = StdId AND SCORE_RECORD.Year = Y AND SCORE_RECORD.semester = Seme;
         RETURN RESULT;
     END//
+    
 DROP FUNCTION avgWithStudentIdYearAndSemester//
 
 -- Return subject has highest lose student
 CREATE PROCEDURE showBadSubjectWithMajorNamePerSemester(MajorName VARCHAR(50),Y INT,Seme INT)
     BEGIN
-        SELECT COUNT(*) AS NUMBER,SUBJECT.SubjectName FROM MAJOR JOIN SUBJECT ON MAJOR.ID = SUBJECT.MAJORID JOIN SCORE_RECORD
+        SELECT COUNT(*) AS NUMBER,SUBJECT.SubjectName FROM MAJOR JOIN SUBJECT 
+        ON MAJOR.ID = SUBJECT.MAJORID JOIN SCORE_RECORD
         ON SCORE_RECORD.SUBJECTID = SUBJECT.ID
         WHERE SCORE_RECORD.SCORE < 1.6 AND SCORE_RECORD.YEAR = Y AND SCORE_RECORD.SEMESTER = Seme AND MAJOR.MAJORNAME = MajorName
         GROUP BY SUBJECT.ID
         ORDER BY NUMBER DESC LIMIT 1;
     END//
     
+DROP PROCEDURE showBadSubjectWithMajorNamePerSemester;
 
-        
-        
-    drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
--- select top 2 student in faculty
+
+-- select top 2 highest score student on faculty
 CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     BEGIN
 		SELECT STUDENT.ID,STUDENT.STUDENTNAME,ROUND(AVG(SCORE),2) AS AVG,COUNT(*) FROM SCORE_RECORD JOIN STUDENT 
@@ -419,6 +394,8 @@ CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     END//
     DROP PROCEDURE showTop2FalcultyStudent//
     
+
+-- show student include id, student name, class name, faculty name
 CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
     BEGIN
 		SELECT STUDENT.ID,STUDENT.STUDENTNAME,CLASS.CLASSNAME,MAJOR.MAJORNAME,FALCULTY.FALNAME FROM FALCULTY JOIN MAJOR 
@@ -428,8 +405,9 @@ CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
         WHERE STUDENT.ID = StdId;
     END//
     DROP PROCEDURE showFullStudentInfo//
-    
-    CREATE FUNCTION getTotalStudentWithFalcultyName(FalName VARCHAR(50))
+
+-- get total student each faculty by faculty name    
+CREATE FUNCTION getTotalStudentWithFalcultyName(FalName VARCHAR(50))
 	RETURNS INT  DETERMINISTIC
 	BEGIN
 		DECLARE RESULT INT DEFAULT 1;
@@ -440,65 +418,40 @@ CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
         WHERE FALCULTY.FalName = FalName;
         RETURN RESULT;
     END//
+    
 DROP FUNCTION getTotalStudentWithFalcultyName//
 delimiter ;
-
-
-
-SELECT MAX(NUMBER) AS SL,ID INTO @SL,@ID FROM temp_result;
-SELECT @SL,@ID;
-
-DROP TEMPORARY TABLE top10customers;
-DROP TEMPORARY TABLE temp_result;
-DROP FUNCTION showBadSubjectWithFaculty;
-
-
-
-
-SELECT STUDENT.ID,ROUND(AVG(SCORE),2) AS AVG,COUNT(*) FROM SCORE_RECORD JOIN STUDENT 
-        ON SCORE_RECORD.StudentId = STUDENT.Id JOIN CLASS ON CLASS.Id = STUDENT.ClassId JOIN MAJOR ON MAJOR.Id = CLASS.MajorId JOIN FALCULTY ON FALCULTY.Id = MAJOR.FalId
-        WHERE FALCULTY.Id = 'CNTTTT'
-        GROUP BY STUDENT.ID
-        ORDER BY AVG DESC
-        LIMIT 2;
-
-
-
-
-
-
-
 
 SELECT * FROM MAJOR;
 SELECT * FROM COURSE;
 SELECT * FROM SCORE_RECORD;
 SELECT * FROM STUDENT;
 
-SELECT ROUND(AVG(SCORE),2) FROM SCORE_RECORD JOIN STUDENT ON SCORE_RECORD.StudentId = STUDENT.Id WHERE StudentId = 'B1605369' and year = 3 and semester = 1;
-
+-- testing
+	-- find student with studentid is b1605404
 CALL findStudentWithId('B1605404');
+	
+	
 CALL findAnything('falculty','falname','Khoa Du Bi Dan Toc');
 CALL findAnything('STUDENT_DETAIL','GENDER','NAM');
 CALL findAnything('STUDENT_DETAIL','GENDER','N%');
+
 CALL modifyAnything('STUDENT','AcademicWarning','2','Id','B1605369');
 CALL modifyAnything('STUDENT','AcademicWarning','2','Id','B1605396');
+
 CALL deleteAnyThing('STUDENT','Id','B1605404');
-CALL showTop2FalcultyStudent('khoa cong nghe thong tin va truyen thong',3,1);
-CALL showBadSubjectWithMajorNamePerSemester('cong nghe thong tin',3,1);
-CALL showFullStudentInfo('B1605369');
+
 CALL filterAcademicWarning(2,1);
-CALL countNumberStudentEachFalculty('KT');
-CALL countNumberStudentHaveTheSameFalcultyHometownAndCourse();
-set @a= avgWithStudentIdYearAndSemester('B1605369',3,1);
-select @a;
-select avgWithStudentIdYearAndSemester('B1605369',3,1);
-SET @b= showBadSubjectWithFaculty('CNTTTT');
-select getTotalStudentWithFalcultyName('KHOA kinh te');
-SELECT @b;
 
+CALL showTop2FalcultyStudent('khoa cong nghe thong tin va truyen thong',3,1);
 
-SELECT * FROM STUDENT;
-DROP PROCEDURE findStudentWithId;
-DROP PROCEDURE findAnything;
+CALL showBadSubjectWithMajorNamePerSemester('cong nghe thong tin',3,1);
+
+CALL showFullStudentInfo('B1605369');
+
+SELECT avgWithStudentIdYearAndSemester('B1605369',3,1) AS AVG;
+
+SELECT getTotalStudentWithFalcultyName('KHOA kinh te') AS Total;
+
 
 
