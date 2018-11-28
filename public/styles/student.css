@@ -2,7 +2,7 @@
 -- Change height + width in fieldset
 */
 .form-create fieldset{
-    height: 330px;
+    height: 280px;
     width: 400px;
     /* position: relative;
     background-color: white; */    
@@ -14,9 +14,3 @@
 .table .thead th:nth-child(3){width: 65%}
 .table .thead th:nth-child(4){width: 10%}
 
-.table .tbody .tb-data .function{
-    /* display: grid;  */
-    grid-template-columns: 1fr 1fr 1fr;                      
-    /* grid-gap: 1rem;
-    padding: 1rem; */
-}
