@@ -84,7 +84,6 @@ INSERT INTO CLASS VALUES ('MTR14V7F1','KTTNN','Ky Thuat Tai Nguyen Nuoc 1','Nguy
 INSERT INTO CLASS VALUES ('SP13V7F2','SPTH','Su Pham Toan Hoc 2','Nguyen Thi Diem');
 INSERT INTO CLASS VALUES ('TS17V7F2','NTTS','Nuoi Trong Thuy San 2','Tran Van An');
 INSERT INTO CLASS VALUES ('KT12V7F1','QTKD','Quan Tri Kinh Doanh 1','Le Cong Cong');
-INSERT INTO CLASS VALUES ('DI15V7F1','KHMT','Khoa Hoc May Tinh 1','Pham Nguyen Khang');
 INSERT INTO CLASS VALUES ('DI17V7F1','KHMTCLC','Khoa Hoc May Tinh Chat Luong Cao 1','Nguyen Huu Hoa');
 
 DELETE FROM CLASS

@@ -57,8 +57,8 @@ module.exports.getCourseData =  (req,res) => {
     conn.query(sql, (err,result) => {
         if(err) throw err;  
         for(x of result){
-            x['StartYear'] = date.format(x['StartYear'],'YYYY');
-            x['EndYear'] = date.format(x['EndYear'],'YYYY');
+            x['StartYear'] = date.format(x['StartYear'],'MM-DD-YYYY');
+            x['EndYear'] = date.format(x['EndYear'],'MM-DD-YYYY');
         }                  
         res.render('../views/course/course-data-view',{                
             listCourse: result.slice(begin, end),
@@ -75,7 +75,7 @@ module.exports.postCourseCreate = (req,res) => {
     res.render('../views/course/course-create-view');
 }
 
-module.exports.postCourseCreate = (req,res) =>{
+module.exports.postCourseCreate = (req,res) => {
     console.log(req.body)
     if (req.body.courseid) {
         const sql =`INSERT INTO COURSE VALUES ('${req.body.courseid}','${req.body.coursename}','${req.body.start}','${req.body.end}')`;

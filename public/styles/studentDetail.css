@@ -5,7 +5,7 @@
 -- Change width of .table .thead th:nth-child
 */
 .form-create fieldset{
-    height: 450px;
+    height: 480px;
     width: 450px;
     /* position: relative;
     background-color: white; */    
@@ -29,6 +29,6 @@
     left: 10px;
 }
 
-.modify{
-    margin-top: 4rem;
-}
+/* .modify{    
+    margin: 5% 10% 0;
+} */

@@ -3,7 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/subject.css")    
-    form.form-create(method="post",action="/subject/data-modify/"+data.id)
+    form.form-create.modify(method="post",action="/subject/data-modify/"+data.id)
         fieldset
             legend New subject information
             table.table-create
@@ -16,7 +16,7 @@ block main
                     td
                         label(for="majorid") Major: 
                     td
-                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid, value=major.id)
+                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid, value=data.majorid)
                 tr
                     td 
                         label(for="subjectname") Name: 
