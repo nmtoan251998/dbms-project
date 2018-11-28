@@ -49,9 +49,9 @@ block main
                         ul
                             if data_stu_scho
                                 each student in data_stu_scho
-                                    li=student.ID
-                                    li=student.STUDENTNAME
-                                    li=student.AVG
+                                    li=student.ID +" - " +student.studentname +" - " +student.avg
+                                    //- li=student.STUDENTNAME
+                                    //- li=student.AVG
             .function-item#failed-subject
                 .input
                     form(action="/functions/failed-subject", method="get")
