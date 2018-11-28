@@ -3,7 +3,7 @@ CREATE DATABASE STUDENTMANAGER3;
 USE STUDENTMANAGER3;
 DROP DATABASE STUDENTMANAGER3;
 SELECT * FROM SUBJECT;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 CREATE TABLE FALCULTY(
 	Id CHAR(10) ,
@@ -401,10 +401,8 @@ CREATE PROCEDURE showBadSubjectWithMajorNamePerSemester(MajorName VARCHAR(50),Y 
         ORDER BY NUMBER DESC LIMIT 1;
     END//
     
+    drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
 
-        
-        
-drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
 -- select top 2 student in faculty
 CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     BEGIN
@@ -420,34 +418,32 @@ CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     END//
     DROP PROCEDURE showTop2FalcultyStudent//
     
-    CREATE FUNCTION getTotalStudentWithFalcultyNamePerCourse(FalName VARCHAR(50),CourseName CHAR(10))
+CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
+    BEGIN
+		SELECT STUDENT.ID,STUDENT.STUDENTNAME,CLASS.CLASSNAME,MAJOR.MAJORNAME,FALCULTY.FALNAME FROM FALCULTY JOIN MAJOR 
+        ON FALCULTY.ID = MAJOR.FalId JOIN CLASS
+        ON CLASS.MajorId = MAJOR.Id JOIN STUDENT 
+        ON STUDENT.ClassId = CLASS.Id
+        WHERE STUDENT.ID = StdId;
+    END//
+    DROP PROCEDURE showFullStudentInfo//
+    
+    CREATE FUNCTION getTotalStudentWithFalcultyName(FalName VARCHAR(50))
 	RETURNS INT  DETERMINISTIC
 	BEGIN
 		DECLARE RESULT INT DEFAULT 1;
-		SELECT COUNT(*) INTO RESULT  FROM FALCULTY JOIN MAJOR 
-        ON FALCULTY.ID = MAJOR.FalId JOIN COURSE_HAS_MAJOR
-        ON COURSE_HAS_MAJOR.MAJORID = MAJOR.ID JOIN CLASS
-        ON CLASS.MajorId = MAJOR.Id JOIN STUDENT 
-        ON STUDENT.ClassId = CLASS.Id
-        WHERE FALCULTY.FalName = FalName AND COURSE_HAS_MAJOR.CourseId=CourseName;
-        RETURN RESULT;
-    END//
-DROP FUNCTION getTotalStudentWithFalcultyNamePerCourse//
-delimiter ;
-
--- test
-SELECT * FROM FALCULTY JOIN MAJOR 
+		SELECT COUNT(*) INTO RESULT FROM FALCULTY JOIN MAJOR 
         ON FALCULTY.ID = MAJOR.FalId JOIN CLASS
         ON CLASS.MajorId = MAJOR.Id JOIN STUDENT 
-        ON STUDENT.ClassId = CLASS.Id;
+        ON STUDENT.ClassId = CLASS.Id
+        WHERE FALCULTY.FalName = FalName;
+        RETURN RESULT;
+    END//
+DROP FUNCTION getTotalStudentWithFalcultyName//
+delimiter ;
 
-SELECT * FROM STUDENT JOIN CLASS 
-	ON STUDENT.CLASSID = CLASS.ID JOIN MAJOR
-    ON CLASS.MAJORID = MAJOR.ID JOIN FALCULTY
-    ON MAJOR.FALID = FALCULTY.ID JOIN COURSE_HAS_MAJOR 
-    ON MAJOR.ID = COURSE_HAS_MAJOR.MAJORID ;
-SELECT distinct majorid FROM COURSE_HAS_MAJOR;
--- end test
+
+
 
 SELECT MAX(NUMBER) AS SL,ID INTO @SL,@ID FROM temp_result;
 SELECT @SL,@ID;
@@ -489,6 +485,7 @@ CALL modifyAnything('STUDENT','AcademicWarning','2','Id','B1605396');
 CALL deleteAnyThing('STUDENT','Id','B1605404');
 CALL showTop2FalcultyStudent('khoa cong nghe thong tin va truyen thong',3,1);
 CALL showBadSubjectWithMajorNamePerSemester('cong nghe thong tin',3,1);
+CALL showFullStudentInfo('B1605369');
 CALL filterAcademicWarning(2,1);
 CALL countNumberStudentEachFalculty('KT');
 CALL countNumberStudentHaveTheSameFalcultyHometownAndCourse();
@@ -496,8 +493,8 @@ set @a= avgWithStudentIdYearAndSemester('B1605369',3,1);
 select @a;
 select avgWithStudentIdYearAndSemester('B1605369',3,1);
 SET @b= showBadSubjectWithFaculty('CNTTTT');
-select getTotalStudentWithFalcultyNamePerCourse('KHOA CONG NGHE THONG TIN VA TRUYEN THONG','k40');
-SELECT @b;
+select getTotalStudentWithFalcultyName('KHOA kinh te');
+
 
 
 SELECT * FROM STUDENT;

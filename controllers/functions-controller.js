@@ -51,12 +51,21 @@ module.exports.getFailedSubject = (req,res) => {
 }
 
 module.exports.getFullStuInfo = (req,res) => {
-    res.render('../views/higher-order/full-stu-info-view')
+    if(req.query['student-code']){
+        const sql = `CALL showFullStudentInfo('${req.query['student-code']}');`
+        conn.query(sql,(err,result)=>{
+            res.render('../views/higher-order/full-stu-info-view',{
+                data_stu_info_stu: result[0][0].STUDENTNAME,
+                data_stu_info_class: result[0][0].CLASSNAME,
+                data_stu_info_major: result[0][0].MAJORNAME,
+                data_stu_info_falname: result[0][0].FALNAME,
+            })
+        })
+    }
+    else
+        res.render('../views/higher-order/full-stu-info-view')
 }
 
-module.exports.getMostLeastScho = (req,res) => {
-    res.render('../views/higher-order/most-least-scho-view')
-}
 
 module.exports.getStuScho = (req,res) => {
     if(req.query['falculty-name']){
@@ -73,8 +82,8 @@ module.exports.getStuScho = (req,res) => {
 }
 
 module.exports.getTotalStudent = (req,res) => {
-    if(req.query['falculty-name'] && req.query.courseid){
-        const sql = `SELECT getTotalStudentWithFalcultyNamePerCourse('${req.query['falculty-name']}','${req.query.courseid}') AS total;`
+    if(req.query['falculty-name']){
+        const sql = `SELECT getTotalStudentWithFalcultyName('${req.query['falculty-name']}') AS total;`
         conn.query(sql,(err,result)=>{
             if (err) throw err;
             res.render('../views/higher-order/total-stu-view',{

@@ -9,14 +9,12 @@ block main
             button.btn Pick student for scholarship
             button.btn The most failed subject
             button.btn Full student information
-            button.btn The most - least scholarship
             button.btn Bad students
         .show-board
             .function-item#total-stu
                 .input
                     form(action="/functions/total-stu", method="get")
                         input(type="text", name="falculty-name", placeholder="Faculty name")
-                        input(type="text", name="courseid", placeholder="Course identification")
                         button(type="submit") Run
                 .output
                     fieldset
@@ -68,29 +66,18 @@ block main
                 .input
                     form(action="/functions/full-stu-info", method="get")
                         input(type="text", name="student-code", placeholder="Student code")
-                        input(type="text", name="semester", placeholder="Semester")
-                        input(type="text", name="year", placeholder="Year")
                         button(type="submit") Run
                 .output
                     fieldset
                         legend Results
+                        | Name
+                        input(type="text", value=data_stu_info_stu)
                         | Class
-                        input(type="text", value="")
+                        input(type="text", value=data_stu_info_class)
                         | Major
-                        input(type="text", value="")
+                        input(type="text", value=data_stu_info_major)
                         | Faculty
-                        input(type="text", value="")
-            .function-item#most-least-scho
-                .input
-                    form(action="/functions/most-least-scho", method="get")
-                        input(type="text", name="semester", placeholder="Semester")
-                        input(type="text", name="year", placeholder="Year")
-                        button(type="submit") Run
-                .output
-                    fieldset
-                        legend Results
-                        | Faculty name
-                        input(type="text", value="")
+                        input(type="text", value=data_stu_info_falname)
             .function-item#bad-stu
                 .input
                     form(action="/functions/bad-stu", method="get")
