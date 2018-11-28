@@ -11,21 +11,21 @@ block main
                     td
                         label(for="courseid") Id: 
                     td
-                        input(type="text" name="courseid" id="courseid" placeholder=data.courseid)
+                        input(type="text" name="courseid" id="courseid" placeholder=data.courseid, value=data.courseid)
                 tr
                     td
                         label(for="coursename") Name: 
                     td
-                        input(type="text" name="coursename" id="coursename" placeholder=data.coursename)
+                        input(type="text" name="coursename" id="coursename" placeholder=data.coursename, value=data.coursename)
                 tr
                     td 
-                        label(for="startyear") Dean: 
+                        label(for="startyear") Start year: 
                     td
-                        input(type="text" name="startyear" id="startyear" placeholder=data.startyear)
+                        input(type="text" name="startyear" id="startyear" placeholder=data.startyear, valuedata.startyear)
                 tr
                     td 
-                        label(for="endyear") Dean: 
+                        label(for="endyear") End year: 
                     td
-                        input(type="text" name="endyear" id="endyear" placeholder=data.endyear)
+                        input(type="text" name="endyear" id="endyear" placeholder=data.endyear, value=data.endyear)
             button.btn.save-btn(type="submit") Save
             a.btn(href="/course/data") Back

@@ -11,21 +11,21 @@ block main
                     td
                         label(for="subjectid") Id: 
                     td
-                        input(type="text" name="subjectid" id="subjectid" placeholder=data.id)
+                        input(type="text" name="subjectid" id="subjectid" placeholder=data.id, value=data.id)
                 tr
                     td
                         label(for="majorid") Major: 
                     td
-                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid)
+                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid, value=major.id)
                 tr
                     td 
                         label(for="subjectname") Name: 
                     td
-                        input(type="text" name="subjectname" id="subjectname" placeholder=data.subjectname)
+                        input(type="text" name="subjectname" id="subjectname" placeholder=data.subjectname, value=data.subjectname)
                 tr
                     td 
                         label(for="credit") Credit: 
                     td
-                        input(type="text" name="credit" id="credit" placeholder=data.credit)
+                        input(type="text" name="credit" id="credit" placeholder=data.credit, value=data.credit)
             button.btn.save-btn(type="submit") Save
             a.btn(href="/subject/data") Back
