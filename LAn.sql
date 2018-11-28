@@ -161,25 +161,26 @@ CREATE TABLE STUDENT(
 );
 
 INSERT INTO STUDENT
-	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan');
+	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan', 0);
 INSERT INTO STUDENT
-	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc');
+	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc', 0);
 INSERT INTO STUDENT
-	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc');
+	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc', 0);
 INSERT INTO STUDENT
-	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang');
+	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang', 0);
 INSERT INTO STUDENT
-	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh');
+	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh', 0);
 INSERT INTO STUDENT
-	VALUES('B1709588','TS17V7F2','Nguyen Van Tu'); 
+	VALUES('B1709588','TS17V7F2','Nguyen Van Tu', 0); 
 INSERT INTO STUDENT
-	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh');
+	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh', 0);
 INSERT INTO STUDENT
-	VALUES('B1305069','SP13V7F2','Tran Hung Dao');
+	VALUES('B1305069','SP13V7F2','Tran Hung Dao', 0);
 INSERT INTO STUDENT
-	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh');
+	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh', 0);
 INSERT INTO STUDENT
-	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu');
+	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu', 0);
+    
 ALTER TABLE STUDENT ADD COLUMN AcademicWarning INT DEFAULT 0;
 
 UPDATE STUDENT SET Course='K42' WHERE Id = 'B1605383';
@@ -400,10 +401,8 @@ CREATE PROCEDURE showBadSubjectWithMajorNamePerSemester(MajorName VARCHAR(50),Y 
         ORDER BY NUMBER DESC LIMIT 1;
     END//
     
-
-        
-        
     drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
+
 -- select top 2 student in faculty
 CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     BEGIN
@@ -442,6 +441,7 @@ CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
     END//
 DROP FUNCTION getTotalStudentWithFalcultyName//
 delimiter ;
+
 
 
 
@@ -494,11 +494,10 @@ select @a;
 select avgWithStudentIdYearAndSemester('B1605369',3,1);
 SET @b= showBadSubjectWithFaculty('CNTTTT');
 select getTotalStudentWithFalcultyName('KHOA kinh te');
-SELECT @b;
+
 
 
 SELECT * FROM STUDENT;
 DROP PROCEDURE findStudentWithId;
 DROP PROCEDURE findAnything;
-
 
