@@ -17,11 +17,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
     closeBtn.addEventListener("click", function(){              
         setTimeout(() => options.style.fontSize = 35+"px", 250)          
-        sideBar.style.width = 0;              
+        sideBar.style.width = "0px";              
     })
 
     menuBtn.addEventListener("click", function(){
         options.style.fontSize = 0;
         sideBar.style.width = "12vw";      
     })
+
+    // Clicked event of window
+    window.addEventListener("click", e => {
+        if(options.contains(e.target)){
+            return           
+        }else{
+            setTimeout(() => options.style.fontSize = 35+"px", 250)          
+            sideBar.style.width = "0px";            
+        }         
+    })
+
 }, false)
