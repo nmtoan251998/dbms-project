@@ -3,7 +3,7 @@ CREATE DATABASE STUDENTMANAGER3;
 USE STUDENTMANAGER3;
 DROP DATABASE STUDENTMANAGER3;
 SELECT * FROM SUBJECT;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 CREATE TABLE FALCULTY(
 	Id CHAR(10) ,
@@ -161,26 +161,25 @@ CREATE TABLE STUDENT(
 );
 
 INSERT INTO STUDENT
-	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan', 0);
+	VALUES('B1605369','DI16V7F1','Nguyen Minh Toan');
 INSERT INTO STUDENT
-	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc', 0);
+	VALUES('B1405404', 'DI16V7F2','Nguyen Thai Ngoc');
 INSERT INTO STUDENT
-	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc', 0);
+	VALUES('B1605396','DI16V7F1',  'Le Phuc Loc');
 INSERT INTO STUDENT
-	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang', 0);
+	VALUES('B1605383','KT16V7F3', 'Nguyen Thu Trang');
 INSERT INTO STUDENT
-	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh', 0);
+	VALUES('B1605333','DI16V7F1',' Mai Ngoc Tuong Minh');
 INSERT INTO STUDENT
-	VALUES('B1709588','TS17V7F2','Nguyen Van Tu', 0); 
+	VALUES('B1709588','TS17V7F2','Nguyen Van Tu'); 
 INSERT INTO STUDENT
-	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh', 0);
+	VALUES('B1505369','MT15V7F1','Le Thi Kim Binh');
 INSERT INTO STUDENT
-	VALUES('B1305069','SP13V7F2','Tran Hung Dao', 0);
+	VALUES('B1305069','SP13V7F2','Tran Hung Dao');
 INSERT INTO STUDENT
-	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh', 0);
+	VALUES('B1200369','KT12V7F1','Nguyen Minh Tinh');
 INSERT INTO STUDENT
-	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu', 0);
-    
+	VALUES('B1405569','MTR14V7F1','Ninh Phuoc Thu');
 ALTER TABLE STUDENT ADD COLUMN AcademicWarning INT DEFAULT 0;
 
 UPDATE STUDENT SET Course='K42' WHERE Id = 'B1605383';
@@ -208,23 +207,23 @@ CREATE TABLE STUDENT_DETAIL(
 );
 
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1605369', '1998-05-02', 'Nam', 'Can Tho', '12/54A Quang Trung', '0987654321');
+	VALUES('B1605369', '1998-05-02', 'Nam', 'Can Tho', '12-54A Quang Trung', '0987654321');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1605383', '1998-09-14', 'Nam', 'Ca Mau', '22/54AE/78B Ho Tung Mau', '0987654322');
+	VALUES('B1605383', '1998-09-14', 'Nam', 'Ca Mau', '22-54AE-78B Ho Tung Mau', '0987654322');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1605396', '1998-05-12', 'Nam', 'Can Tho', '132A 3/2 Ninh Kieu', '0987654323');
+	VALUES('B1605396', '1998-05-12', 'Nam', 'Can Tho', '132A 3-2 Ninh Kieu', '0987654323');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1405404', '1996-01-01', 'Nam', 'Can Tho', '121A 30/4 Ninh Kieu', '0987654324');
+	VALUES('B1405404', '1996-01-01', 'Nam', 'Can Tho', '121A 30-4 Ninh Kieu', '0987654324');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1605333', '1998-01-01', 'Nu', 'Kien Giang', '158A 3/2 Phu Cuong', '0987654325');
+	VALUES('B1605333', '1998-01-01', 'Nu', 'Kien Giang', '158A 3-2 Phu Cuong', '0987654325');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1709588', '1999-10-22', 'Nam', 'Kien Giang', '30/4', '0987555555');
+	VALUES('B1709588', '1999-10-22', 'Nam', 'Kien Giang', '30-4', '0987555555');
 INSERT INTO STUDENT_DETAIL
 	VALUES('B1505369', '1997-01-01', 'Nu', 'Soc Trang', 'Cu Lao Dung', '0879654555');
 INSERT INTO STUDENT_DETAIL
-	VALUES('B1305069', '1995-10-01', 'Nam', 'Vinh Long', '15A 3/2', '0976543425');
+	VALUES('B1305069', '1995-10-01', 'Nam', 'Vinh Long', '15A 3-2', '0976543425');
 INSERT INTO STUDENT_DETAIL
-  VALUES('B1200369', '1994-01-10', 'Nam', 'Kien Giang', '1A 3/2 Phu Cuong', '0966654325');
+  VALUES('B1200369', '1994-01-10', 'Nam', 'Kien Giang', '1A 3-2 Phu Cuong', '0966654325');
 INSERT INTO STUDENT_DETAIL
 	VALUES('B1405569', '1996-11-11', 'Nam', 'Tien Giang', 'Hung Vuong', '0986541225');
 
@@ -401,8 +400,10 @@ CREATE PROCEDURE showBadSubjectWithMajorNamePerSemester(MajorName VARCHAR(50),Y 
         ORDER BY NUMBER DESC LIMIT 1;
     END//
     
-    drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
 
+        
+        
+    drop PROCEDURE showBadSubjectWithMajorNamePerSemester;
 -- select top 2 student in faculty
 CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
     BEGIN
@@ -441,7 +442,6 @@ CREATE PROCEDURE showFullStudentInfo(StdId CHAR(10))
     END//
 DROP FUNCTION getTotalStudentWithFalcultyName//
 delimiter ;
-
 
 
 
@@ -494,10 +494,11 @@ select @a;
 select avgWithStudentIdYearAndSemester('B1605369',3,1);
 SET @b= showBadSubjectWithFaculty('CNTTTT');
 select getTotalStudentWithFalcultyName('KHOA kinh te');
-
+SELECT @b;
 
 
 SELECT * FROM STUDENT;
 DROP PROCEDURE findStudentWithId;
 DROP PROCEDURE findAnything;
+
 
