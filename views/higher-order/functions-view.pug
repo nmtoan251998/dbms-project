@@ -15,14 +15,14 @@ block main
             .function-item#total-stu
                 .input
                     form(action="/functions/total-stu", method="get")
-                        input(type="text", name="faculty-name", placeholder="Faculty name")
-                        input(type="text", name="year", placeholder="Year")
+                        input(type="text", name="falculty-name", placeholder="Faculty name")
+                        input(type="text", name="courseid", placeholder="Course identification")
                         button(type="submit") Run
                 .output
                     fieldset
                         legend Results
                         | Total student
-                        input(type="text", value="")
+                        input(type="text", value=data_total_student)
             .function-item#avg-point
                 .input
                     form(action="/functions/avg-point", method="get")
@@ -34,11 +34,11 @@ block main
                     fieldset
                         legend Results
                         | Avarage point
-                        input(type="text", value="")
+                        input(type="text", value=data_avg)
             .function-item#stu-scho
                 .input
                     form(action="/functions/stu-scho", method="get")
-                        input(type="text", name="major-name", placeholder="Major name")
+                        input(type="text", name="falculty-name", placeholder="Faculty name")
                         input(type="text", name="semester", placeholder="Semester")
                         input(type="text", name="year", placeholder="Year")
                         button(type="submit") Run
@@ -47,9 +47,11 @@ block main
                         legend Results
                         | Student list
                         ul
-                            li Student ID + Student Name
-                            li Student ID + Student Name
-                            li Student ID + Student Name
+                            if data_stu_scho
+                                each student in data_stu_scho
+                                    li=student.ID
+                                    li=student.STUDENTNAME
+                                    li=student.AVG
             .function-item#failed-subject
                 .input
                     form(action="/functions/failed-subject", method="get")
@@ -61,7 +63,7 @@ block main
                     fieldset
                         legend Results
                         | Subject name
-                        input(type="text", value="")
+                        input(type="text", value=data_fail_sub)
             .function-item#full-stu-info
                 .input
                     form(action="/functions/full-stu-info", method="get")
@@ -99,7 +101,7 @@ block main
                     fieldset
                         legend Results
                         | Number of students                       
-                        input(type="text", value="") 
+                        input(type="text", value=data_bad_stu) 
     script(src="/scripts/functions.js")
 
 
