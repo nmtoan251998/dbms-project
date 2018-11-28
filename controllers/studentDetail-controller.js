@@ -104,7 +104,7 @@ module.exports.modifyStudentDetailData = (req,res) =>{
 
 module.exports.postModifyStudentDetailData = (req,res) =>{
     console.log(req.body)
-    const sql = `UPDATE STUDENT_DETAIL SET ID = '${req.body.studentid}', DoB = '${req.body.dob}', Gender = '${req.body.gender}' , City = '${req.body.city}, Address = '${req.body.address}, Phone = '${req.body.phone}'WHERE Id = '${req.body.studentid}'`;
+    const sql = `UPDATE STUDENT_DETAIL SET ID = '${req.body.studentid}', DoB = '${req.body.dob}', Gender = '${req.body.gender}' , City = '${req.body.city}', Address = '${req.body.address}', Phone = '${req.body.phone}' WHERE Id = '${req.body.studentid}'`;
    
     conn.query(sql,(err,result)=>{
         if(err) throw err;

@@ -11,21 +11,21 @@ block main
                     td
                         label(for="classid") Id: 
                     td
-                        input(type="text" name="classid" id="classid" placeholder=data.id)
+                        input(type="text" name="classid" id="classid" placeholder=data.id, value=data.id)
                 tr
                     td
                         label(for="majorid") Major: 
                     td
-                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid)
+                        input(type="text" name="majorid" id="majorid" placeholder=data.majorid, value=data.majorid)
                 tr
                     td 
                         label(for="classname") Name: 
                     td
-                        input(type="text" name="classname" id="classname" placeholder=data.classname)
+                        input(type="text" name="classname" id="classname" placeholder=data.classname, value=data.classname)
                 tr
                     td 
                         label(for="headteacher") Headteacher: 
                     td
-                        input(type="text" name="headteacher" id="headteacher" placeholder=data.headteacher)
+                        input(type="text" name="headteacher" id="headteacher" placeholder=data.headteacher, value=data.headteacher)
             button.btn.save-btn(type="submit") Save
             a.btn(href="/class/data") Back

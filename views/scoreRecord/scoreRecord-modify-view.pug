@@ -11,26 +11,26 @@ block main
                     td
                         label(for="subjectid") Subject Id: 
                     td
-                        input(type="text" name="subjectid" id="subjectid" placeholder=data.id)
+                        input(type="text" name="subjectid" id="subjectid" placeholder=data.id, value=data.id)
                 tr
                     td
                         label(for="studentid") Student Id: 
                     td
-                        input(type="text" name="studentid" id="studentid" placeholder=data.studentid)
+                        input(type="text" name="studentid" id="studentid" placeholder=data.studentid, value=data.studentid)
                 tr
                     td 
                         label(for="year") Year: 
                     td
-                        input(type="text" name="year" id="year" placeholder=data.year)
+                        input(type="text" name="year" id="year" placeholder=data.year, value=data.year)
                 tr
                     td 
                         label(for="semester") Semester: 
                     td
-                        input(type="text" name="semester" id="semester" placeholder=data.semester)
+                        input(type="text" name="semester" id="semester" placeholder=data.semester, value=data.semester)
                 tr
                     td 
                         label(for="score") Score: 
                     td
-                        input(type="text" name="score" id="score" placeholder=data.score)
+                        input(type="text" name="score" id="score" placeholder=data.score, value=data.score)
             button.btn.save-btn(type="submit") Save
             a.btn(href="/scoreRecord/data") Back
