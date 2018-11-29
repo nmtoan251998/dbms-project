@@ -3,7 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/course.css")
-    form.form-create(method="post",action="/course/data-modify/"+data.course)
+    form.form-create.modify(method="post",action="/course/data-modify/"+data.course)
         fieldset
             legend New course information
             table.table-create
@@ -11,21 +11,21 @@ block main
                     td
                         label(for="courseid") Id: 
                     td
-                        input(type="text" name="courseid" id="courseid" placeholder=data.courseid)
+                        input(type="text" name="courseid" id="courseid" placeholder=data.courseid, value=data.courseid)
                 tr
                     td
                         label(for="coursename") Name: 
                     td
-                        input(type="text" name="coursename" id="coursename" placeholder=data.coursename)
+                        input(type="text" name="coursename" id="coursename" placeholder=data.coursename, value=data.coursename)
                 tr
                     td 
-                        label(for="startyear") Dean: 
+                        label(for="startyear") Start year: 
                     td
-                        input(type="text" name="startyear" id="startyear" placeholder=data.startyear)
+                        input(type="text" name="startyear" id="startyear" placeholder=data.startyear, value=data.startyear)
                 tr
                     td 
-                        label(for="endyear") Dean: 
+                        label(for="endyear") End year: 
                     td
-                        input(type="text" name="endyear" id="endyear" placeholder=data.endyear)
+                        input(type="text" name="endyear" id="endyear" placeholder=data.endyear, value=data.endyear)
             button.btn.save-btn(type="submit") Save
             a.btn(href="/course/data") Back

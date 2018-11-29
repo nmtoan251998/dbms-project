@@ -1,9 +1,9 @@
 extends ../layout/common
 
-block main
-    link(rel="stylesheet", href="/styles/create-forms.css")    
+block main        
     link(rel="stylesheet", href="/styles/major.css")    
-    form.form-create(method="post",action="/major/data-modify/"+data.id)
+    link(rel="stylesheet", href="/styles/create-forms.css")
+    form.form-create.modify(method="post",action="/major/data-modify/"+data.id)
         fieldset
             legend New major information
             table.table-create

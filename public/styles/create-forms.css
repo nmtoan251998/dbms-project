@@ -33,7 +33,7 @@
             .form-create .table-create input{
                 border: 2px solid gainsboro;
                 border-radius: 5px;            
-                padding: .8rem 0;
+                padding: .8rem .5rem;
                 width: 90%;
                 overflow: hidden;
                 box-sizing: border-box;
@@ -70,3 +70,6 @@
         border: 1px solid #607897;
         background: white;
     }
+.modify{    
+    margin: 5% 10% 0;
+}
