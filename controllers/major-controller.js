@@ -13,7 +13,7 @@ module.exports.getMajorData =  (req,res) => {
     */
 
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -106,7 +106,7 @@ module.exports.postModifyMajorData = (req,res) =>{
 
 module.exports.getSearchMajorData = (req,res) =>{
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;        
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;

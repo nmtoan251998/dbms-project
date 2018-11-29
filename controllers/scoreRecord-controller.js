@@ -14,7 +14,7 @@ module.exports.getScoreRecordData =  (req,res) => {
     */
 
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -113,7 +113,7 @@ module.exports.postModifyScoreRecordData = (req,res) =>{
 
 module.exports.getSearchScoreRecordData = (req,res) =>{
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;       
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
