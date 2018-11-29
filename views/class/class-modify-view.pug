@@ -3,7 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/class.css")   
-    form.form-create(method="post",action="/class/data-modify/"+data.id)
+    form.form-create.modify(method="post",action="/class/data-modify/"+data.id)
         fieldset
             legend New class information
             table.table-create

@@ -3,7 +3,7 @@ extends ../layout/common
 block main
     link(rel="stylesheet", href="/styles/create-forms.css")    
     link(rel="stylesheet", href="/styles/scoreRecord.css")     
-    form.form-create(method="post",action="/scoreRecord/data-modify/"+data.id)
+    form.form-create.modify(method="post",action="/scoreRecord/data-modify/"+data.id)
         fieldset
             legend New score record information
             table.table-create
