@@ -14,7 +14,7 @@ module.exports.getSubjectData =  (req,res) => {
     */
 
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;        
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -109,7 +109,7 @@ module.exports.postModifySubjectData = (req,res) =>{
 
 module.exports.getSearchSubjectData = (req,res) =>{
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
