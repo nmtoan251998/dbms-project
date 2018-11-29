@@ -15,7 +15,7 @@ module.exports.getStudentDetailData =  (req,res) => {
     */
 
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;      
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -116,7 +116,7 @@ module.exports.postModifyStudentDetailData = (req,res) =>{
 
 module.exports.getSearchStudentDetailData = (req,res) =>{
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
