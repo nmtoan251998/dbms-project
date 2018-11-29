@@ -19,7 +19,7 @@ module.exports.getCourseData =  (req,res) => {
     */
 
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
@@ -119,7 +119,7 @@ module.exports.postModifyCourseData = (req,res) =>{
 
 module.exports.getSearchCourseData = (req,res) =>{
     let currentPage = parseInt(req.query.page) || 1;
-    let itemPerPage = parseInt(req.query.size) || 5;    
+    let itemPerPage = parseInt(req.query.size) || 10;    
     
     let begin = (currentPage-1) * itemPerPage;
     let end = currentPage* itemPerPage ;
