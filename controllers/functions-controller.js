@@ -1,4 +1,3 @@
-// const conn = require('../public/scripts/config');
 const conn = require('../config');
 
 module.exports.getFunctions =  (req,res) => {   
@@ -42,6 +41,12 @@ module.exports.getFailedSubject = (req,res) => {
     if(req.query['major-name']){
         const sql = `CALL showBadSubjectWithMajorNamePerSemester('${req.query['major-name']}',${req.query.year},${req.query.semester});`
         conn.query(sql,(err,result)=>{
+            if(result[0][0] == undefined){
+                result[0][0] = {
+                    SubjectName: "No subject bad at this semester"
+                }
+
+            }
             res.render('../views/higher-order/failed-subject-view',{
                 data_fail_sub: result[0][0].SubjectName
             })
