@@ -153,8 +153,9 @@ CREATE PROCEDURE filterAcademicWarning(Y INT,Seme INT)
 	BEGIN
 	SELECT * FROM STUDENT INNER JOIN SCORE_RECORD
     ON STUDENT.Id = SCORE_RECORD.StudentId 
-    WHERE AcademicWarning > 1 AND Score < 1.6 AND SCORE_RECORD.Year = Y AND Semester = Seme;
+    WHERE AcademicWarning >= 1 AND Score < 1.6 AND SCORE_RECORD.Year = Y AND Semester = Seme;
     END//
+    
     
 -- count avg according to studentid, year and semester
 CREATE FUNCTION avgWithStudentIdYearAndSemester(StdId CHAR(10),Y INT, Seme INT)
@@ -177,7 +178,6 @@ CREATE PROCEDURE showBadSubjectWithMajorNamePerSemester(MajorName VARCHAR(50),Y 
         GROUP BY SUBJECT.ID
         ORDER BY NUMBER DESC LIMIT 1;
     END//
-
 
 -- select top 2 highest score student on faculty
 CREATE PROCEDURE showTop2FalcultyStudent(FalcultyName CHAR(50),Y INT, Seme INT)
