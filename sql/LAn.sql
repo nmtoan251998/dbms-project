@@ -431,7 +431,7 @@ SELECT * FROM STUDENT;
 	-- find student with studentid is b1605404
 CALL findStudentWithId('B1605404');
 	
-	
+
 CALL findAnything('falculty','falname','Khoa Du Bi Dan Toc');
 CALL findAnything('STUDENT_DETAIL','GENDER','NAM');
 CALL findAnything('STUDENT_DETAIL','GENDER','N%');
