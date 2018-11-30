@@ -82,8 +82,8 @@ module.exports.getStuScho = (req,res) => {
 }
 
 module.exports.getTotalStudent = (req,res) => {
-    if(req.query['falculty-name']){
-        const sql = `SELECT getTotalStudentWithFalcultyName('${req.query['falculty-name']}') AS total;`
+    if(req.query['falculty-id']){
+        const sql = `SELECT getTotalStudentWithFalcultyId('${req.query['falculty-id']}') AS total;`
         conn.query(sql,(err,result)=>{
             if (err) throw err;
             res.render('../views/higher-order/total-stu-view',{
