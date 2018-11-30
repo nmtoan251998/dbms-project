@@ -1,4 +1,5 @@
-const conn = require('../public/scripts/config');
+// const conn = require('../public/scripts/config');
+const conn = require('../config');
 const find = require('../admin_modules/find')
 module.exports.getMajorData =  (req,res) => {                
     // PAGINATION    

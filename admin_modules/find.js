@@ -1,4 +1,5 @@
-const conn = require('../public/scripts/config');
+// const conn = require('../public/scripts/config');
+const conn = require('../config');
 async function findData(table,column,value){
     const sql = `CALL findAnything('${table}','${column}','${value}');`
     var re;
