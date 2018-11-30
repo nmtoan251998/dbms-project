@@ -1,5 +1,2 @@
 node_modules
 .env
-main.js
-dbms-project.sql
-config.js
