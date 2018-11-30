@@ -422,19 +422,16 @@ CREATE FUNCTION getTotalStudentWithFalcultyId(FalId CHAR(10))
 DROP FUNCTION getTotalStudentWithFalcultyId//
 delimiter ;
 
-<<<<<<< HEAD:LAn.sql
-=======
 SELECT * FROM MAJOR;
 SELECT * FROM COURSE;
 SELECT * FROM SCORE_RECORD;
 SELECT * FROM STUDENT;
 
->>>>>>> 872d95f5b2d14ec0524b367674bef834ddc70796:sql/LAn.sql
 -- testing
 	-- find student with studentid is b1605404
 CALL findStudentWithId('B1605404');
 	
-	
+
 CALL findAnything('falculty','falname','Khoa Du Bi Dan Toc');
 CALL findAnything('STUDENT_DETAIL','GENDER','NAM');
 CALL findAnything('STUDENT_DETAIL','GENDER','N%');
