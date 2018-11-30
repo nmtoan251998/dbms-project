@@ -424,14 +424,6 @@ CREATE FUNCTION getTotalStudentWithFalcultyName(FalName VARCHAR(50))
 DROP FUNCTION getTotalStudentWithFalcultyName//
 delimiter ;
 
-
-
-
-
-
-
-
-
 -- testing
 	-- find student with studentid is b1605404
 CALL findStudentWithId('B1605404');
